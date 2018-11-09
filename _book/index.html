@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introducción al software R</title>
+  <meta name="description" content="Introducción al uso del Software R">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introducción al software R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Introducción al uso del Software R" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introducción al software R" />
+  
+  <meta name="twitter:description" content="Introducción al uso del Software R" />
+  
+
+<meta name="author" content="Paccioretti Pablo">
+<meta name="author" content="Bruno Cecilia">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="intro.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introducción a R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Instalación de programas</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#breve-introduccion-a-la-interfaz-del-interprete-de-infostat"><i class="fa fa-check"></i><b>1.1</b> Breve introducción a la interfaz del intérprete de InfoStat</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Breve introducción a R</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#SintaxisBasica"><i class="fa fa-check"></i><b>2.1</b> Generalidades del ambiente R</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="funciones-y-comandos-basicos.html"><a href="funciones-y-comandos-basicos.html"><i class="fa fa-check"></i><b>3</b> Funciones y comandos básicos</a><ul>
+<li class="chapter" data-level="3.1" data-path="funciones-y-comandos-basicos.html"><a href="funciones-y-comandos-basicos.html#ayuda"><i class="fa fa-check"></i><b>3.1</b> Ayuda</a></li>
+<li class="chapter" data-level="3.2" data-path="funciones-y-comandos-basicos.html"><a href="funciones-y-comandos-basicos.html#asignaciones-y-aritmetica-vectorial"><i class="fa fa-check"></i><b>3.2</b> Asignaciones y aritmética vectorial</a></li>
+<li class="chapter" data-level="3.3" data-path="funciones-y-comandos-basicos.html"><a href="funciones-y-comandos-basicos.html#r-como-herramienta-estadistica"><i class="fa fa-check"></i><b>3.3</b> R como herramienta estadística</a></li>
+<li class="chapter" data-level="3.4" data-path="funciones-y-comandos-basicos.html"><a href="funciones-y-comandos-basicos.html#r-como-herramienta-grafica"><i class="fa fa-check"></i><b>3.4</b> R como herramienta gráfica</a></li>
+<li class="chapter" data-level="3.5" data-path="funciones-y-comandos-basicos.html"><a href="funciones-y-comandos-basicos.html#tablas_resumen"><i class="fa fa-check"></i><b>3.5</b> Tablas resumen de operadores y funciones</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="objetos-en-r.html"><a href="objetos-en-r.html"><i class="fa fa-check"></i><b>4</b> Objetos en R</a><ul>
+<li class="chapter" data-level="4.1" data-path="objetos-en-r.html"><a href="objetos-en-r.html#vectores"><i class="fa fa-check"></i><b>4.1</b> Vectores</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="objetos-en-r.html"><a href="objetos-en-r.html#secuencias"><i class="fa fa-check"></i><b>4.1.1</b> Secuencias</a></li>
+<li class="chapter" data-level="4.1.2" data-path="objetos-en-r.html"><a href="objetos-en-r.html#vectores-con-valores-repetidos"><i class="fa fa-check"></i><b>4.1.2</b> Vectores con valores repetidos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="objetos-en-r.html"><a href="objetos-en-r.html#matrices"><i class="fa fa-check"></i><b>4.2</b> Matrices</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="objetos-en-r.html"><a href="objetos-en-r.html#operaciones-con-matrices"><i class="fa fa-check"></i><b>4.2.1</b> Operaciones con matrices:</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="objetos-en-r.html"><a href="objetos-en-r.html#listas"><i class="fa fa-check"></i><b>4.3</b> Listas</a></li>
+<li class="chapter" data-level="4.4" data-path="objetos-en-r.html"><a href="objetos-en-r.html#hojas-de-datos-data-frames"><i class="fa fa-check"></i><b>4.4</b> Hojas de datos (Data frames)</a></li>
+<li class="chapter" data-level="4.5" data-path="objetos-en-r.html"><a href="objetos-en-r.html#algunas-funciones-basicas-predefinidas"><i class="fa fa-check"></i><b>4.5</b> Algunas funciones básicas predefinidas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="control-de-flujo.html"><a href="control-de-flujo.html"><i class="fa fa-check"></i><b>5</b> Control de flujo</a><ul>
+<li class="chapter" data-level="5.1" data-path="control-de-flujo.html"><a href="control-de-flujo.html#construccion-condicional-if"><i class="fa fa-check"></i><b>5.1</b> Construcción condicional <code>if</code></a></li>
+<li class="chapter" data-level="5.2" data-path="control-de-flujo.html"><a href="control-de-flujo.html#construccion-repetitiva-for"><i class="fa fa-check"></i><b>5.2</b> Construcción repetitiva <code>for</code></a></li>
+<li class="chapter" data-level="5.3" data-path="control-de-flujo.html"><a href="control-de-flujo.html#construccion-repetitiva-while"><i class="fa fa-check"></i><b>5.3</b> Construccion repetitiva <code>while</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="generar-nuevas-funciones.html"><a href="generar-nuevas-funciones.html"><i class="fa fa-check"></i><b>6</b> Generar nuevas funciones</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introducción al software R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Introducción al software R</h1>
+<h3 class="subtitle"><em>Notas de clases</em></h3>
+<h4 class="author"><em>Paccioretti Pablo<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></em></h4>
+<h4 class="author"><em>Bruno Cecilia<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></em></h4>
+</div>
+<div id="instalacion-de-programas" class="section level1">
+<h1><span class="header-section-number">Sección 1</span> Instalación de programas</h1>
+<p>Se debe tener instalado R y RStudio. R puede ser instalado en múltiples plataformas tales como Windows, Mac OS y en sistemas basados en Linux. Además hay múltiples entornos de desarrollo integrado (<em>Integrated Development Environment</em> IDE) los cuales facilitan la programación. Ejemplos de este tipo de software es el intérprete de R que contiene InfoStat <span class="citation">(Di Rienzo et al. <a href="#ref-Infostat">2018</a>)</span> y RStudio <span class="citation">(RStudio Team <a href="#ref-Rstudio">2016</a>)</span>. Las interfaces gráficas de ambos softwares son similares.</p>
+<p>Links para las descargas:</p>
+<ul>
+<li><a href="https://cran.r-project.org/bin/windows/base/">R (windows)</a></li>
+<li><a href="http://www.infostat.com.ar/descargas/demo/infostatinstaller_esp.exe">InfoStat</a></li>
+</ul>
+<div id="breve-introduccion-a-la-interfaz-del-interprete-de-infostat" class="section level2">
+<h2><span class="header-section-number">1.1</span> Breve introducción a la interfaz del intérprete de InfoStat</h2>
+<p>La interfaz del intérprete de R en InfoStat se divide en cuatro paneles.</p>
+<div class="figure">
+<img src="images/InfoStatPartes.png" alt="Diseño de los paneles del intérprete de R de InfoStat RStudio" style="width:80.0%" />
+<p class="caption">Diseño de los paneles del intérprete de R de InfoStat RStudio</p>
+</div>
+<p>El panel superior izquierdo permite al usuario visualizar scripts previamente escritos o escribir nuevos. En el panel inferior izquierdo se muestran los resultados. En los paneles derechos se muestran los objetos cargados en el ambiente de trabajo, mientras que en el panel inferior derecho se muestran los paquetes instalados y en rojo los paquetees cargados.</p>
+<!-- Links para las descargas: -->
+<!-- - [R (windows)](https://cran.r-project.org/bin/windows/base/) -->
+<!-- - [RStudio](https://www.rstudio.com/products/rstudio/download/#download) -->
+<!-- ## Breve introducción a la interfaz de RStudio -->
+<!-- La interfaz de RStudio se divide en cuatro paneles. -->
+<!-- ![Diseño de los paneles de RStudio](images/Rstudiopartes.jpg){ width=80% } -->
+<!-- El panel superior izquierdo permite al usuario cargar scripts previamente escritos o escribir nuevos. En el panel *consola* se muestran las sentencias de código ejecutadas y los resultados. En los paneles derechos se muestran los objetos cargados en el ambiente de trabajo, mientras que en el panel inferior derecho se muestran archivos en el directorio de trabajo, gráficos generados, ayudas. -->
+
+</div>
+</div>
+<h3>Referencias</h3>
+<div id="refs" class="references">
+<div id="ref-Infostat">
+<p>Di Rienzo, JA, F Casanoves, MG Balzarini, L Gonzalez, M Tablada, and CW Robledo. 2018. <em>InfoStat</em>. Universidad Nacional de Córdoba. <a href="http://www.infostat.com.ar/" class="uri">http://www.infostat.com.ar/</a>.</p>
+</div>
+<div id="ref-Rstudio">
+<p>RStudio Team. 2016. <em>RStudio: Integrated Development Environment for R</em>. Boston, MA: RStudio, Inc. <a href="http://www.rstudio.com/" class="uri">http://www.rstudio.com/</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><a href="mailto:pablopaccioretti@agro.unc.edu.ar">pablopaccioretti@agro.unc.edu.ar</a><a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p><a href="mailto:cebruno@agro.unc.edu.ar">cebruno@agro.unc.edu.ar</a><a href="#fnref2">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["TutorialR.pdf", "TutorialR.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

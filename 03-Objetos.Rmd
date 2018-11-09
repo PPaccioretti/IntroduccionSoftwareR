@@ -1,0 +1,398 @@
+# Objetos en R
+
+Los resultados de un cierto procedimiento o valores pueden ser almacenados en diferentes clases de objetos. R tiene cinco clases básicas de objetos, números (`numeric`), números complejos (`complex`), cadenas de caracteres (`character`), factores (`factor`) y valores lógicos (`logical`). Éstos pueden juntarse para formar vectores (`vector`), matrices (`matrix`), hojas de datos (`data.frame`) o listas (`list`) entre otras clases de objetos menos usuales. En esta sección trabajaremos con algunos de ellos. Para conocer la clase de un objeto se utiliza la función `class`.
+
+## Vectores
+
+Es el objeto más simple de R. Es importante tener en cuenta que los vectores solo contienen elementos de la **misma** clase. La función `c()` puede utilizarse para crear vectores concatentando sus argumentos. 
+
+```{r, eval=FALSE}
+a <- c(-1,5,9,10.5)           #numérico
+d <- c(4+2i, 2+5i)            #números complejos
+x <- c(1, 2, 3)               #numérico
+y <- c("a", "b", "c")         #caracteres
+z <- c(TRUE, TRUE, FALSE, T)  #lógico
+```
+
+```{block, type='rmdnote'}
+Note que en el ejemplo anterior `T` y `F` es la forma corta de especificar `TRUE` y `FALSE`. Es recomendable utilizar la forma explícita de `TRUE` y `FALSE` que la forma corta.
+```
+
+
+
+### Secuencias
+
+```{r, eval=FALSE}
+x <- c(1, 2, 3, 4, 5) 
+x <- 1:10
+y <- -5:3
+
+```
+
+
+Para generar secuencias de números enteros consecutivos se puede utilizar `:`, pero si se desea generar otros tipos de secuencias, por ejemplo la secuencia 4,6,8,...,20, se debe utilizar la función `seq`. Los argumentos de esta función permiten generar secuencias con saltos o longitud definida por el usuario.
+```{r, eval=TRUE, echo=TRUE}
+seq(from = 4, to = 20, by = 2)
+```
+
+
+### Vectores con valores repetidos
+
+Cuando se desea generar un vector con valores repetidos se puede utilizar la función `rep`. Esta función replica los valores que se espicifican en el primer argumento, tantas veces o el largo que se especifique.
+
+```{r, eval=TRUE, collapse=TRUE}
+rep(1, 5)
+x <- 1:3
+rep(x, 2)
+rep(x, c(2,4,1))
+rep(x, length = 8)
+```
+
+
+<!-- ## Recordemos que podemos convertir cualquier vector en factor: -->
+<!-- fcol1 <- as.factor(col) -->
+<!-- # Otra forma de  generar factores: -->
+<!-- gl(3, 5) -->
+<!-- gl(3, 5, length = 30) -->
+<!-- gl(3, 5, labels = c("grupo A", "grupo B", "grupo C")) -->
+<!-- # Genere un factor con elementos -->
+<!-- # 1,1,1,2,2,2,3,3,3,4,4,4,1,1,1,2,2,2,3,3,3,4,4,4,1,1,1,2,2,2,3,3,3,4,4,4 -->
+
+
+
+
+
+<!-- ## Seleccion de elementos de un vector -->
+
+<!-- x <- c(3,52,-8,2,1,7,11,-3,0,6,23,17) -->
+<!-- x[1] -->
+<!-- x[3] -->
+<!-- x[c(1, 3)] -->
+
+<!-- # Seleccione los primeros 8 elementos de x -->
+<!-- # ?Y si queremos sustituir un elemento del vector? -->
+<!-- ## sustituya el tercer elemento de x por 88 -->
+
+
+<!-- x[3] <-  88 -->
+<!-- x -->
+
+<!-- ## ?Y si queremos suprimir coordenadas? -->
+<!-- x[-3] -->
+<!-- # Suprima la primera y la cuarta coordenada del vector x -->
+<!-- ## ?Y si queremos ordenar el vector? -->
+<!-- sort(x) -->
+<!-- # ?Y si lo queremos ordenado de mayor a menor? -->
+<!-- # ?Que hace la funcion "order"? -->
+<!-- ## Podemos pedirle la edad minima -->
+
+<!-- min(x) -->
+<!-- which.min(x)                  # ?Que obtenemos con este comando? -->
+
+<!-- # ?Y la edad maxima? -->
+
+
+## Matrices
+
+Las matrices son vectores con atributo de dimensión (filas y columnas). A diferencia de los `data.frame`s, todas las columnas de las matrices son de una misma clase. Para generar matrices se pude utilizar la función `matrix`.
+
+```{r, eval=TRUE}
+x <- 1:20
+matrix(x, nrow = 5, ncol = 4)
+```
+
+Las matrices pueden ser creadas uniendo filas o columnas mediante las funciones `cbind()` y `rbind()`. 
+
+```{r, eval=TRUE}
+x <- 1:3
+y <- 10:12
+cbind(x, y)
+rbind(x, y) 
+```
+
+
+###  Operaciones con matrices:
+- `A %*% B` : producto de matrices
+- `t(A)` : traspuesta de la matriz A
+- `solve(A)` : inversa de la matriz A
+- `solve(A,b)` : solución del sistema de ecuaciones Ax=b.
+- `svd(A)` : descomposición en valores singulares
+- `qr(A)` : descomposición QR
+- `eigen(A)` : valores y vectores propios
+- `diag(b)` : matriz diagonal.  (b  es un vector)
+- `diag(A)` : matriz diagonal. (A  es una matriz)
+- `A %o% B == outer(A,B)` : producto exterior de dos vectores o matrices
+
+
+
+
+<!-- ## Algunas medidas resumen para matrices: -->
+
+
+<!-- summary(A) -->
+<!-- mean(A) -->
+<!-- sd(A) -->
+
+
+<!-- ## Coordenadas de la matriz -->
+
+<!-- # Podemos obtener los elementos de una matriz como con los vectores: -->
+
+<!-- A[1,2]                   # el primer lugar indica la fila y el segundo, la columna -->
+
+
+<!-- ## En general, ?como elegimos una fila o columna de la matriz? -->
+
+<!-- ## Extraiga la columna 4 -->
+
+<!-- A[,4] -->
+
+
+<!-- # Extraiga la fila 5 -->
+<!-- # Extraiga la matriz formada por las columnas 1 y 2 -->
+<!-- # Extraiga la matriz formada por las columnas 1 y 3 y las filas 2, 3, 5 -->
+<!-- # ?Si queremos calcular la media para una sola columna? -->
+<!-- # Calcule la media de la primer columna de A -->
+<!-- # Calcule la varianza de la tercera fila de A -->
+<!-- ## Si queremos un vector con las medias de todas las columnas? -->
+
+<!-- # Funcion "apply" -->
+
+<!-- apply(A, 2, mean) -->
+<!-- # calcule la suma de las filas de A: -->
+<!-- ## Para formar matrices combinando vectores utilizamos -->
+<!-- ## las funciones "rbind" y "cbind". -->
+
+<!-- x <- seq(5, 10, by = 0.5) -->
+<!-- y <- 11:21 -->
+
+<!-- W <- rbind(x, y) -->
+<!-- Z <- cbind(x, y) -->
+
+
+<!-- ## "cbind" y "rbind" funcionan para matrices tambien: -->
+
+<!-- A1 <- matrix(0, 2, 2) -->
+<!-- A2 <- matrix(4:6, 2, 3) -->
+<!-- A3 <- matrix(c(8, -2, 0, -1, 5, 6), 3, 2) -->
+
+
+<!-- # Realice algunas combinaciones -->
+
+
+<!-- ## Podemos dar nombre a las filas y columnas. -->
+
+<!-- ## Ejemplo: Los siguientes resultados fueron obtenidos durante un -->
+<!-- # estudio sobre la concentracion de zinc (ppm) en muestras de distintas zonas -->
+<!-- # de un lago. -->
+
+<!-- #        fondo superficie -->
+<!-- # Norte   0.43       0.42 -->
+<!-- # Sur     0.27       0.24 -->
+<!-- # Este    0.57       0.39 -->
+<!-- # Oeste   0.53       0.41 -->
+<!-- # Centro  0.70       0.61 -->
+
+<!-- # ?Como generamos esa matriz? -->
+
+<!-- x <- -->
+
+
+<!-- zinc <- -->
+
+
+<!-- ## Nos faltan los nombres -->
+
+<!-- zonas <- c("Norte", "Sur", "Este", "Oeste", "Centro") -->
+<!-- variables <- c("fondo", "superficie") -->
+
+<!-- # "rownames" y "colnames" -->
+
+<!-- zinc <- matrix(x, nrow = 5) -->
+<!-- rownames(zinc) <- zonas -->
+<!-- colnames(zinc) <- variables -->
+<!-- zinc -->
+
+<!-- ## Tambien se puede crear directamente la matriz con nombres: -->
+
+<!-- zinc <- matrix(x, nrow = 5, dimnames = list(zonas, variables)) -->
+
+
+<!-- # Seleccione los valores de concentracion de zinc en: -->
+<!-- # - zona sur -->
+<!-- # - fondo -->
+<!-- # - zona sur y fondo -->
+
+
+<!-- # Guardemos esta matriz en el archivo "lago.RData" -->
+
+<!-- save(zinc,file="lago.RData") -->
+
+## Listas
+
+Una lista es la forma generalizada de un vector que puede contener elementos de diferentes clases (número, vector, matriz, lista, etc.). Para crear lista se puede utilizar la función `list()`. Dada su flexibilidad son contenedores generales de datos. Muchas funciones devuelven un conjunto de resultados de distinta longitud y distinto tipo en forma de lista.
+
+
+```{r}
+n <-  c(2, 4, 6)
+s <-  c("aa", "bb", "cc", "dd", "ee")
+b <-  c(TRUE, FALSE, TRUE, FALSE, FALSE)
+x <-  list(n, s, b)
+x
+```
+
+
+
+<!-- # llamando los objetos que est?n dentro de una lista usando [] -->
+<!-- x[2]  # devuleve una copia del objeto que est? en el orden 2 de la lista -->
+<!-- # tambi?n puedo llamar m?s de un elemento de la lista -->
+<!-- x[c(2,4)] -->
+<!-- # otra manera m?s directa de llamar objetos que est?n en una lista es usando doble [[]] -->
+<!-- x [[2]]  # nos devuelve el objeto de orden 2 de la lista pero no una copia -->
+<!-- # para modificar un objeto de la lista en forma directa -->
+<!-- x[[2]][1]<- "ta" -->
+<!-- x[[2]] # muestra el objeto s con un nuevo elemento "ta". Pero no modific? el objeto original -->
+<!-- s -->
+<!-- #Poniendo nombres a los objetos que conforman la lista -->
+<!-- names(x) <- c("nom1", "nom2", "nom3", "nom3") -->
+<!-- x -->
+<!-- x$nom1 -->
+
+
+
+<!-- ###################################### -->
+<!-- #         ARREGLOS                   # -->
+<!-- ###################################### -->
+
+<!-- ## Otra forma de generar matrices: -->
+<!-- # Las matrices son arreglos ("array") de dimension 2 -->
+<!-- ## Supongamos que queremos generar una matriz 3x6 con los elementos del -->
+<!-- # vector b -->
+<!-- b <- seq(-2, by = 2, length.out = 18) -->
+<!-- B1 <- array(b, dim = c(3,6)) -->
+
+<!-- ## Pero "array" nos permite tener arreglos de mas dimensiones. -->
+<!-- ## Consideremos un arreglo de 3 dimensiones -->
+<!-- D <- array(1:24, c(3,4,2)) -->
+
+
+<!-- # ?Como seleccionamos los elementos de un arreglo? -->
+<!-- # Seleccione el numero 1 -->
+<!-- # Seleccione el numero 13 -->
+<!-- # Seleccione el numero 15 -->
+
+<!-- ## Tambien podemos considerar subconjuntos de un array -->
+<!-- D[, , 1]  # es un array de dimension c(3,4) -->
+
+## Hojas de datos (Data frames)
+
+Es el objeto más común en R para almacenar datos. Sus columnas pueden ser de diferentes clases por ejemplo variables continuas y categóricas. Este tipo de objetos puede generarse mediante la función `data.frame()`. 
+
+```{block, type="rmdnote"}
+`data.frame` convierte los vectores de caracteres en factores automáticamente.
+```
+
+```{r, eval=TRUE}
+x1 <- 1:10
+x2 <- 24:33
+x3 <- gl(2, 5, labels = c("si","no"))
+x4 <-letters[1:10]
+data.frame(A = x1, B = x2, C = x3, D = x4)
+```
+
+## Algunas funciones básicas predefinidas
+- `summay()`
+- `mean()`
+- `var()`
+- `sd()`
+- `cor()`
+- `sum()`
+- `min()`
+- `max()`
+- `seq()`
+- `which()`
+    - `which.min()`
+    - `which.min()`
+- `length()`
+- `table()`
+- `is.na()`
+- `is.null()`
+- `complete.cases()`
+- `as.character()`
+- `as.numeric()`
+- `paste()`
+- `gsub()`
+- `unique()`
+- `lm()`
+- `dim()`
+- `nrow()`
+- `ncol()`
+- `colnames()`
+- `rownames()`
+- `edit()`
+- `cbind()`
+- `rbind()`
+- `order()`
+- `install.packages()`
+- `library()`
+
+
+---
+  
+```{block, type='rmdtip'}
+## Ejercitación
+```
+
+
+```{block, type='boxeda'}
+
+1. Vectores
+
+    Genere un vector `b` el cual contenga los valores de `x` y `a` ¿Cuantos elementos tiene el vector `b`? 
+ 
+2. Secuencias
+    
+    Genere la secuencia 8,7,6,5,4
+    
+    seq(4,20,2) ¿Este comando da eror? ¿Por qué?
+      
+    Genere usando comandos para secuencias el vector de componentes:  1, 2, 3, 4, 5, 6, 73, 72, 71, 70, 69, 68, 3, 6, 9, 12, 15, 18.
+
+3. Repetir valores
+
+    Genere un vector de componentes "azul", "azul","azul", "azul", "amarillo", "amarillo", "verde", "verde","verde", llamado `col`. ¿Es un vector de factores?
+    
+
+4. Matrices
+
+    Calcule la inversa y los autovalores y autovectores de `A  =  matrix(c(1,3,3,9,5,9,3,5,6), nrow = 3)`
+
+```
+
+
+
+<!-- ## Tambien podemos a??adir alguna columna a un data frame: -->
+<!-- especialista <- c("Toledo", "Toledo", "Toledo", "Buteler", "Buteler") -->
+<!-- zinc.df <- data.frame(zinc.df, especialista) -->
+<!-- ## Operador $ -->
+<!-- ## Es facil acceder y crear nuevas columnas con el operador "$" cuando estas -->
+<!-- # tienen nombre -->
+
+<!-- zinc.df$fondo -->
+<!-- zinc.df$fecha <- factor(c(1,2,1,2,1),labels=c("marzo","abril")) -->
+
+<!-- # Tambien puede usarse la notacion matricial para extraer filas y columnas -->
+<!-- # Extraiga la columna 2 -->
+<!-- # Extraiga los datos de zona Este -->
+<!-- zinc.df["Este",] -->
+<!-- # Que informacion nos da "str" y "summary" de un data frame? -->
+
+<!-- # Le dijimos que "especialista" era factor? -->
+<!-- class(especialista) -->
+<!-- class(zinc.df$especialista) -->
+
+<!-- ## Funcion "attach" -->
+<!-- # Sirve cuando vamos a trabajar con un conjunto de datos y queremos escribir menos! -->
+<!-- # Permite que las columnas dentro de un data frame puedan tratarse temporalmente -->
+<!-- # como variables con ese nombre. -->
+<!-- # Los objetos con el mismo nombre de alguna columna NO son reemplazados. -->

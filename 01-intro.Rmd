@@ -1,0 +1,18 @@
+# Breve introducción a R {#intro}
+
+R [@R-base] es un lenguaje de programación orientado a objetos. Fue creado por Ross Ihaka y Robert Gentleman en 1993 como un dialecto del software S, fue publicado en 1996 [@ihaka1996r]. Es un software libre y de código abierto, lo que significa que se puede usar, compartir y modificar el software libremente. Junto con el instalador de R, se distribuyen ciertos paquetes (*packages*) los cuales incluyen funciones para implementar algunos métodos estadísticos clásicos y modernos. Muchas personas utilizan R para realizar análisis estadísticos por esta razón. Muchos algoritmos y metodologías estadísticas están disponibles para ser implementadas en R, pero se debe buscar en cual paquete está disponible y descargarlo para su utilización.
+
+## Generalidades del ambiente R {#SintaxisBasica}
+
+R distingue mayúsculas y minúsculas, esto significa que `P` y `p` son variables diferentes. Los comandos elementales consisten en expresiones o asignaciones. Si se ejecuta una expresión el resultado será impreso pero no se guardará dicho valor. Cuando se asigna un valor de una expresión (mediante el comando `<-`), el resultado no se imprimirá en pantalla y se almacenará en un objeto. Comandos diferentes son separados por `;` o por una nueva línea. Un conjunto de comandos pueden estar encerrados entre llaves (`{` y `}`). Los `#` indican comentarios en el código, todo lo que está a la derecha de este símbolo no será ejecutado por R. Si se desean hacer comentarios en más de una línea, cada una de ellas debe comenzar con #. 
+
+```{r, eval=TRUE}
+x <- sqrt(10) #No se muestra el resultado
+sqrt(10)      #Impresión automática del resultado
+```
+
+Las funciones son segmentos de código escrito para llevar a cabo una tarea específica, en el ejemplo anterior se utilizó la función `sqrt` para calcular la raíz cuadrada de 10. Las funciones o no necesitar argumentos y devolver o no uno o más valores en el resultado. Los argumentos de la función son los *inputs* para ejecutar la tarea. Argumentos deben ir dentro de paréntesis luego del nombre de la función, cada argumento se separa con `,` (`(arg1,arg2 )`). Nombres de los argumentos pueden especificarse explicitamente o no. Si no se detalla el nombre del argumento, R entenderá que están en el mismo orden que se especificaron cuando se creó la función. 
+
+```{block, type='rmdnote'}
+Notar que la mayoría de las funciones de R derivan del inglés y que utiliza `.` como separador decimal.
+```

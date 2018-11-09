@@ -1,0 +1,77 @@
+# Generar nuevas funciones
+
+R es un lenguaje que permite crear nuevas funciones. Una funcion se define con una asignacion de la forma:
+```{r, eval=FALSE}
+nombre <- function(arg1, arg2, ...) {
+   expresion
+ }
+```
+
+
+La `expresion` es una fórmula o grupo de formulas (o sentencias) que utilizan los argumentos para calcular uno o varios valores. El resultado de dicha expresión es el valor que proporciona R en su salida y este puede ser un número, un vector, un gráfico, una lista y/o un mensaje. Una función devuelve el último valor impreso en la consola.
+
+Ejemplos:
+
+```{r, eval=TRUE}
+funcion1 <- function(x){ y = x + 4}
+
+(a<-funcion1(5))
+```
+
+En en caso siguiente, si se desea guardar el resultado en un objeto solo se guardará el rango (último valor impreso en consola). 
+
+```{r fun2, eval=TRUE}
+funcion2 <- function(muestra){     #El único argumento es un vector de datos
+  media = mean(muestra, na.rm = T)
+  varianza = var(muestra, na.rm = T)
+  rango = max(muestra, na.rm = T) - min(muestra, na.rm = T)
+  print(media)
+  print(varianza)
+  print(rango)
+
+}
+
+funcion2(rnorm(40,5,16))
+```
+
+Para que guarde los tres resultados hay que especificar que se haga una lista o vector.
+
+
+```{r}
+funcion3 <- function(muestra){     
+  med = mean(muestra, na.rm = T)
+  vari = var(muestra, na.rm = T)
+  rang = max(muestra, na.rm = T) - min(muestra, na.rm = T)
+  # list(media = med, varianza = vari ,rango = rang)
+  c("Media"=med,"Var"=vari,"Rango"=rang)
+}
+
+ej <- funcion3(1:20)
+ej
+```
+
+Los diferentes argumentos de las funciones se separan con `,`. Éstos pueden tener un valor por defecto. Para especificarlo, en el momento de crear la función se especifica con el signo `=`, cuál es el valor que se usará si el usuario no lo especifica explícitamente.
+
+```{r, eval=FALSE}
+funcion4 <- function(a,b,c = 4,d = FALSE){
+  if (d == FALSE) x1 <- a*b else x1 <- a*b + c
+  x1
+}
+```
+
+
+
+---
+  
+```{block, type='rmdtip'}
+## Ejercitación
+```
+
+```{block, type='boxeda'}
+
+1. Funciones
+
+    Genere una función que grafique una variable en función de otra y coloque nombre al eje x que por defecto sea: "mi eje x"
+
+```
+

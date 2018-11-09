@@ -1,0 +1,126 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{framed,color}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\usepackage{polyglossia}
+\setmainlanguage{spanish}
+\AtBeginDocument{\renewcommand{\chaptername}{Sección}}
+\usepackage{longtable}
+
+
+\usepackage{letltxmacro}
+\LetLtxMacro\SavedIncludeGraphics\includegraphics
+\def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
+	\IncludeGraphicsAux{#1}%
+}%
+\newcommand*{\IncludeGraphicsAux}[2]{%
+	\XeTeXLinkBox{%
+		\SavedIncludeGraphics#1{#2}%
+	}%
+}%
+
+\newenvironment{rmdblock}[1]
+{\begin{shaded*}
+		\begin{itemize}
+			\renewcommand{\labelitemi}{
+				\raisebox{-.7\height}[0pt][0pt]{
+					{\setkeys{Gin}{width=3em,keepaspectratio}\includegraphics{images/#1}}
+				}
+			}
+			\item
+		}
+		{
+		\end{itemize}
+	\end{shaded*}
+}
+\newenvironment{rmdnote}
+{\begin{rmdblock}{note}}
+	{\end{rmdblock}}
+\newenvironment{rmdcaution}
+{\begin{rmdblock}{caution}}
+	{\end{rmdblock}}
+\newenvironment{rmdimportant}
+{\begin{rmdblock}{important}}
+	{\end{rmdblock}}
+\newenvironment{rmdtip}
+{\begin{rmdblock}{tip}}
+	{\end{rmdblock}}
+\newenvironment{rmdwarning}
+{\begin{rmdblock}{warning}}
+	{\end{rmdblock}}
+
+\usepackage{environ}
+\usepackage{xcolor}
+\NewEnviron{boxeda}%
+  {\begin{center}%
+   \noindent\fcolorbox{black}{gray!30}%
+     {\parbox{33em}%
+       {\vspace{15pt}\par
+        \BODY
+        \vspace{15pt}\par
+       }%
+     }%
+   \end{center}%
+  }
+  
+% \newenvironment{boxeda}
+%     {\begin{center}
+%       \begin{tabular}{|p{0.9\textwidth}|}
+%        %\hline\\
+%     }
+%     { 
+%     %\\\\\hline
+%     \end{tabular} 
+%     \end{center}
+%     }
+
+% \usepackage{booktabs}
+% \usepackage{longtable}
+% \usepackage{framed,color}
+% \definecolor{shadecolor}{RGB}{248,248,248}
+% 
+% \ifxetex
+%   \usepackage{letltxmacro}
+%   \setlength{\XeTeXLinkMargin}{1pt}
+%   \LetLtxMacro\SavedIncludeGraphics\includegraphics
+%   \def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
+%     \IncludeGraphicsAux{#1}%
+%   }%
+%   \newcommand*{\IncludeGraphicsAux}[2]{%
+%     \XeTeXLinkBox{%
+%       \SavedIncludeGraphics#1{#2}%
+%     }%
+%   }%
+% \fi
+% 
+% \newenvironment{rmdblock}[1]
+%   {\begin{shaded*}
+%   \begin{itemize}
+%   \renewcommand{\labelitemi}{
+%     \raisebox{-.7\height}[0pt][0pt]{
+%       {\setkeys{Gin}{width=3em,keepaspectratio}\includegraphics{images/#1}}
+%     }
+%   }
+%   \item
+%   }
+%   {
+%   \end{itemize}
+%   \end{shaded*}
+%   }
+% \newenvironment{rmdnote}
+%   {\begin{rmdblock}{note}}
+%   {\end{rmdblock}}
+% \newenvironment{rmdcaution}
+%   {\begin{rmdblock}{caution}}
+%   {\end{rmdblock}}
+% \newenvironment{rmdimportant}
+%   {\begin{rmdblock}{important}}
+%   {\end{rmdblock}}
+% \newenvironment{rmdtip}
+%   {\begin{rmdblock}{tip}}
+%   {\end{rmdblock}}
+% \newenvironment{rmdwarning}
+%   {\begin{rmdblock}{warning}}
+%   {\end{rmdblock}}

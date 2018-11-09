@@ -1,0 +1,112 @@
+# Control de flujo
+
+## Construcción condicional `if` 
+
+Es de la forma `if (expr 1) expr 2 else expr 3` donde `expr 1` debe producir un valor logico. Si `expr 1` es verdadero (`T`), se ejecutara `expr 2`. Si `expr 1` es falso (`F`), y se ha escrito la opcion else, que es opcional, se ejecutara `expr 3`.
+
+```{r, eval=TRUE}
+if( 3 > 2) print("yes")
+if( 2 > 3) print("yes")
+if( 2 > 3) print("yes") else print("no")
+```
+
+Ejemplo con dos condiciones
+supongamos que `x <- 75 ` es la nota numerica de examen de un alumno, queremos asignar nota "A", "B" o "C"
+ 
+```{r, eval=TRUE, echo=FALSE}
+x <- 75 
+```
+
+```{r, eval=TRUE}
+if(x < 60) nota = "C"
+if(x >= 60 & x < 80) nota = "B"
+if(x >=  80) nota = "A"
+```
+
+`ifelse` es la versión vectorizada de `if`
+
+Ejemplo
+
+```{r, eval=TRUE}
+nota.num <- c(39, 51, 60, 65, 72, 78, 79, 83, 85, 85, 87, 89, 91, 95, 96, 97, 100, 100)
+
+prueba <- ifelse (nota.num >= 60, "aprobado", "desaprobado")
+prueba
+```
+
+
+
+##  Construcción repetitiva `for`
+
+Es de la forma `for (nombre in expr 1) expr 2` donde `nombre` es la variable de control de iteración, `expr 1` es un vector (a menudo de la forma `m:n`), y `expr 2` es una expresión, a menudo agrupada, en cuyas sub-expresiones puede aparecer la variable de control, `nombre`. `expr 2` se evalua repetidamente conforme `nombre` recorre los valores del vector `expr 1`.
+
+```{r, eval=TRUE}
+for (i in 1:10) print(i)
+
+x = numeric(10)
+for (i in 1:10) x[i] = i^2
+
+y = 0
+for (i in 1:10) y = y + i
+```
+
+
+
+## Construccion repetitiva `while`
+Es de la forma `while (expr1) expr2`, indicando que se quiere repetir la acción `expr2` mientras que ocurra `expr1`.
+
+```{r, eval=TRUE}
+i = 0
+while (i < 15) {print(i); i = i+1}
+```
+
+
+
+---
+  
+```{block, type='rmdtip'}
+## Ejercitación
+```
+
+```{block, type='boxeda'}
+
+1. Construcción condicional
+
+    Si se quiere poner notas  "A", "B" o "C": "C" si final_score <60, "B" si 60 =< final_score < 80, "A" si 80 =< final_score =< 100.
+
+2. Construcción repetitiva
+    
+    Usar un ciclo `for` para contar la cantidad de números mayores a 10 en el vector `x <- c(2,5,3,9,8,11,6,8,12,3,57,56)`
+
+```
+
+
+
+<!-- funcion5 <- function(x, y, label = "mi eje x", ...) { -->
+<!--   plot(x, y, xlab = label, ...) -->
+<!-- } -->
+
+
+<!-- funcion5(1:5, 1:5) -->
+<!-- x <- 1:5 -->
+<!-- funcion4(x, x^2, label = "otro nombre para el eje x") -->
+
+
+
+
+
+<!-- ############################### -->
+<!-- # Ejecucion no interactiva -->
+<!-- ############################### -->
+
+<!-- # Con "source" abrimos una sesion de R y ejecutamos todo el codigo dentro un archivo determinado: -->
+
+<!-- # Guardamos la funcion en un fichero aparte -->
+
+<!-- # Ejemplos: guardar la funcion MiFuncion en un archivo aparte. -->
+
+<!-- # Podemos ejecutarlo sin abrirlo con -->
+
+<!-- source("MiFuncion.R") -->
+
+
