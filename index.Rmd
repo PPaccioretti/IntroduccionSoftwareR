@@ -52,4 +52,6 @@ El panel superior izquierdo permite al usuario visualizar scripts previamente es
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
+
+set.seed(3)
 ```
