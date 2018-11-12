@@ -1,1 +1,0 @@
-`c()` concatena vectores 
