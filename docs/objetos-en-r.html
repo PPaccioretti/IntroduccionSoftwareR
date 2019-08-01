@@ -24,6 +24,8 @@
 
 <meta name="author" content="Paccioretti Pablo">
 <meta name="author" content="Bruno Cecilia">
+<meta name="author" content="Nores María Laura">
+<meta name="author" content="Gonzalez Aldana">
 
 
 
@@ -32,7 +34,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="funciones-y-comandos-basicos.html">
+<link rel="prev" href="intro.html">
 <link rel="next" href="control-de-flujo.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,41 +52,59 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; min-height: 1.25em; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; }
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; color: initial; }
+}
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.bn { color: #40a070; } /* BaseN */
+code span.fl { color: #40a070; } /* Float */
+code span.ch { color: #4070a0; } /* Char */
+code span.st { color: #4070a0; } /* String */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.ot { color: #007020; } /* Other */
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.fu { color: #06287e; } /* Function */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code span.cn { color: #880000; } /* Constant */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.im { } /* Import */
+code span.va { color: #19177c; } /* Variable */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.op { color: #666666; } /* Operator */
+code span.bu { } /* BuiltIn */
+code span.ex { } /* Extension */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.at { color: #7d9029; } /* Attribute */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -105,35 +125,36 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Instalación de programas</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#breve-introduccion-a-la-interfaz-del-interprete-de-infostat"><i class="fa fa-check"></i><b>1.1</b> Breve introducción a la interfaz del intérprete de InfoStat</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#breve-introduccion-a-la-interfaz-de-rstudio"><i class="fa fa-check"></i><b>1.2</b> Breve introducción a la interfaz de RStudio</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Breve introducción a R</a><ul>
-<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#SintaxisBasica"><i class="fa fa-check"></i><b>2.1</b> Generalidades del ambiente R</a></li>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#SintaxisBasica"><i class="fa fa-check"></i><b>2.1</b> Generalidades del ambiente R</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#tablas_resumen"><i class="fa fa-check"></i><b>2.1.1</b> Tablas resumen de operadores y funciones</a></li>
+<li class="chapter" data-level="2.1.2" data-path="intro.html"><a href="intro.html#ayuda"><i class="fa fa-check"></i><b>2.1.2</b> Ayuda</a></li>
+<li class="chapter" data-level="2.1.3" data-path="intro.html"><a href="intro.html#asignaciones"><i class="fa fa-check"></i><b>2.1.3</b> Asignaciones</a></li>
+<li class="chapter" data-level="2.1.4" data-path="intro.html"><a href="intro.html#r-como-herramienta-estadistica"><i class="fa fa-check"></i><b>2.1.4</b> R como herramienta estadística</a></li>
+<li class="chapter" data-level="2.1.5" data-path="intro.html"><a href="intro.html#r-como-herramienta-grafica"><i class="fa fa-check"></i><b>2.1.5</b> R como herramienta gráfica</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="funciones-y-comandos-basicos.html"><a href="funciones-y-comandos-basicos.html"><i class="fa fa-check"></i><b>3</b> Funciones y comandos básicos</a><ul>
-<li class="chapter" data-level="3.1" data-path="funciones-y-comandos-basicos.html"><a href="funciones-y-comandos-basicos.html#ayuda"><i class="fa fa-check"></i><b>3.1</b> Ayuda</a></li>
-<li class="chapter" data-level="3.2" data-path="funciones-y-comandos-basicos.html"><a href="funciones-y-comandos-basicos.html#asignaciones-y-aritmetica-vectorial"><i class="fa fa-check"></i><b>3.2</b> Asignaciones y aritmética vectorial</a></li>
-<li class="chapter" data-level="3.3" data-path="funciones-y-comandos-basicos.html"><a href="funciones-y-comandos-basicos.html#r-como-herramienta-estadistica"><i class="fa fa-check"></i><b>3.3</b> R como herramienta estadística</a></li>
-<li class="chapter" data-level="3.4" data-path="funciones-y-comandos-basicos.html"><a href="funciones-y-comandos-basicos.html#r-como-herramienta-grafica"><i class="fa fa-check"></i><b>3.4</b> R como herramienta gráfica</a></li>
-<li class="chapter" data-level="3.5" data-path="funciones-y-comandos-basicos.html"><a href="funciones-y-comandos-basicos.html#tablas_resumen"><i class="fa fa-check"></i><b>3.5</b> Tablas resumen de operadores y funciones</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="objetos-en-r.html"><a href="objetos-en-r.html"><i class="fa fa-check"></i><b>4</b> Objetos en R</a><ul>
-<li class="chapter" data-level="4.1" data-path="objetos-en-r.html"><a href="objetos-en-r.html#vectores"><i class="fa fa-check"></i><b>4.1</b> Vectores</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="objetos-en-r.html"><a href="objetos-en-r.html#secuencias"><i class="fa fa-check"></i><b>4.1.1</b> Secuencias</a></li>
-<li class="chapter" data-level="4.1.2" data-path="objetos-en-r.html"><a href="objetos-en-r.html#vectores-con-valores-repetidos"><i class="fa fa-check"></i><b>4.1.2</b> Vectores con valores repetidos</a></li>
+<li class="chapter" data-level="3" data-path="objetos-en-r.html"><a href="objetos-en-r.html"><i class="fa fa-check"></i><b>3</b> Objetos en R</a><ul>
+<li class="chapter" data-level="3.1" data-path="objetos-en-r.html"><a href="objetos-en-r.html#vectores"><i class="fa fa-check"></i><b>3.1</b> Vectores</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="objetos-en-r.html"><a href="objetos-en-r.html#secuencias"><i class="fa fa-check"></i><b>3.1.1</b> Secuencias</a></li>
+<li class="chapter" data-level="3.1.2" data-path="objetos-en-r.html"><a href="objetos-en-r.html#vectores-con-valores-repetidos"><i class="fa fa-check"></i><b>3.1.2</b> Vectores con valores repetidos</a></li>
+<li class="chapter" data-level="3.1.3" data-path="objetos-en-r.html"><a href="objetos-en-r.html#vectores-de-factores"><i class="fa fa-check"></i><b>3.1.3</b> Vectores de factores</a></li>
+<li class="chapter" data-level="3.1.4" data-path="objetos-en-r.html"><a href="objetos-en-r.html#seleccion-de-elementos-de-un-vector"><i class="fa fa-check"></i><b>3.1.4</b> Seleccion de elementos de un vector</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="objetos-en-r.html"><a href="objetos-en-r.html#matrices"><i class="fa fa-check"></i><b>4.2</b> Matrices</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="objetos-en-r.html"><a href="objetos-en-r.html#operaciones-con-matrices"><i class="fa fa-check"></i><b>4.2.1</b> Operaciones con matrices:</a></li>
+<li class="chapter" data-level="3.2" data-path="objetos-en-r.html"><a href="objetos-en-r.html#matrices"><i class="fa fa-check"></i><b>3.2</b> Matrices</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="objetos-en-r.html"><a href="objetos-en-r.html#operaciones-con-matrices"><i class="fa fa-check"></i><b>3.2.1</b> Operaciones con matrices:</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="objetos-en-r.html"><a href="objetos-en-r.html#listas"><i class="fa fa-check"></i><b>4.3</b> Listas</a></li>
-<li class="chapter" data-level="4.4" data-path="objetos-en-r.html"><a href="objetos-en-r.html#hojas-de-datos-data-frames"><i class="fa fa-check"></i><b>4.4</b> Hojas de datos (Data frames)</a></li>
-<li class="chapter" data-level="4.5" data-path="objetos-en-r.html"><a href="objetos-en-r.html#algunas-funciones-basicas-predefinidas"><i class="fa fa-check"></i><b>4.5</b> Algunas funciones básicas predefinidas</a></li>
+<li class="chapter" data-level="3.3" data-path="objetos-en-r.html"><a href="objetos-en-r.html#listas"><i class="fa fa-check"></i><b>3.3</b> Listas</a></li>
+<li class="chapter" data-level="3.4" data-path="objetos-en-r.html"><a href="objetos-en-r.html#hojas-de-datos-data-frames"><i class="fa fa-check"></i><b>3.4</b> Hojas de datos (Data frames)</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="control-de-flujo.html"><a href="control-de-flujo.html"><i class="fa fa-check"></i><b>5</b> Control de flujo</a><ul>
-<li class="chapter" data-level="5.1" data-path="control-de-flujo.html"><a href="control-de-flujo.html#construccion-condicional-if"><i class="fa fa-check"></i><b>5.1</b> Construcción condicional <code>if</code></a></li>
-<li class="chapter" data-level="5.2" data-path="control-de-flujo.html"><a href="control-de-flujo.html#construccion-repetitiva-for"><i class="fa fa-check"></i><b>5.2</b> Construcción repetitiva <code>for</code></a></li>
-<li class="chapter" data-level="5.3" data-path="control-de-flujo.html"><a href="control-de-flujo.html#construccion-repetitiva-while"><i class="fa fa-check"></i><b>5.3</b> Construccion repetitiva <code>while</code></a></li>
+<li class="chapter" data-level="4" data-path="control-de-flujo.html"><a href="control-de-flujo.html"><i class="fa fa-check"></i><b>4</b> Control de flujo</a><ul>
+<li class="chapter" data-level="4.1" data-path="control-de-flujo.html"><a href="control-de-flujo.html#construccion-condicional-if"><i class="fa fa-check"></i><b>4.1</b> Construcción condicional <code>if</code></a></li>
+<li class="chapter" data-level="4.2" data-path="control-de-flujo.html"><a href="control-de-flujo.html#construccion-repetitiva-for"><i class="fa fa-check"></i><b>4.2</b> Construcción repetitiva <code>for</code></a></li>
+<li class="chapter" data-level="4.3" data-path="control-de-flujo.html"><a href="control-de-flujo.html#construccion-repetitiva-while"><i class="fa fa-check"></i><b>4.3</b> Construccion repetitiva <code>while</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="generar-nuevas-funciones.html"><a href="generar-nuevas-funciones.html"><i class="fa fa-check"></i><b>6</b> Generar nuevas funciones</a></li>
+<li class="chapter" data-level="5" data-path="generar-nuevas-funciones.html"><a href="generar-nuevas-funciones.html"><i class="fa fa-check"></i><b>5</b> Generar nuevas funciones</a></li>
 <li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
 </ul>
 
@@ -153,78 +174,97 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="objetos-en-r" class="section level1">
-<h1><span class="header-section-number">Sección 4</span> Objetos en R</h1>
-<p>Los resultados de un cierto procedimiento o valores pueden ser almacenados en diferentes clases de objetos. R tiene cinco clases básicas de objetos, números (<code>numeric</code>), números complejos (<code>complex</code>), cadenas de caracteres (<code>character</code>), factores (<code>factor</code>) y valores lógicos (<code>logical</code>). Éstos pueden juntarse para formar vectores (<code>vector</code>), matrices (<code>matrix</code>), hojas de datos (<code>data.frame</code>) o listas (<code>list</code>) entre otras clases de objetos menos usuales. En esta sección trabajaremos con algunos de ellos. Para conocer la clase de un objeto se utiliza la función <code>class</code>.</p>
+<h1><span class="header-section-number">Sección 3</span> Objetos en R</h1>
+<p>Los resultados de un cierto procedimiento o valores pueden ser almacenados en diferentes clases de objetos. R tiene cinco clases básicas de objetos, números (<code>numeric</code>), números complejos (<code>complex</code>), cadenas de caracteres (<code>character</code>), factores (<code>factor</code>) y valores lógicos (<code>logical</code>). Éstos pueden juntarse para formar vectores (<code>vector</code>), matrices (<code>matrix</code>), hojas de datos (<code>data.frame</code>) o listas (<code>list</code>). Otras clases de objetos pueden ser funciones, modelos, objetos espaciales, entre otros. En esta sección trabajaremos con algunos de ellos. Para conocer la clase de un objeto se utiliza la función <code>class</code>.</p>
 <div id="vectores" class="section level2">
-<h2><span class="header-section-number">4.1</span> Vectores</h2>
-<p>Es el objeto más simple de R. Es importante tener en cuenta que los vectores solo contienen elementos de la <strong>misma</strong> clase. La función <code>c()</code> puede utilizarse para crear vectores concatentando sus argumentos.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="fl">10.5</span>)           <span class="co">#numérico</span>
-d &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span><span class="op">+</span>2i, <span class="dv">2</span><span class="op">+</span>5i)            <span class="co">#números complejos</span>
-x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)               <span class="co">#numérico</span>
-y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)         <span class="co">#caracteres</span>
-z &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, T)  <span class="co">#lógico</span></code></pre></div>
+<h2><span class="header-section-number">3.1</span> Vectores</h2>
+<p>Es el objeto más simple de R. Es importante tener en cuenta que los vectores solo contienen elementos de la <strong>misma</strong> clase. La función <code>c()</code> puede utilizarse para crear vectores concatenando sus argumentos.</p>
+<pre class="sourceCode r" id="cb22"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)                 <span class="co">#numérico (enteros) </span></a>
+<a class="sourceLine" id="cb22-2" data-line-number="2">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="fl">10.5</span>)           <span class="co">#numérico (contínuo)</span></a>
+<a class="sourceLine" id="cb22-3" data-line-number="3">d &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span><span class="op">+</span>2i, <span class="dv">2</span><span class="op">+</span>5i)            <span class="co">#números complejos</span></a>
+<a class="sourceLine" id="cb22-4" data-line-number="4">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)         <span class="co">#caracteres</span></a>
+<a class="sourceLine" id="cb22-5" data-line-number="5">z &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, T)  <span class="co">#lógico</span></a></code></pre>
+<p>Si quisieramos concatenar <code>x</code> y <code>a</code> podemos llamar esos objetos dentro de la función <code>c()</code>. Para calcular la longitud del objeto se utiliza la función <code>length()</code></p>
+<pre class="sourceCode r" id="cb23"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)             </a>
+<a class="sourceLine" id="cb23-2" data-line-number="2">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="fl">10.5</span>)       </a>
+<a class="sourceLine" id="cb23-3" data-line-number="3">x_a &lt;-<span class="st"> </span><span class="kw">c</span>(x,a)</a>
+<a class="sourceLine" id="cb23-4" data-line-number="4">x_a</a>
+<a class="sourceLine" id="cb23-5" data-line-number="5">## [1]  2.0  4.0  6.0 -1.0  5.0  9.0 10.5</a>
+<a class="sourceLine" id="cb23-6" data-line-number="6"><span class="kw">length</span>(x_a)</a>
+<a class="sourceLine" id="cb23-7" data-line-number="7">## [1] 7</a></code></pre>
 <div class="rmdnote">
 <p>
-Note que en el ejemplo anterior <code>T</code> y <code>F</code> es la forma corta de especificar <code>TRUE</code> y <code>FALSE</code>. Es recomendable utilizar la forma explícita de <code>TRUE</code> y <code>FALSE</code> que la forma corta.
+Note que en el ejemplo anterior <code>T</code> y <code>F</code> es la forma corta de especificar <code>TRUE</code> y <code>FALSE</code>. Es recomendable utilizar la forma explícita de <code>TRUE</code> y <code>FALSE</code> que la forma corta, dado que <code>T</code> y <code>F</code> son símbolos que pueden redefinirse, por lo que no se debería asumir que siempre se van a evaluar como operadores lógicos.
 </p>
 </div>
 <div id="secuencias" class="section level3">
-<h3><span class="header-section-number">4.1.1</span> Secuencias</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>) 
-x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>
-y &lt;-<span class="st"> </span><span class="op">-</span><span class="dv">5</span><span class="op">:</span><span class="dv">3</span></code></pre></div>
-<p>Para generar secuencias de números enteros consecutivos se puede utilizar <code>:</code>, pero si se desea generar otros tipos de secuencias, por ejemplo la secuencia 4,6,8,…,20, se debe utilizar la función <code>seq</code>. Los argumentos de esta función permiten generar secuencias con saltos o longitud definida por el usuario.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">4</span>, <span class="dt">to =</span> <span class="dv">20</span>, <span class="dt">by =</span> <span class="dv">2</span>)</code></pre></div>
+<h3><span class="header-section-number">3.1.1</span> Secuencias</h3>
+<pre class="sourceCode r" id="cb24"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>) </a>
+<a class="sourceLine" id="cb24-2" data-line-number="2">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></a>
+<a class="sourceLine" id="cb24-3" data-line-number="3">y &lt;-<span class="st"> </span><span class="dv">-5</span><span class="op">:</span><span class="dv">3</span></a></code></pre>
+<p>Para generar secuencias de números enteros consecutivos se puede utilizar <code>:</code>, pero si se desea generar otros tipos de secuencias, por ejemplo la secuencia 4,6,8,…,20, se debe utilizar la función <code>seq</code>.</p>
+<pre class="sourceCode r" id="cb25"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">4</span>, <span class="dt">to =</span> <span class="dv">20</span>, <span class="dt">by =</span> <span class="dv">2</span>)</a></code></pre>
 <pre><code>## [1]  4  6  8 10 12 14 16 18 20</code></pre>
+<div class="rmdnote">
+<p>
+Los argumentos de la función <code>seq</code>, permiten generar secuencia, desde (<code>from</code> y, hasta (<code>to</code>) los valores especificados. Se pueden especificar el incremento de cada valor (<code>by</code>), o puede definirse el largo de la secuencia deseada (<code>length.out</code>).
+</p>
+</div>
 </div>
 <div id="vectores-con-valores-repetidos" class="section level3">
-<h3><span class="header-section-number">4.1.2</span> Vectores con valores repetidos</h3>
-<p>Cuando se desea generar un vector con valores repetidos se puede utilizar la función <code>rep</code>. Esta función replica los valores que se espicifican en el primer argumento, tantas veces o el largo que se especifique.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">5</span>)
-## [1] 1 1 1 1 1
-x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>
-<span class="kw">rep</span>(x, <span class="dv">2</span>)
-## [1] 1 2 3 1 2 3
-<span class="kw">rep</span>(x, <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>))
-## [1] 1 1 2 2 2 2 3
-<span class="kw">rep</span>(x, <span class="dt">length =</span> <span class="dv">8</span>)
-## [1] 1 2 3 1 2 3 1 2</code></pre></div>
-<!-- ## Recordemos que podemos convertir cualquier vector en factor: -->
-<!-- fcol1 <- as.factor(col) -->
-<!-- # Otra forma de  generar factores: -->
-<!-- gl(3, 5) -->
-<!-- gl(3, 5, length = 30) -->
-<!-- gl(3, 5, labels = c("grupo A", "grupo B", "grupo C")) -->
-<!-- # Genere un factor con elementos -->
-<!-- # 1,1,1,2,2,2,3,3,3,4,4,4,1,1,1,2,2,2,3,3,3,4,4,4,1,1,1,2,2,2,3,3,3,4,4,4 -->
-<!-- ## Seleccion de elementos de un vector -->
-<!-- x <- c(3,52,-8,2,1,7,11,-3,0,6,23,17) -->
-<!-- x[1] -->
-<!-- x[3] -->
-<!-- x[c(1, 3)] -->
-<!-- # Seleccione los primeros 8 elementos de x -->
-<!-- # ?Y si queremos sustituir un elemento del vector? -->
-<!-- ## sustituya el tercer elemento de x por 88 -->
-<!-- x[3] <-  88 -->
-<!-- x -->
-<!-- ## ?Y si queremos suprimir coordenadas? -->
-<!-- x[-3] -->
-<!-- # Suprima la primera y la cuarta coordenada del vector x -->
-<!-- ## ?Y si queremos ordenar el vector? -->
-<!-- sort(x) -->
-<!-- # ?Y si lo queremos ordenado de mayor a menor? -->
-<!-- # ?Que hace la funcion "order"? -->
-<!-- ## Podemos pedirle la edad minima -->
-<!-- min(x) -->
-<!-- which.min(x)                  # ?Que obtenemos con este comando? -->
-<!-- # ?Y la edad maxima? -->
+<h3><span class="header-section-number">3.1.2</span> Vectores con valores repetidos</h3>
+<p>Cuando se desea generar un vector con valores repetidos se puede utilizar la función <code>rep</code>. Esta función replica los valores que se espicifican en el primer argumento, tantas veces o hasta alcanzar la longitud total que se especifique.</p>
+<pre class="sourceCode r" id="cb27"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb27-2" data-line-number="2">## [1] 1 1 1 1 1</a>
+<a class="sourceLine" id="cb27-3" data-line-number="3">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb27-4" data-line-number="4"><span class="kw">rep</span>(x, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb27-5" data-line-number="5">## [1] 1 2 3 1 2 3</a>
+<a class="sourceLine" id="cb27-6" data-line-number="6"><span class="kw">rep</span>(x, <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>)) <span class="co">#En este caso repetirá el 1 dos vecesm el 2 cuatro veces y el 3 una vez.</span></a>
+<a class="sourceLine" id="cb27-7" data-line-number="7">## [1] 1 1 2 2 2 2 3</a>
+<a class="sourceLine" id="cb27-8" data-line-number="8"><span class="kw">rep</span>(x, <span class="dt">length =</span> <span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb27-9" data-line-number="9">## [1] 1 2 3 1 2 3 1 2</a></code></pre>
+</div>
+<div id="vectores-de-factores" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Vectores de factores</h3>
+<p>Los vectores que se generan pueden convertirse en factores, para ello se utiliza la función <code>as.factor</code>.</p>
+<pre class="sourceCode r" id="cb28"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">x_f &lt;-<span class="st"> </span><span class="kw">as.factor</span>(x)</a></code></pre>
+<p>Tambien pueden generarse vectores que contiene factores utilizando <code>gl</code>. A esta función se le debe especificar el número de niveles del factor y el número de repeticiones. Se le puede especificar el largo del vector y las etiquetas (<code>labels</code>) de los factores.</p>
+<pre class="sourceCode r" id="cb29"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">gl</span>(<span class="dv">3</span>, <span class="dv">5</span>)</a></code></pre>
+<pre><code>##  [1] 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3
+## Levels: 1 2 3</code></pre>
+<pre class="sourceCode r" id="cb31"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">gl</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dt">length =</span> <span class="dv">30</span>)</a></code></pre>
+<pre><code>##  [1] 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3
+## Levels: 1 2 3</code></pre>
+<pre class="sourceCode r" id="cb33"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">gl</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;grupo A&quot;</span>, <span class="st">&quot;grupo B&quot;</span>, <span class="st">&quot;grupo C&quot;</span>))</a></code></pre>
+<pre><code>##  [1] grupo A grupo A grupo A grupo A grupo A grupo B grupo B grupo B
+##  [9] grupo B grupo B grupo C grupo C grupo C grupo C grupo C
+## Levels: grupo A grupo B grupo C</code></pre>
+</div>
+<div id="seleccion-de-elementos-de-un-vector" class="section level3">
+<h3><span class="header-section-number">3.1.4</span> Seleccion de elementos de un vector</h3>
+<p>Los corchetes (<code>[ ]</code>) se utilizan para indicar posición de un objeto. Se utilizan del lado derecho del objeto. Dado que los vectores son elementos de una dimensión, si se desea seleccionar el primer elemento del objeto <code>x</code> se debe indicar <code>x[1]</code>.</p>
+<pre class="sourceCode r" id="cb35"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">52</span>,<span class="op">-</span><span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">11</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">23</span>,<span class="dv">17</span>)</a>
+<a class="sourceLine" id="cb35-2" data-line-number="2">x[<span class="dv">1</span>]</a></code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="sourceCode r" id="cb37"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">x[<span class="dv">3</span>]</a></code></pre>
+<pre><code>## [1] -8</code></pre>
+<pre class="sourceCode r" id="cb39"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">x[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</a></code></pre>
+<pre><code>## [1]  3 -8</code></pre>
+<p>Si se desea sustituir un elemento del vector se puede utilizar el signo de asignación.
+Por ejemplo, si se desea sustituir el tercer elemento de x por 88:</p>
+<pre class="sourceCode r" id="cb41"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1">x[<span class="dv">3</span>] &lt;-<span class="st">  </span><span class="dv">88</span></a>
+<a class="sourceLine" id="cb41-2" data-line-number="2">x</a></code></pre>
+<pre><code>##  [1]  3 52 88  2  1  7 11 -3  0  6 23 17</code></pre>
+<p>Si se quiere obtener un vector sin algunos elementos, se debe anteponer el signo <code>-</code> al valor del índice.</p>
+<pre class="sourceCode r" id="cb43"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1">x[<span class="op">-</span><span class="dv">3</span>]</a></code></pre>
+<pre><code>##  [1]  3 52  2  1  7 11 -3  0  6 23 17</code></pre>
 </div>
 </div>
 <div id="matrices" class="section level2">
-<h2><span class="header-section-number">4.2</span> Matrices</h2>
-<p>Las matrices son vectores con atributo de dimensión (filas y columnas). A diferencia de los <code>data.frame</code>s, todas las columnas de las matrices son de una misma clase. Para generar matrices se pude utilizar la función <code>matrix</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">20</span>
-<span class="kw">matrix</span>(x, <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">4</span>)</code></pre></div>
+<h2><span class="header-section-number">3.2</span> Matrices</h2>
+<p>Las matrices son vectores con atributo de dimensión (2 dimensiones: filas y columnas). A diferencia de los <code>data.frame</code>s, todas las columnas de las matrices son de una misma clase. Para generar matrices se puede utilizar la función <code>matrix</code>.</p>
+<pre class="sourceCode r" id="cb45"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">20</span></a>
+<a class="sourceLine" id="cb45-2" data-line-number="2"><span class="kw">matrix</span>(x, <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">4</span>)</a></code></pre>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]    1    6   11   16
 ## [2,]    2    7   12   17
@@ -232,19 +272,19 @@ x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</spa
 ## [4,]    4    9   14   19
 ## [5,]    5   10   15   20</code></pre>
 <p>Las matrices pueden ser creadas uniendo filas o columnas mediante las funciones <code>cbind()</code> y <code>rbind()</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>
-y &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">:</span><span class="dv">12</span>
-<span class="kw">cbind</span>(x, y)</code></pre></div>
+<pre class="sourceCode r" id="cb47"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb47-2" data-line-number="2">y &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">:</span><span class="dv">12</span></a>
+<a class="sourceLine" id="cb47-3" data-line-number="3"><span class="kw">cbind</span>(x, y)</a></code></pre>
 <pre><code>##      x  y
 ## [1,] 1 10
 ## [2,] 2 11
 ## [3,] 3 12</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rbind</span>(x, y) </code></pre></div>
+<pre class="sourceCode r" id="cb49"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="kw">rbind</span>(x, y) </a></code></pre>
 <pre><code>##   [,1] [,2] [,3]
 ## x    1    2    3
 ## y   10   11   12</code></pre>
 <div id="operaciones-con-matrices" class="section level3">
-<h3><span class="header-section-number">4.2.1</span> Operaciones con matrices:</h3>
+<h3><span class="header-section-number">3.2.1</span> Operaciones con matrices:</h3>
 <ul>
 <li><code>A %*% B</code> : producto de matrices</li>
 <li><code>t(A)</code> : traspuesta de la matriz A</li>
@@ -320,13 +360,13 @@ y &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">:</sp
 </div>
 </div>
 <div id="listas" class="section level2">
-<h2><span class="header-section-number">4.3</span> Listas</h2>
+<h2><span class="header-section-number">3.3</span> Listas</h2>
 <p>Una lista es la forma generalizada de un vector que puede contener elementos de diferentes clases (número, vector, matriz, lista, etc.). Para crear lista se puede utilizar la función <code>list()</code>. Dada su flexibilidad son contenedores generales de datos. Muchas funciones devuelven un conjunto de resultados de distinta longitud y distinto tipo en forma de lista.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>)
-s &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="st">&quot;aa&quot;</span>, <span class="st">&quot;bb&quot;</span>, <span class="st">&quot;cc&quot;</span>, <span class="st">&quot;dd&quot;</span>, <span class="st">&quot;ee&quot;</span>)
-b &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>)
-x &lt;-<span class="st">  </span><span class="kw">list</span>(n, s, b)
-x</code></pre></div>
+<pre class="sourceCode r" id="cb51"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1">n &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb51-2" data-line-number="2">s &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="st">&quot;aa&quot;</span>, <span class="st">&quot;bb&quot;</span>, <span class="st">&quot;cc&quot;</span>, <span class="st">&quot;dd&quot;</span>, <span class="st">&quot;ee&quot;</span>)</a>
+<a class="sourceLine" id="cb51-3" data-line-number="3">b &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb51-4" data-line-number="4">x &lt;-<span class="st">  </span><span class="kw">list</span>(n, s, b)</a>
+<a class="sourceLine" id="cb51-5" data-line-number="5">x</a></code></pre>
 <pre><code>## [[1]]
 ## [1] 2 4 6
 ## 
@@ -369,18 +409,18 @@ x</code></pre></div>
 <!-- D[, , 1]  # es un array de dimension c(3,4) -->
 </div>
 <div id="hojas-de-datos-data-frames" class="section level2">
-<h2><span class="header-section-number">4.4</span> Hojas de datos (Data frames)</h2>
+<h2><span class="header-section-number">3.4</span> Hojas de datos (Data frames)</h2>
 <p>Es el objeto más común en R para almacenar datos. Sus columnas pueden ser de diferentes clases por ejemplo variables continuas y categóricas. Este tipo de objetos puede generarse mediante la función <code>data.frame()</code>.</p>
 <div class="rmdnote">
 <p>
 <code>data.frame</code> convierte los vectores de caracteres en factores automáticamente.
 </p>
 </div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x1 &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>
-x2 &lt;-<span class="st"> </span><span class="dv">24</span><span class="op">:</span><span class="dv">33</span>
-x3 &lt;-<span class="st"> </span><span class="kw">gl</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;si&quot;</span>,<span class="st">&quot;no&quot;</span>))
-x4 &lt;-letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]
-<span class="kw">data.frame</span>(<span class="dt">A =</span> x1, <span class="dt">B =</span> x2, <span class="dt">C =</span> x3, <span class="dt">D =</span> x4)</code></pre></div>
+<pre class="sourceCode r" id="cb53"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1">x1 &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></a>
+<a class="sourceLine" id="cb53-2" data-line-number="2">x2 &lt;-<span class="st"> </span><span class="dv">24</span><span class="op">:</span><span class="dv">33</span></a>
+<a class="sourceLine" id="cb53-3" data-line-number="3">x3 &lt;-<span class="st"> </span><span class="kw">gl</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;si&quot;</span>,<span class="st">&quot;no&quot;</span>))</a>
+<a class="sourceLine" id="cb53-4" data-line-number="4">x4 &lt;-letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]</a>
+<a class="sourceLine" id="cb53-5" data-line-number="5"><span class="kw">data.frame</span>(<span class="dt">A =</span> x1, <span class="dt">B =</span> x2, <span class="dt">C =</span> x3, <span class="dt">D =</span> x4)</a></code></pre>
 <pre><code>##     A  B  C D
 ## 1   1 24 si a
 ## 2   2 25 si b
@@ -392,47 +432,41 @@ x4 &lt;-letters[<span class="dv">1</span><span class="op">:</span><span class="d
 ## 8   8 31 no h
 ## 9   9 32 no i
 ## 10 10 33 no j</code></pre>
-</div>
-<div id="algunas-funciones-basicas-predefinidas" class="section level2">
-<h2><span class="header-section-number">4.5</span> Algunas funciones básicas predefinidas</h2>
-<ul>
-<li><code>summay()</code></li>
-<li><code>mean()</code></li>
-<li><code>var()</code></li>
-<li><code>sd()</code></li>
-<li><code>cor()</code></li>
-<li><code>sum()</code></li>
-<li><code>min()</code></li>
-<li><code>max()</code></li>
-<li><code>seq()</code></li>
-<li><code>which()</code>
-<ul>
-<li><code>which.min()</code></li>
-<li><code>which.min()</code></li>
-</ul></li>
-<li><code>length()</code></li>
-<li><code>table()</code></li>
-<li><code>is.na()</code></li>
-<li><code>is.null()</code></li>
-<li><code>complete.cases()</code></li>
-<li><code>as.character()</code></li>
-<li><code>as.numeric()</code></li>
-<li><code>paste()</code></li>
-<li><code>gsub()</code></li>
-<li><code>unique()</code></li>
-<li><code>lm()</code></li>
-<li><code>dim()</code></li>
-<li><code>nrow()</code></li>
-<li><code>ncol()</code></li>
-<li><code>colnames()</code></li>
-<li><code>rownames()</code></li>
-<li><code>edit()</code></li>
-<li><code>cbind()</code></li>
-<li><code>rbind()</code></li>
-<li><code>order()</code></li>
-<li><code>install.packages()</code></li>
-<li><code>library()</code></li>
-</ul>
+<!-- ## Algunas funciones básicas predefinidas -->
+<!-- - `summay()` -->
+<!-- - `mean()` -->
+<!-- - `var()` -->
+<!-- - `sd()` -->
+<!-- - `cor()` -->
+<!-- - `sum()` -->
+<!-- - `min()` -->
+<!-- - `max()` -->
+<!-- - `seq()` -->
+<!-- - `which()` -->
+<!--     - `which.min()` -->
+<!--     - `which.min()` -->
+<!-- - `length()` -->
+<!-- - `table()` -->
+<!-- - `is.na()` -->
+<!-- - `is.null()` -->
+<!-- - `complete.cases()` -->
+<!-- - `as.character()` -->
+<!-- - `as.numeric()` -->
+<!-- - `paste()` -->
+<!-- - `gsub()` -->
+<!-- - `unique()` -->
+<!-- - `lm()` -->
+<!-- - `dim()` -->
+<!-- - `nrow()` -->
+<!-- - `ncol()` -->
+<!-- - `colnames()` -->
+<!-- - `rownames()` -->
+<!-- - `edit()` -->
+<!-- - `cbind()` -->
+<!-- - `rbind()` -->
+<!-- - `order()` -->
+<!-- - `install.packages()` -->
+<!-- - `library()` -->
 <hr />
 <div class="rmdtip">
 <h2 id="ejercitacion">
@@ -510,7 +544,7 @@ Calcule la inversa y los autovalores y autovectores de <code>A = matrix(c(1,3,3,
           </div>
         </div>
       </div>
-<a href="funciones-y-comandos-basicos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="control-de-flujo.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -557,7 +591,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

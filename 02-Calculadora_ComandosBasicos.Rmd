@@ -1,165 +1,165 @@
-#Funciones y comandos básicos
+<!-- #Funciones y comandos básicos -->
 
-En R se puede ejecutar cualquier operación matemática. Comencemos viendo algunas operaciones básicas:
+<!-- En R se puede ejecutar cualquier operación matemática. Comencemos viendo algunas operaciones básicas: -->
 
-Suma:
-```{r, eval=TRUE}
-5+2
-```
+<!-- Suma: -->
+<!-- ```{r, eval=TRUE} -->
+<!-- 5+2 -->
+<!-- ``` -->
 
-Raíz cuadrada:
-```{r, eval=TRUE}
-sqrt(15)
-```
-
-
-
-## Ayuda
-
-R incluye documentación de ayuda muy detallada. Para acceder a la ayuda de cada función, objeto o datos de prueba se debe ejecutar el comando `help()` o `?`. Por ejemplo `help(sqrt)`, o `?sqrt`. Otra forma de pedir la ayuda es presionando F1 luego de seleccionar la función. La sentencia `??` busca un patrón dentro de la documentación del sistema de ayuda, es útil si no se conoce cual función ejecuta cierto análisis. Otra herramienta muy útil para buscar ayuda es Google o [Stack Overflow](https://stackoverflow.com/). 
-
-```{r, eval=FALSE}
-help(sqrt)
-??square
-```
-
-## Asignaciones y aritmética vectorial
-
-Como ya se especificó en la sección \@ref(SintaxisBasica), un comando de asignación es `<-`, donde a la izquierda se especifica el nombre del objeto y a la derecha el valor, ya sean resultados de un cálculo o de un análisis estadístico. Por ejemplo, si se desea asignar el valor de `5` al objeto `radio` se debe ejecutar `radio <- 5`. Otras formas de hacer asignaciones es mediante la utilización de `=` o `->`, este último no es utilizado comúnmente.
-
-Asignaremos al objeto `x` una secuencia numérica del 1 al 5 y luego ver el contenido de `x`:
-```{r, eval=TRUE, collapse=TRUE}
-x<-c(1,2,3,4,5)  #No se muestra el resultado
-x                #Se auto imprime el resultado
-print(x)         #Imprime el resultado de manera explícita mediante el comando print 
-```
-
-
-## R como herramienta estadística
-
-En el paquete `stats` (uno de los paquetes instalados por defecto) contiene la densidad, la función de distribución (probabilidades), función de cuantiles y generación de números aleatorios de las distribuciones estadísticas más comunes. Por ejemplo, si se desea generar 40 números aleatorios de una distribución normal estándar se deberá ejecutar la sentencia `rnorm(40)`.
-
-Si se desea calcular medidas descriptivas básicas de un vector se puede ejecutar `mean` para calcular la media, `sd` para calcular el desvío estándar y `var` para la varianza. Otra función útil para obtener valores de posición y dispersión es la función `summary`.
-
-```{r, eval=TRUE}
-x<- rnorm(40)
-summary(x)
-```
-
-
-## R como herramienta gráfica
-
-Con R se puede realizar gráficos y modificar numerosos parámetros del gráfico para su publicación. Se realizará un histograma y un boxplot de la variable `x` generada anteriormente. 
-
-```{r, eval=TRUE}
-hist(x)
-boxplot(x)
-```
-
-También se puede realizar gráficos de dispersión utilizando la función `plot` y editar algunos elementos del gráfico. 
-
-```{r, eval=TRUE}
-x <- c(-4,-3,-2,-1,0,1,2,3,4)  # Observar que se remplazó el objeto "x" que se generó previamente
-y <- x^2
-plot(x,y)
-plot(x,y, type="b", col="red")
-```
-
-
-## Tablas resumen de operadores y funciones {#tablas_resumen}
-
-```{r funcbasic, tidy=TRUE, eval=TRUE, echo = FALSE,out.width = '80%'}
-text_tab1 <- data.frame(
-  Operador = c("`x + y`", 
-               "`x - y`", 
-               "`x * y`", 
-               "`x / y`",
-               "`x %/% y`",
-               "`x %% y`",
-               "`x ^ y`", 
-               "`x < y`",
-               "`x <= y`",
-               "`x > y`",
-               "`x >= y`",
-               "`x == y`",
-               "`x != y`",
-               "`sqrt(x)`",
-               "`exp(y)`",
-               "`log(x)`",
-               "`log(x, k)`",
-               "`sum(x)`",
-               "`prod(x)`",
-               "`round(x, k)`"),
-  
-  Operacion = c("suma de x e y",
-                "diferencia de x e y",
-                "multiplicación de x e y", 
-                "división de x por y", 
-                "parte entera de la división de x por y",
-                "resto de la división de x por y",
-                "x elevado a y-ésima potencia",
-                "x menor que y",
-                "x menor o igual que y",
-                "x mayor que y",
-                "x mayor o igual que y",
-                "x igual a y",
-                "x no es igual a y",
-                "raíz cuadrada de x",
-                "exponencial de y",
-                "logaritmo natural de x",
-                "logaritmo base k de x",
-                "suma los elementos de x",
-                "producto de los elementos de x",
-                "redondea x a k dígitos")
-)
-
-knitr::kable(text_tab1, col.names = c("Sintaxis", "Operación"),
-             caption = 'Algunas funciones matemáticas en R',longtable=TRUE,
-             booktabs = TRUE)
-```
+<!-- Raíz cuadrada: -->
+<!-- ```{r, eval=TRUE} -->
+<!-- sqrt(15) -->
+<!-- ``` -->
 
 
 
+<!-- ## Ayuda -->
 
----
+<!-- R incluye documentación de ayuda muy detallada. Para acceder a la ayuda de cada función, objeto o datos de prueba se debe ejecutar el comando `help()` o `?`. Por ejemplo `help(sqrt)`, o `?sqrt`. Otra forma de pedir la ayuda es presionando F1 luego de seleccionar la función. La sentencia `??` busca un patrón dentro de la documentación del sistema de ayuda, es útil si no se conoce cual función ejecuta cierto análisis. Otra herramienta muy útil para buscar ayuda es Google o [Stack Overflow](https://stackoverflow.com/).  -->
 
-```{block, type='rmdtip'}
-## Ejercitación
-```
+<!-- ```{r, eval=FALSE} -->
+<!-- help(sqrt) -->
+<!-- ??square -->
+<!-- ``` -->
+
+<!-- ## Asignaciones y aritmética vectorial -->
+
+<!-- Como ya se especificó en la sección \@ref(SintaxisBasica), un comando de asignación es `<-`, donde a la izquierda se especifica el nombre del objeto y a la derecha el valor, ya sean resultados de un cálculo o de un análisis estadístico. Por ejemplo, si se desea asignar el valor de `5` al objeto `radio` se debe ejecutar `radio <- 5`. Otras formas de hacer asignaciones es mediante la utilización de `=` o `->`, este último no es utilizado comúnmente. -->
+
+<!-- Asignaremos al objeto `x` una secuencia numérica del 1 al 5 y luego ver el contenido de `x`: -->
+<!-- ```{r, eval=TRUE, collapse=TRUE} -->
+<!-- x<-c(1,2,3,4,5)  #No se muestra el resultado -->
+<!-- x                #Se auto imprime el resultado -->
+<!-- print(x)         #Imprime el resultado de manera explícita mediante el comando print  -->
+<!-- ``` -->
+
+
+<!-- ## R como herramienta estadística -->
+
+<!-- En el paquete `stats` (uno de los paquetes instalados por defecto) contiene la densidad, la función de distribución (probabilidades), función de cuantiles y generación de números aleatorios de las distribuciones estadísticas más comunes. Por ejemplo, si se desea generar 40 números aleatorios de una distribución normal estándar se deberá ejecutar la sentencia `rnorm(40)`. -->
+
+<!-- Si se desea calcular medidas descriptivas básicas de un vector se puede ejecutar `mean` para calcular la media, `sd` para calcular el desvío estándar y `var` para la varianza. Otra función útil para obtener valores de posición y dispersión es la función `summary`. -->
+
+<!-- ```{r, eval=TRUE} -->
+<!-- x<- rnorm(40) -->
+<!-- summary(x) -->
+<!-- ``` -->
+
+
+<!-- ## R como herramienta gráfica -->
+
+<!-- Con R se puede realizar gráficos y modificar numerosos parámetros del gráfico para su publicación. Se realizará un histograma y un boxplot de la variable `x` generada anteriormente.  -->
+
+<!-- ```{r, eval=TRUE} -->
+<!-- hist(x) -->
+<!-- boxplot(x) -->
+<!-- ``` -->
+
+<!-- También se puede realizar gráficos de dispersión utilizando la función `plot` y editar algunos elementos del gráfico.  -->
+
+<!-- ```{r, eval=TRUE} -->
+<!-- x <- c(-4,-3,-2,-1,0,1,2,3,4)  # Observar que se remplazó el objeto "x" que se generó previamente -->
+<!-- y <- x^2 -->
+<!-- plot(x,y) -->
+<!-- plot(x,y, type="b", col="red") -->
+<!-- ``` -->
+
+
+<!-- ## Tablas resumen de operadores y funciones {#tablas_resumen} -->
+
+<!-- ```{r funcbasic, tidy=TRUE, eval=TRUE, echo = FALSE,out.width = '80%'} -->
+<!-- text_tab1 <- data.frame( -->
+<!--   Operador = c("`x + y`",  -->
+<!--                "`x - y`",  -->
+<!--                "`x * y`",  -->
+<!--                "`x / y`", -->
+<!--                "`x %/% y`", -->
+<!--                "`x %% y`", -->
+<!--                "`x ^ y`",  -->
+<!--                "`x < y`", -->
+<!--                "`x <= y`", -->
+<!--                "`x > y`", -->
+<!--                "`x >= y`", -->
+<!--                "`x == y`", -->
+<!--                "`x != y`", -->
+<!--                "`sqrt(x)`", -->
+<!--                "`exp(y)`", -->
+<!--                "`log(x)`", -->
+<!--                "`log(x, k)`", -->
+<!--                "`sum(x)`", -->
+<!--                "`prod(x)`", -->
+<!--                "`round(x, k)`"), -->
+
+<!--   Operacion = c("suma de x e y", -->
+<!--                 "diferencia de x e y", -->
+<!--                 "multiplicación de x e y",  -->
+<!--                 "división de x por y",  -->
+<!--                 "parte entera de la división de x por y", -->
+<!--                 "resto de la división de x por y", -->
+<!--                 "x elevado a y-ésima potencia", -->
+<!--                 "x menor que y", -->
+<!--                 "x menor o igual que y", -->
+<!--                 "x mayor que y", -->
+<!--                 "x mayor o igual que y", -->
+<!--                 "x igual a y", -->
+<!--                 "x no es igual a y", -->
+<!--                 "raíz cuadrada de x", -->
+<!--                 "exponencial de y", -->
+<!--                 "logaritmo natural de x", -->
+<!--                 "logaritmo base k de x", -->
+<!--                 "suma los elementos de x", -->
+<!--                 "producto de los elementos de x", -->
+<!--                 "redondea x a k dígitos") -->
+<!-- ) -->
+
+<!-- knitr::kable(text_tab1, col.names = c("Sintaxis", "Operación"), -->
+<!--              caption = 'Algunas funciones matemáticas en R',longtable=TRUE, -->
+<!--              booktabs = TRUE) -->
+<!-- ``` -->
 
 
 
-```{block, type='boxeda'}
 
-1. Funciones y comandos básicos
-    
-    Calcule la raiz cuadrada de 10
+<!-- --- -->
 
-    Calcule el perimetro del círculo de radio 5 ($P = 2\pi \times r$) 
+<!-- ```{block, type='rmdtip'} -->
+<!-- ## Ejercitación -->
+<!-- ``` -->
 
-    Calcule 270 dividido la suma entre 12 y 78 
 
-    Calcule el cuadrado de 8
 
-    Calcule el logaritmo de 10
-    
-2. Asignaciones y aritmética vectorial
+<!-- ```{block, type='boxeda'} -->
 
-    Calcule el perímetro del círculo de radio 5 y guárdelo en el objeto `per`. 
+<!-- 1. Funciones y comandos básicos -->
 
-    Crear el vector de coordenadas 6,7,8,9,10 y llamarlo `z`Suma de dos vectores
+<!--     Calcule la raiz cuadrada de 10 -->
 
-    Calcular la suma de `z` y `x`
+<!--     Calcule el perimetro del círculo de radio 5 ($P = 2\pi \times r$)  -->
 
-    Calcular el doble de `x` 
+<!--     Calcule 270 dividido la suma entre 12 y 78  -->
 
-    ¿Qué se obtiene haciendo el producto entre los vectores `z` y `x`?
+<!--     Calcule el cuadrado de 8 -->
 
-3. R como herramienta gráfica
-     
-    Generar un vector `y` con 20 realizaciones de una normal con media 5 y desvío estándar 2. Calcular la media y la varianza de `y`.
+<!--     Calcule el logaritmo de 10 -->
 
-```
+<!-- 2. Asignaciones y aritmética vectorial -->
+
+<!--     Calcule el perímetro del círculo de radio 5 y guárdelo en el objeto `per`.  -->
+
+<!--     Crear el vector de coordenadas 6,7,8,9,10 y llamarlo `z`Suma de dos vectores -->
+
+<!--     Calcular la suma de `z` y `x` -->
+
+<!--     Calcular el doble de `x`  -->
+
+<!--     ¿Qué se obtiene haciendo el producto entre los vectores `z` y `x`? -->
+
+<!-- 3. R como herramienta gráfica -->
+
+<!--     Generar un vector `y` con 20 realizaciones de una normal con media 5 y desvío estándar 2. Calcular la media y la varianza de `y`. -->
+
+<!-- ``` -->
 
 
 

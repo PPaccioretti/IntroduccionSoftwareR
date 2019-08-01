@@ -25,7 +25,7 @@
 \usepackage{hyperref}
 \hypersetup{unicode=true,
             pdftitle={Introducción al software R},
-            pdfauthor={Paccioretti Pablo; Bruno Cecilia},
+            pdfauthor={Paccioretti Pablo; Bruno Cecilia; Nores María Laura; Gonzalez Aldana},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -121,7 +121,7 @@
     \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
   \subtitle{Notas de clases}
-  \author{Paccioretti Pablo\footnote{\href{mailto:pablopaccioretti@agro.unc.edu.ar}{\nolinkurl{pablopaccioretti@agro.unc.edu.ar}}} \\ Bruno Cecilia\footnote{\href{mailto:cebruno@agro.unc.edu.ar}{\nolinkurl{cebruno@agro.unc.edu.ar}}}}
+  \author{Paccioretti Pablo\footnote{\href{mailto:pablopaccioretti@agro.unc.edu.ar}{\nolinkurl{pablopaccioretti@agro.unc.edu.ar}}} \\ Bruno Cecilia\footnote{\href{mailto:cebruno@agro.unc.edu.ar}{\nolinkurl{cebruno@agro.unc.edu.ar}}} \\ Nores María Laura\footnote{\href{mailto:lalinores@yahoo.com.ar}{\nolinkurl{lalinores@yahoo.com.ar}}} \\ Gonzalez Aldana\footnote{\href{mailto:aldanagonzalez@gmail.com}{\nolinkurl{aldanagonzalez@gmail.com}}}}
     \preauthor{\centering\large\emph}
   \postauthor{\par}
     \date{}
@@ -261,15 +261,16 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter{Instalación de programas}\label{instalacion-de-programas}
+\hypertarget{instalacion-de-programas}{%
+\chapter{Instalación de programas}\label{instalacion-de-programas}}
 
-Se debe tener instalado R y RStudio. R puede ser instalado en múltiples
-plataformas tales como Windows, Mac OS y en sistemas basados en Linux.
-Además hay múltiples entornos de desarrollo integrado (\emph{Integrated
-Development Environment} IDE) los cuales facilitan la programación.
-Ejemplos de este tipo de software es el intérprete de R que contiene
-InfoStat \citep{Infostat} y RStudio \citep{Rstudio}. Las interfaces
-gráficas de ambos softwares son similares.
+R puede ser instalado en múltiples plataformas tales como Windows, Mac
+OS y en sistemas basados en Linux. Además hay múltiples entornos de
+desarrollo integrado (\emph{Integrated Development Environment} IDE) los
+cuales facilitan la programación. Ejemplos de este tipo de software es
+el intérprete de R que contiene InfoStat \citep{Infostat} y RStudio
+\citep{Rstudio}. Las interfaces gráficas de ambos softwares son
+similares.
 
 Links para las descargas:
 
@@ -281,14 +282,15 @@ Links para las descargas:
   \href{http://www.infostat.com.ar/descargas/demo/infostatinstaller_esp.exe}{InfoStat}
 \end{itemize}
 
+\hypertarget{breve-introduccion-a-la-interfaz-del-interprete-de-infostat}{%
 \section{Breve introducción a la interfaz del intérprete de
-InfoStat}\label{breve-introduccion-a-la-interfaz-del-interprete-de-infostat}
+InfoStat}\label{breve-introduccion-a-la-interfaz-del-interprete-de-infostat}}
 
 La interfaz del intérprete de R en InfoStat se divide en cuatro paneles.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.80000\textwidth]{images/InfoStatPartes.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/InfoStatPartes.png}
 \caption{Diseño de los paneles del intérprete de R de InfoStat RStudio}
 \end{figure}
 
@@ -297,9 +299,37 @@ previamente escritos o escribir nuevos. En el panel inferior izquierdo
 se muestran los resultados. En los paneles derechos se muestran los
 objetos cargados en el ambiente de trabajo, mientras que en el panel
 inferior derecho se muestran los paquetes instalados y en rojo los
-paquetees cargados.
+paquetes cargados.
 
-\chapter{Breve introducción a R}\label{intro}
+\hypertarget{breve-introduccion-a-la-interfaz-de-rstudio}{%
+\section{Breve introducción a la interfaz de
+RStudio}\label{breve-introduccion-a-la-interfaz-de-rstudio}}
+
+Links de descarga:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.rstudio.com/products/rstudio/download/\#download}{RStudio}
+\end{itemize}
+
+La interfaz de RStudio se divide en cuatro paneles.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/Rstudiopartes.jpg}
+\caption{Diseño de los paneles de RStudio}
+\end{figure}
+
+El panel superior izquierdo permite al usuario cargar scripts
+previamente escritos o escribir nuevos. En el panel \emph{consola} se
+muestran las sentencias de código ejecutadas y los resultados. En los
+paneles derechos se muestran los objetos cargados en el ambiente de
+trabajo, mientras que en el panel inferior derecho se muestran archivos
+en el directorio de trabajo, gráficos generados, ayudas.
+
+\hypertarget{intro}{%
+\chapter{Breve introducción a R}\label{intro}}
 
 R \citep{R-base} es un lenguaje de programación orientado a objetos. Fue
 creado por Ross Ihaka y Robert Gentleman en 1993 como un dialecto del
@@ -313,25 +343,48 @@ por esta razón. Muchos algoritmos y metodologías estadísticas están
 disponibles para ser implementadas en R, pero se debe buscar en cual
 paquete está disponible y descargarlo para su utilización.
 
-\section{Generalidades del ambiente R}\label{SintaxisBasica}
+\hypertarget{SintaxisBasica}{%
+\section{Generalidades del ambiente R}\label{SintaxisBasica}}
 
 R distingue mayúsculas y minúsculas, esto significa que \texttt{P} y
-\texttt{p} son variables diferentes. Los comandos elementales consisten
-en expresiones o asignaciones. Si se ejecuta una expresión el resultado
-será impreso pero no se guardará dicho valor. Cuando se asigna un valor
-de una expresión (mediante el comando \texttt{\textless{}-}), el
-resultado no se imprimirá en pantalla y se almacenará en un objeto.
-Comandos diferentes son separados por \texttt{;} o por una nueva línea.
-Un conjunto de comandos pueden estar encerrados entre llaves
-(\texttt{\{} y \texttt{\}}). Los \texttt{\#} indican comentarios en el
-código, todo lo que está a la derecha de este símbolo no será ejecutado
-por R. Si se desean hacer comentarios en más de una línea, cada una de
-ellas debe comenzar con \#.
+\texttt{p} son objetos diferentes. Los comandos elementales consisten en
+expresiones o asignaciones. Si se ejecuta una expresión el resultado se
+imprimirá en la consola pero no se guardará dicho valor. Cuando se
+asigna un valor de una expresión (mediante el comando
+\texttt{\textless{}-}), el resultado no se imprimirá en pantalla y se
+almacenará en un objeto. Comandos diferentes son separados por
+\texttt{;} o por una nueva línea. Un conjunto de comandos pueden estar
+encerrados entre llaves (\texttt{\{} y \texttt{\}}). Los \texttt{\#}
+indican comentarios en el código, todo lo que está a la derecha de este
+símbolo no será ejecutado por R. Si se desean hacer comentarios en más
+de una línea, cada una de ellas debe comenzar con \#.
+
+Si deseamos guardar en el objeto llamado \texttt{x} el valor de la raíz
+cuadrada de 10, debemos utilizar la función \texttt{\textless{}-}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{x <-}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(}\DecValTok{10}\NormalTok{) }\CommentTok{#No se muestra el resultado}
-\KeywordTok{sqrt}\NormalTok{(}\DecValTok{10}\NormalTok{)      }\CommentTok{#Impresión automática del resultado}
+\end{Highlighting}
+\end{Shaded}
+
+Para ver el valor de cualquier objeto, se puede especificar el nombre y
+ejecutar la línea, por ejemplo si deseamos ver el valor que está
+almacenado en \texttt{x} debemos escribir y ejecutar:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\CommentTok{#Se muestra el resultado}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.162278
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sqrt}\NormalTok{(}\DecValTok{10}\NormalTok{) }\CommentTok{#Se imprime en la consola el resultado}
 \end{Highlighting}
 \end{Shaded}
 
@@ -341,23 +394,24 @@ ellas debe comenzar con \#.
 
 Las funciones son segmentos de código escrito para llevar a cabo una
 tarea específica, en el ejemplo anterior se utilizó la función
-\texttt{sqrt} para calcular la raíz cuadrada de 10. Las funciones o no
-necesitar argumentos y devolver o no uno o más valores en el resultado.
-Los argumentos de la función son los \emph{inputs} para ejecutar la
-tarea. Argumentos deben ir dentro de paréntesis luego del nombre de la
-función, cada argumento se separa con \texttt{,}
-(\texttt{(arg1,arg2\ )}). Nombres de los argumentos pueden especificarse
-explicitamente o no. Si no se detalla el nombre del argumento, R
-entenderá que están en el mismo orden que se especificaron cuando se
-creó la función.
+\texttt{sqrt} para calcular la raíz cuadrada de 10. Las funciones pueden
+necesitar argumentos y devolvuelven uno o más valores en el resultado,
+algunas funciones pueden no devolver ningún resultado visible. Los
+argumentos de la función son los \emph{inputs} para ejecutar la tarea.
+Argumentos deben ir dentro de paréntesis luego del nombre de la función,
+cada argumento se separa con \texttt{,} (\texttt{(arg1,arg2\ )}).
+Nombres de los argumentos pueden especificarse explicitamente o no. Si
+no se detalla el nombre del argumento, R entenderá que están en el mismo
+orden que se especificaron cuando se creó la función. En el caso de
+\texttt{sqrt} el primer y único argumento de la función es un objeto
+numerico.
 
 \begin{rmdnote}
 Notar que la mayoría de las funciones de R derivan del inglés y que
 utiliza \texttt{.} como separador decimal.
 \end{rmdnote}
 
-\chapter{Funciones y comandos
-básicos}\label{funciones-y-comandos-basicos}
+\#\#Funciones y comandos básicos
 
 En R se puede ejecutar cualquier operación matemática. Comencemos viendo
 algunas operaciones básicas:
@@ -386,7 +440,43 @@ Raíz cuadrada:
 ## [1] 3.872983
 \end{verbatim}
 
-\section{Ayuda}\label{ayuda}
+\hypertarget{tablas_resumen}{%
+\subsection{Tablas resumen de operadores y
+funciones}\label{tablas_resumen}}
+
+\begin{longtable}[t]{ll}
+\caption{\label{tab:funcbasic}Algunas funciones matemáticas en R}\\
+\toprule
+Sintaxis & Operación\\
+\midrule
+`x + y` & suma de x e y\\
+`x - y` & diferencia de x e y\\
+`x * y` & multiplicación de x e y\\
+`x / y` & división de x por y\\
+`x \%/\% y` & parte entera de la división de x por y\\
+\addlinespace
+`x \%\% y` & resto de la división de x por y\\
+`x \textasciicircum{} y` & x elevado a y-ésima potencia\\
+`x < y` & x menor que y\\
+`x <= y` & x menor o igual que y\\
+`x > y` & x mayor que y\\
+\addlinespace
+`x >= y` & x mayor o igual que y\\
+`x == y` & x igual a y\\
+`x != y` & x no es igual a y\\
+`sqrt(x)` & raíz cuadrada de x\\
+`exp(x)` & exponencial de x\\
+\addlinespace
+`log(x)` & logaritmo natural de x\\
+`log(x, k)` & logaritmo base k de x\\
+`sum(x)` & suma de los elementos de x\\
+`prod(x)` & producto de los elementos de x\\
+`round(x, k)` & x redondeado a k dígitos\\
+\bottomrule
+\end{longtable}
+
+\hypertarget{ayuda}{%
+\subsection{Ayuda}\label{ayuda}}
 
 R incluye documentación de ayuda muy detallada. Para acceder a la ayuda
 de cada función, objeto o datos de prueba se debe ejecutar el comando
@@ -404,8 +494,8 @@ ayuda es Google o \href{https://stackoverflow.com/}{Stack Overflow}.
 \end{Highlighting}
 \end{Shaded}
 
-\section{Asignaciones y aritmética
-vectorial}\label{asignaciones-y-aritmetica-vectorial}
+\hypertarget{asignaciones}{%
+\subsection{Asignaciones}\label{asignaciones}}
 
 Como ya se especificó en la sección \ref{SintaxisBasica}, un comando de
 asignación es \texttt{\textless{}-}, donde a la izquierda se especifica
@@ -429,21 +519,52 @@ luego ver el contenido de \texttt{x}:
 \end{Highlighting}
 \end{Shaded}
 
-\section{R como herramienta
-estadística}\label{r-como-herramienta-estadistica}
+Otra formas de asignar valores es utilizando \texttt{-\textgreater{}} o
+\texttt{=}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{)->x}
+\NormalTok{x}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{)}
+\NormalTok{x}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3 4
+\end{verbatim}
+
+\begin{rmdnote}
+Al utilizar el comando de asignación con el mismo nombre de objeto
+(\texttt{x}), cada vez que se utilizó ese comando, el valor que contenía
+previamente se reasignó con el valor nuevo.
+\end{rmdnote}
+
+\hypertarget{r-como-herramienta-estadistica}{%
+\subsection{R como herramienta
+estadística}\label{r-como-herramienta-estadistica}}
 
 En el paquete \texttt{stats} (uno de los paquetes instalados por
-defecto) contiene la densidad, la función de distribución
-(probabilidades), función de cuantiles y generación de números
-aleatorios de las distribuciones estadísticas más comunes. Por ejemplo,
-si se desea generar 40 números aleatorios de una distribución normal
-estándar se deberá ejecutar la sentencia \texttt{rnorm(40)}.
+defecto) permite entre otras cosas, obtener la densidad, función de
+distribución (probabilidades), cuantiles y generar números aleatorios de
+las distribuciones estadísticas más comunes. Por ejemplo, si se desea
+generar 40 números aleatorios de una distribución normal estándar se
+deberá ejecutar la sentencia \texttt{rnorm(40)}.
 
 Si se desea calcular medidas descriptivas básicas de un vector se puede
 ejecutar \texttt{mean} para calcular la media, \texttt{sd} para calcular
 el desvío estándar y \texttt{var} para la varianza. Otra función útil
-para obtener valores de posición y dispersión es la función
-\texttt{summary}.
+para obtener valores de posición es la función \texttt{summary}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -457,7 +578,9 @@ para obtener valores de posición y dispersión es la función
 ## -1.66647 -0.74200 -0.02098 -0.05684  0.72991  1.30036
 \end{verbatim}
 
-\section{R como herramienta gráfica}\label{r-como-herramienta-grafica}
+\hypertarget{r-como-herramienta-grafica}{%
+\subsection{R como herramienta
+gráfica}\label{r-como-herramienta-grafica}}
 
 Con R se puede realizar gráficos y modificar numerosos parámetros del
 gráfico para su publicación. Se realizará un histograma y un boxplot de
@@ -469,7 +592,7 @@ la variable \texttt{x} generada anteriormente.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{TutorialR_files/figure-latex/unnamed-chunk-9-1.pdf}
+\includegraphics{TutorialR_files/figure-latex/unnamed-chunk-13-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -477,10 +600,11 @@ la variable \texttt{x} generada anteriormente.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{TutorialR_files/figure-latex/unnamed-chunk-9-2.pdf}
+\includegraphics{TutorialR_files/figure-latex/unnamed-chunk-13-2.pdf}
 
-También se puede realizar gráficos de dispersión utilizando la función
-\texttt{plot} y editar algunos elementos del gráfico.
+Podría decirse que la función más importante para generar gráficos es
+\texttt{plot}. Permite entre otros, realizar diagramas de dispersión y
+editar algunos elementos del gráfico.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -490,7 +614,7 @@ También se puede realizar gráficos de dispersión utilizando la función
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{TutorialR_files/figure-latex/unnamed-chunk-10-1.pdf}
+\includegraphics{TutorialR_files/figure-latex/unnamed-chunk-14-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -498,45 +622,13 @@ También se puede realizar gráficos de dispersión utilizando la función
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{TutorialR_files/figure-latex/unnamed-chunk-10-2.pdf}
-
-\section{Tablas resumen de operadores y funciones}\label{tablas_resumen}
-
-\begin{longtable}[t]{ll}
-\caption{\label{tab:funcbasic}Algunas funciones matemáticas en R}\\
-\toprule
-Sintaxis & Operación\\
-\midrule
-`x + y` & suma de x e y\\
-`x - y` & diferencia de x e y\\
-`x * y` & multiplicación de x e y\\
-`x / y` & división de x por y\\
-`x \%/\% y` & parte entera de la división de x por y\\
-\addlinespace
-`x \%\% y` & resto de la división de x por y\\
-`x \textasciicircum{} y` & x elevado a y-ésima potencia\\
-`x < y` & x menor que y\\
-`x <= y` & x menor o igual que y\\
-`x > y` & x mayor que y\\
-\addlinespace
-`x >= y` & x mayor o igual que y\\
-`x == y` & x igual a y\\
-`x != y` & x no es igual a y\\
-`sqrt(x)` & raíz cuadrada de x\\
-`exp(y)` & exponencial de y\\
-\addlinespace
-`log(x)` & logaritmo natural de x\\
-`log(x, k)` & logaritmo base k de x\\
-`sum(x)` & suma los elementos de x\\
-`prod(x)` & producto de los elementos de x\\
-`round(x, k)` & redondea x a k dígitos\\
-\bottomrule
-\end{longtable}
+\includegraphics{TutorialR_files/figure-latex/unnamed-chunk-14-2.pdf}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \begin{rmdtip}
-\subsection{Ejercitación}\label{ejercitacion}
+\hypertarget{ejercitacion}{%
+\subsubsection{Ejercitación}\label{ejercitacion}}
 \end{rmdtip}
 
 \begin{boxeda}
@@ -570,15 +662,16 @@ Sintaxis & Operación\\
   ¿Qué se obtiene haciendo el producto entre los vectores \texttt{z} y
   \texttt{x}?
 \item
-  R como herramienta gráfica
+  R como herramienta estadística
 
   Generar un vector \texttt{y} con 20 realizaciones de una normal con
   media 5 y desvío estándar 2. Calcular la media y la varianza de
-  \texttt{y}.
+  \texttt{y}. Realizar un histograma.
 \end{enumerate}
 \end{boxeda}
 
-\chapter{Objetos en R}\label{objetos-en-r}
+\hypertarget{objetos-en-r}{%
+\chapter{Objetos en R}\label{objetos-en-r}}
 
 Los resultados de un cierto procedimiento o valores pueden ser
 almacenados en diferentes clases de objetos. R tiene cinco clases
@@ -587,24 +680,42 @@ básicas de objetos, números (\texttt{numeric}), números complejos
 (\texttt{factor}) y valores lógicos (\texttt{logical}). Éstos pueden
 juntarse para formar vectores (\texttt{vector}), matrices
 (\texttt{matrix}), hojas de datos (\texttt{data.frame}) o listas
-(\texttt{list}) entre otras clases de objetos menos usuales. En esta
-sección trabajaremos con algunos de ellos. Para conocer la clase de un
-objeto se utiliza la función \texttt{class}.
+(\texttt{list}). Otras clases de objetos pueden ser funciones, modelos,
+objetos espaciales, entre otros. En esta sección trabajaremos con
+algunos de ellos. Para conocer la clase de un objeto se utiliza la
+función \texttt{class}.
 
-\section{Vectores}\label{vectores}
+\hypertarget{vectores}{%
+\section{Vectores}\label{vectores}}
 
 Es el objeto más simple de R. Es importante tener en cuenta que los
 vectores solo contienen elementos de la \textbf{misma} clase. La función
-\texttt{c()} puede utilizarse para crear vectores concatentando sus
+\texttt{c()} puede utilizarse para crear vectores concatenando sus
 argumentos.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{9}\NormalTok{,}\FloatTok{10.5}\NormalTok{)           }\CommentTok{#numérico}
+\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{)                 }\CommentTok{#numérico (enteros) }
+\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{9}\NormalTok{,}\FloatTok{10.5}\NormalTok{)           }\CommentTok{#numérico (contínuo)}
 \NormalTok{d <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\OperatorTok{+}\NormalTok{2i, }\DecValTok{2}\OperatorTok{+}\NormalTok{5i)            }\CommentTok{#números complejos}
-\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)               }\CommentTok{#numérico}
 \NormalTok{y <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{)         }\CommentTok{#caracteres}
 \NormalTok{z <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, T)  }\CommentTok{#lógico}
+\end{Highlighting}
+\end{Shaded}
+
+Si quisieramos concatenar \texttt{x} y \texttt{a} podemos llamar esos
+objetos dentro de la función \texttt{c()}. Para calcular la longitud del
+objeto se utiliza la función \texttt{length()}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{)             }
+\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{9}\NormalTok{,}\FloatTok{10.5}\NormalTok{)       }
+\NormalTok{x_a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(x,a)}
+\NormalTok{x_a}
+\NormalTok{## [1]  2.0  4.0  6.0 -1.0  5.0  9.0 10.5}
+\KeywordTok{length}\NormalTok{(x_a)}
+\NormalTok{## [1] 7}
 \end{Highlighting}
 \end{Shaded}
 
@@ -612,24 +723,26 @@ argumentos.
 Note que en el ejemplo anterior \texttt{T} y \texttt{F} es la forma
 corta de especificar \texttt{TRUE} y \texttt{FALSE}. Es recomendable
 utilizar la forma explícita de \texttt{TRUE} y \texttt{FALSE} que la
-forma corta.
+forma corta, dado que \texttt{T} y \texttt{F} son símbolos que pueden
+redefinirse, por lo que no se debería asumir que siempre se van a
+evaluar como operadores lógicos.
 \end{rmdnote}
 
-\subsection{Secuencias}\label{secuencias}
+\hypertarget{secuencias}{%
+\subsection{Secuencias}\label{secuencias}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{) }
 \NormalTok{x <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{10}
-\NormalTok{y <-}\StringTok{ }\OperatorTok{-}\DecValTok{5}\OperatorTok{:}\DecValTok{3}
+\NormalTok{y <-}\StringTok{ }\DecValTok{-5}\OperatorTok{:}\DecValTok{3}
 \end{Highlighting}
 \end{Shaded}
 
 Para generar secuencias de números enteros consecutivos se puede
 utilizar \texttt{:}, pero si se desea generar otros tipos de secuencias,
 por ejemplo la secuencia 4,6,8,\ldots{},20, se debe utilizar la función
-\texttt{seq}. Los argumentos de esta función permiten generar secuencias
-con saltos o longitud definida por el usuario.
+\texttt{seq}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -641,13 +754,21 @@ con saltos o longitud definida por el usuario.
 ## [1]  4  6  8 10 12 14 16 18 20
 \end{verbatim}
 
+\begin{rmdnote}
+Los argumentos de la función \texttt{seq}, permiten generar secuencia,
+desde (\texttt{from} y, hasta (\texttt{to}) los valores especificados.
+Se pueden especificar el incremento de cada valor (\texttt{by}), o puede
+definirse el largo de la secuencia deseada (\texttt{length.out}).
+\end{rmdnote}
+
+\hypertarget{vectores-con-valores-repetidos}{%
 \subsection{Vectores con valores
-repetidos}\label{vectores-con-valores-repetidos}
+repetidos}\label{vectores-con-valores-repetidos}}
 
 Cuando se desea generar un vector con valores repetidos se puede
 utilizar la función \texttt{rep}. Esta función replica los valores que
-se espicifican en el primer argumento, tantas veces o el largo que se
-especifique.
+se espicifican en el primer argumento, tantas veces o hasta alcanzar la
+longitud total que se especifique.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -656,19 +777,139 @@ especifique.
 \NormalTok{x <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{3}
 \KeywordTok{rep}\NormalTok{(x, }\DecValTok{2}\NormalTok{)}
 \NormalTok{## [1] 1 2 3 1 2 3}
-\KeywordTok{rep}\NormalTok{(x, }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\KeywordTok{rep}\NormalTok{(x, }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{1}\NormalTok{)) }\CommentTok{#En este caso repetirá el 1 dos vecesm el 2 cuatro veces y el 3 una vez.}
 \NormalTok{## [1] 1 1 2 2 2 2 3}
 \KeywordTok{rep}\NormalTok{(x, }\DataTypeTok{length =} \DecValTok{8}\NormalTok{)}
 \NormalTok{## [1] 1 2 3 1 2 3 1 2}
 \end{Highlighting}
 \end{Shaded}
 
-\section{Matrices}\label{matrices}
+\hypertarget{vectores-de-factores}{%
+\subsection{Vectores de factores}\label{vectores-de-factores}}
 
-Las matrices son vectores con atributo de dimensión (filas y columnas).
-A diferencia de los \texttt{data.frame}s, todas las columnas de las
-matrices son de una misma clase. Para generar matrices se pude utilizar
-la función \texttt{matrix}.
+Los vectores que se generan pueden convertirse en factores, para ello se
+utiliza la función \texttt{as.factor}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x_f <-}\StringTok{ }\KeywordTok{as.factor}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+Tambien pueden generarse vectores que contiene factores utilizando
+\texttt{gl}. A esta función se le debe especificar el número de niveles
+del factor y el número de repeticiones. Se le puede especificar el largo
+del vector y las etiquetas (\texttt{labels}) de los factores.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{gl}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3
+## Levels: 1 2 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{gl}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DataTypeTok{length =} \DecValTok{30}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3
+## Levels: 1 2 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{gl}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"grupo A"}\NormalTok{, }\StringTok{"grupo B"}\NormalTok{, }\StringTok{"grupo C"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] grupo A grupo A grupo A grupo A grupo A grupo B grupo B grupo B
+##  [9] grupo B grupo B grupo C grupo C grupo C grupo C grupo C
+## Levels: grupo A grupo B grupo C
+\end{verbatim}
+
+\hypertarget{seleccion-de-elementos-de-un-vector}{%
+\subsection{Seleccion de elementos de un
+vector}\label{seleccion-de-elementos-de-un-vector}}
+
+Los corchetes (\texttt{{[}\ {]}}) se utilizan para indicar posición de
+un objeto. Se utilizan del lado derecho del objeto. Dado que los
+vectores son elementos de una dimensión, si se desea seleccionar el
+primer elemento del objeto \texttt{x} se debe indicar \texttt{x{[}1{]}}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{52}\NormalTok{,}\OperatorTok{-}\DecValTok{8}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{11}\NormalTok{,}\OperatorTok{-}\DecValTok{3}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{23}\NormalTok{,}\DecValTok{17}\NormalTok{)}
+\NormalTok{x[}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x[}\DecValTok{3}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x[}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  3 -8
+\end{verbatim}
+
+Si se desea sustituir un elemento del vector se puede utilizar el signo
+de asignación. Por ejemplo, si se desea sustituir el tercer elemento de
+x por 88:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x[}\DecValTok{3}\NormalTok{] <-}\StringTok{  }\DecValTok{88}
+\NormalTok{x}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1]  3 52 88  2  1  7 11 -3  0  6 23 17
+\end{verbatim}
+
+Si se quiere obtener un vector sin algunos elementos, se debe anteponer
+el signo \texttt{-} al valor del índice.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x[}\OperatorTok{-}\DecValTok{3}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1]  3 52  2  1  7 11 -3  0  6 23 17
+\end{verbatim}
+
+\hypertarget{matrices}{%
+\section{Matrices}\label{matrices}}
+
+Las matrices son vectores con atributo de dimensión (2 dimensiones:
+filas y columnas). A diferencia de los \texttt{data.frame}s, todas las
+columnas de las matrices son de una misma clase. Para generar matrices
+se puede utilizar la función \texttt{matrix}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -716,7 +957,8 @@ funciones \texttt{cbind()} y \texttt{rbind()}.
 ## y   10   11   12
 \end{verbatim}
 
-\subsection{Operaciones con matrices:}\label{operaciones-con-matrices}
+\hypertarget{operaciones-con-matrices}{%
+\subsection{Operaciones con matrices:}\label{operaciones-con-matrices}}
 
 \begin{itemize}
 \tightlist
@@ -743,7 +985,8 @@ funciones \texttt{cbind()} y \texttt{rbind()}.
   vectores o matrices
 \end{itemize}
 
-\section{Listas}\label{listas}
+\hypertarget{listas}{%
+\section{Listas}\label{listas}}
 
 Una lista es la forma generalizada de un vector que puede contener
 elementos de diferentes clases (número, vector, matriz, lista, etc.).
@@ -773,7 +1016,9 @@ en forma de lista.
 ## [1]  TRUE FALSE  TRUE FALSE FALSE
 \end{verbatim}
 
-\section{Hojas de datos (Data frames)}\label{hojas-de-datos-data-frames}
+\hypertarget{hojas-de-datos-data-frames}{%
+\section{Hojas de datos (Data
+frames)}\label{hojas-de-datos-data-frames}}
 
 Es el objeto más común en R para almacenar datos. Sus columnas pueden
 ser de diferentes clases por ejemplo variables continuas y categóricas.
@@ -809,89 +1054,11 @@ automáticamente.
 ## 10 10 33 no j
 \end{verbatim}
 
-\section{Algunas funciones básicas
-predefinidas}\label{algunas-funciones-basicas-predefinidas}
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{summay()}
-\item
-  \texttt{mean()}
-\item
-  \texttt{var()}
-\item
-  \texttt{sd()}
-\item
-  \texttt{cor()}
-\item
-  \texttt{sum()}
-\item
-  \texttt{min()}
-\item
-  \texttt{max()}
-\item
-  \texttt{seq()}
-\item
-  \texttt{which()}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    \texttt{which.min()}
-  \item
-    \texttt{which.min()}
-  \end{itemize}
-\item
-  \texttt{length()}
-\item
-  \texttt{table()}
-\item
-  \texttt{is.na()}
-\item
-  \texttt{is.null()}
-\item
-  \texttt{complete.cases()}
-\item
-  \texttt{as.character()}
-\item
-  \texttt{as.numeric()}
-\item
-  \texttt{paste()}
-\item
-  \texttt{gsub()}
-\item
-  \texttt{unique()}
-\item
-  \texttt{lm()}
-\item
-  \texttt{dim()}
-\item
-  \texttt{nrow()}
-\item
-  \texttt{ncol()}
-\item
-  \texttt{colnames()}
-\item
-  \texttt{rownames()}
-\item
-  \texttt{edit()}
-\item
-  \texttt{cbind()}
-\item
-  \texttt{rbind()}
-\item
-  \texttt{order()}
-\item
-  \texttt{install.packages()}
-\item
-  \texttt{library()}
-\end{itemize}
-
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \begin{rmdtip}
-\subsection{Ejercitación}\label{ejercitacion}
+\hypertarget{ejercitacion}{%
+\subsection{Ejercitación}\label{ejercitacion}}
 \end{rmdtip}
 
 \begin{boxeda}
@@ -925,10 +1092,12 @@ predefinidas}\label{algunas-funciones-basicas-predefinidas}
 \end{enumerate}
 \end{boxeda}
 
-\chapter{Control de flujo}\label{control-de-flujo}
+\hypertarget{control-de-flujo}{%
+\chapter{Control de flujo}\label{control-de-flujo}}
 
+\hypertarget{construccion-condicional-if}{%
 \section{\texorpdfstring{Construcción condicional
-\texttt{if}}{Construcción condicional if}}\label{construccion-condicional-if}
+\texttt{if}}{Construcción condicional if}}\label{construccion-condicional-if}}
 
 Es de la forma \texttt{if\ (expr\ 1)\ expr\ 2\ else\ expr\ 3} donde
 \texttt{expr\ 1} debe producir un valor logico. Si \texttt{expr\ 1} es
@@ -989,8 +1158,9 @@ Ejemplo
 ## [16] "aprobado"    "aprobado"    "aprobado"
 \end{verbatim}
 
+\hypertarget{construccion-repetitiva-for}{%
 \section{\texorpdfstring{Construcción repetitiva
-\texttt{for}}{Construcción repetitiva for}}\label{construccion-repetitiva-for}
+\texttt{for}}{Construcción repetitiva for}}\label{construccion-repetitiva-for}}
 
 Es de la forma \texttt{for\ (nombre\ in\ expr\ 1)\ expr\ 2} donde
 \texttt{nombre} es la variable de control de iteración, \texttt{expr\ 1}
@@ -1029,8 +1199,9 @@ vector \texttt{expr\ 1}.
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{construccion-repetitiva-while}{%
 \section{\texorpdfstring{Construccion repetitiva
-\texttt{while}}{Construccion repetitiva while}}\label{construccion-repetitiva-while}
+\texttt{while}}{Construccion repetitiva while}}\label{construccion-repetitiva-while}}
 
 Es de la forma \texttt{while\ (expr1)\ expr2}, indicando que se quiere
 repetir la acción \texttt{expr2} mientras que ocurra \texttt{expr1}.
@@ -1063,7 +1234,8 @@ repetir la acción \texttt{expr2} mientras que ocurra \texttt{expr1}.
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \begin{rmdtip}
-\subsection{Ejercitación}\label{ejercitacion}
+\hypertarget{ejercitacion}{%
+\subsection{Ejercitación}\label{ejercitacion}}
 \end{rmdtip}
 
 \begin{boxeda}
@@ -1084,7 +1256,8 @@ repetir la acción \texttt{expr2} mientras que ocurra \texttt{expr1}.
 \end{enumerate}
 \end{boxeda}
 
-\chapter{Generar nuevas funciones}\label{generar-nuevas-funciones}
+\hypertarget{generar-nuevas-funciones}{%
+\chapter{Generar nuevas funciones}\label{generar-nuevas-funciones}}
 
 R es un lenguaje que permite crear nuevas funciones. Una funcion se
 define con una asignacion de la forma:
@@ -1182,7 +1355,8 @@ es el valor que se usará si el usuario no lo especifica explícitamente.
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \begin{rmdtip}
-\subsection{Ejercitación}\label{ejercitacion}
+\hypertarget{ejercitacion}{%
+\subsection{Ejercitación}\label{ejercitacion}}
 \end{rmdtip}
 
 \begin{boxeda}
