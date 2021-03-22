@@ -16,7 +16,7 @@ description: "Introducción al uso del Software R"
 
 # Instalación de programas
 
-Se debe tener instalado R y RStudio. R puede ser instalado en múltiples plataformas tales como Windows, Mac OS y en sistemas basados en Linux. Además hay múltiples entornos de desarrollo integrado (*Integrated Development Environment* IDE) los cuales facilitan la programación. Ejemplos de este tipo de software es el intérprete de R que contiene InfoStat [@Infostat] y RStudio [@Rstudio]. Las interfaces gráficas de ambos softwares son similares. 
+R puede ser instalado en múltiples plataformas tales como Windows, Mac OS y en sistemas basados en Linux. Además hay múltiples entornos de desarrollo integrado (*Integrated Development Environment* IDE) los cuales facilitan la programación. Ejemplos de este tipo de software es el intérprete de R que contiene InfoStat [@Infostat] y RStudio [@Rstudio]. Las interfaces gráficas de ambos softwares son similares. 
 
 Links para las descargas:
 
@@ -29,22 +29,19 @@ La interfaz del intérprete de R en InfoStat se divide en cuatro paneles.
 
 ![Diseño de los paneles del intérprete de R de InfoStat RStudio](images/InfoStatPartes.png){ width=80% }
 
-El panel superior izquierdo permite al usuario visualizar scripts previamente escritos o escribir nuevos. En el panel inferior izquierdo se muestran los resultados. En los paneles derechos se muestran los objetos cargados en el ambiente de trabajo, mientras que en el panel inferior derecho se muestran los paquetes instalados y en rojo los paquetees cargados.
+El panel superior izquierdo permite al usuario visualizar scripts previamente escritos o escribir nuevos. En el panel inferior izquierdo se muestran los resultados. En los paneles derechos se muestran los objetos cargados en el ambiente de trabajo, mientras que en el panel inferior derecho se muestran los paquetes instalados y en rojo los paquetes cargados.
 
+## Breve introducción a la interfaz de RStudio
 
+Links de descarga:
 
-<!-- Links para las descargas: -->
+- [RStudio](https://www.rstudio.com/products/rstudio/download/#download)
 
-<!-- - [R (windows)](https://cran.r-project.org/bin/windows/base/) -->
-<!-- - [RStudio](https://www.rstudio.com/products/rstudio/download/#download) -->
+La interfaz de RStudio se divide en cuatro paneles.
 
-<!-- ## Breve introducción a la interfaz de RStudio -->
+![Diseño de los paneles de RStudio](images/Rstudiopartes.jpg){ width=80% }
 
-<!-- La interfaz de RStudio se divide en cuatro paneles. -->
-
-<!-- ![Diseño de los paneles de RStudio](images/Rstudiopartes.jpg){ width=80% } -->
-
-<!-- El panel superior izquierdo permite al usuario cargar scripts previamente escritos o escribir nuevos. En el panel *consola* se muestran las sentencias de código ejecutadas y los resultados. En los paneles derechos se muestran los objetos cargados en el ambiente de trabajo, mientras que en el panel inferior derecho se muestran archivos en el directorio de trabajo, gráficos generados, ayudas. -->
+El panel superior izquierdo permite al usuario cargar scripts previamente escritos o escribir nuevos. En el panel *consola* se muestran las sentencias de código ejecutadas y los resultados. En los paneles derechos se muestran los objetos cargados en el ambiente de trabajo, mientras que en el panel inferior derecho se muestran archivos en el directorio de trabajo, gráficos generados, ayudas.
 
 
 

@@ -138,18 +138,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Instalación de programas</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#breve-introducción-a-la-interfaz-del-intérprete-de-infostat"><i class="fa fa-check"></i><b>1.1</b> Breve introducción a la interfaz del intérprete de InfoStat</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#breve-introducción-a-la-interfaz-de-rstudio"><i class="fa fa-check"></i><b>1.2</b> Breve introducción a la interfaz de RStudio</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Breve introducción a R</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#SintaxisBasica"><i class="fa fa-check"></i><b>2.1</b> Generalidades del ambiente R</a></li>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#SintaxisBasica"><i class="fa fa-check"></i><b>2.1</b> Generalidades del ambiente R</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#tablas_resumen"><i class="fa fa-check"></i><b>2.1.1</b> Tablas resumen de operadores y funciones</a></li>
+<li class="chapter" data-level="2.1.2" data-path="intro.html"><a href="intro.html#ayuda"><i class="fa fa-check"></i><b>2.1.2</b> Ayuda</a></li>
+<li class="chapter" data-level="2.1.3" data-path="intro.html"><a href="intro.html#asignaciones"><i class="fa fa-check"></i><b>2.1.3</b> Asignaciones</a></li>
+<li class="chapter" data-level="2.1.4" data-path="intro.html"><a href="intro.html#r-como-herramienta-estadística"><i class="fa fa-check"></i><b>2.1.4</b> R como herramienta estadística</a></li>
+<li class="chapter" data-level="2.1.5" data-path="intro.html"><a href="intro.html#r-como-herramienta-gráfica"><i class="fa fa-check"></i><b>2.1.5</b> R como herramienta gráfica</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="funciones-y-comandos-básicos.html"><a href="funciones-y-comandos-básicos.html"><i class="fa fa-check"></i><b>3</b> Funciones y comandos básicos</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="funciones-y-comandos-básicos.html"><a href="funciones-y-comandos-básicos.html#ayuda"><i class="fa fa-check"></i><b>3.1</b> Ayuda</a></li>
-<li class="chapter" data-level="3.2" data-path="funciones-y-comandos-básicos.html"><a href="funciones-y-comandos-básicos.html#asignaciones-y-aritmética-vectorial"><i class="fa fa-check"></i><b>3.2</b> Asignaciones y aritmética vectorial</a></li>
-<li class="chapter" data-level="3.3" data-path="funciones-y-comandos-básicos.html"><a href="funciones-y-comandos-básicos.html#r-como-herramienta-estadística"><i class="fa fa-check"></i><b>3.3</b> R como herramienta estadística</a></li>
-<li class="chapter" data-level="3.4" data-path="funciones-y-comandos-básicos.html"><a href="funciones-y-comandos-básicos.html#r-como-herramienta-gráfica"><i class="fa fa-check"></i><b>3.4</b> R como herramienta gráfica</a></li>
-<li class="chapter" data-level="3.5" data-path="funciones-y-comandos-básicos.html"><a href="funciones-y-comandos-básicos.html#tablas_resumen"><i class="fa fa-check"></i><b>3.5</b> Tablas resumen de operadores y funciones</a></li>
+<li class="chapter" data-level="3.1" data-path="funciones-y-comandos-básicos.html"><a href="funciones-y-comandos-básicos.html#ayuda-1"><i class="fa fa-check"></i><b>3.1</b> Ayuda</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="objetos-en-r.html"><a href="objetos-en-r.html"><i class="fa fa-check"></i><b>4</b> Objetos en R</a>
 <ul>
@@ -157,6 +161,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="4.1.1" data-path="objetos-en-r.html"><a href="objetos-en-r.html#secuencias"><i class="fa fa-check"></i><b>4.1.1</b> Secuencias</a></li>
 <li class="chapter" data-level="4.1.2" data-path="objetos-en-r.html"><a href="objetos-en-r.html#vectores-con-valores-repetidos"><i class="fa fa-check"></i><b>4.1.2</b> Vectores con valores repetidos</a></li>
+<li class="chapter" data-level="4.1.3" data-path="objetos-en-r.html"><a href="objetos-en-r.html#vectores-de-factores"><i class="fa fa-check"></i><b>4.1.3</b> Vectores de factores</a></li>
+<li class="chapter" data-level="4.1.4" data-path="objetos-en-r.html"><a href="objetos-en-r.html#seleccion-de-elementos-de-un-vector"><i class="fa fa-check"></i><b>4.1.4</b> Seleccion de elementos de un vector</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="objetos-en-r.html"><a href="objetos-en-r.html#matrices"><i class="fa fa-check"></i><b>4.2</b> Matrices</a>
 <ul>
@@ -193,77 +199,97 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="objetos-en-r" class="section level1" number="4">
 <h1><span class="header-section-number">Sección 4</span> Objetos en R</h1>
-<p>Los resultados de un cierto procedimiento o valores pueden ser almacenados en diferentes clases de objetos. R tiene cinco clases básicas de objetos, números (<code>numeric</code>), números complejos (<code>complex</code>), cadenas de caracteres (<code>character</code>), factores (<code>factor</code>) y valores lógicos (<code>logical</code>). Éstos pueden juntarse para formar vectores (<code>vector</code>), matrices (<code>matrix</code>), hojas de datos (<code>data.frame</code>) o listas (<code>list</code>) entre otras clases de objetos menos usuales. En esta sección trabajaremos con algunos de ellos. Para conocer la clase de un objeto se utiliza la función <code>class</code>.</p>
+<p>Los resultados de un cierto procedimiento o valores pueden ser almacenados en diferentes clases de objetos. R tiene cinco clases básicas de objetos, números (<code>numeric</code>), números complejos (<code>complex</code>), cadenas de caracteres (<code>character</code>), factores (<code>factor</code>) y valores lógicos (<code>logical</code>). Éstos pueden juntarse para formar vectores (<code>vector</code>), matrices (<code>matrix</code>), hojas de datos (<code>data.frame</code>) o listas (<code>list</code>). Otras clases de objetos pueden ser funciones, modelos, objetos espaciales, entre otros. En esta sección trabajaremos con algunos de ellos. Para conocer la clase de un objeto se utiliza la función <code>class</code>.</p>
 <div id="vectores" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Vectores</h2>
 <p>Es el objeto más simple de R. Es importante tener en cuenta que los vectores solo contienen elementos de la <strong>misma</strong> clase. La función <code>c()</code> puede utilizarse para crear vectores concatentando sus argumentos.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="objetos-en-r.html#cb15-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="fl">10.5</span>)           <span class="co">#numérico</span></span>
-<span id="cb15-2"><a href="objetos-en-r.html#cb15-2" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span><span class="sc">+</span>2i, <span class="dv">2</span><span class="sc">+</span>5i)            <span class="co">#números complejos</span></span>
-<span id="cb15-3"><a href="objetos-en-r.html#cb15-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)               <span class="co">#numérico</span></span>
-<span id="cb15-4"><a href="objetos-en-r.html#cb15-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)         <span class="co">#caracteres</span></span>
-<span id="cb15-5"><a href="objetos-en-r.html#cb15-5" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, T)  <span class="co">#lógico</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="objetos-en-r.html#cb27-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)                 <span class="co">#numérico (enteros) </span></span>
+<span id="cb27-2"><a href="objetos-en-r.html#cb27-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="fl">10.5</span>)           <span class="co">#numérico (contínuo)</span></span>
+<span id="cb27-3"><a href="objetos-en-r.html#cb27-3" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span><span class="sc">+</span>2i, <span class="dv">2</span><span class="sc">+</span>5i)            <span class="co">#números complejos</span></span>
+<span id="cb27-4"><a href="objetos-en-r.html#cb27-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)         <span class="co">#caracteres</span></span>
+<span id="cb27-5"><a href="objetos-en-r.html#cb27-5" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, T)  <span class="co">#lógico</span></span></code></pre></div>
+<p>Si quisieramos concatenar <code>x</code> y <code>a</code> podemos llamar esos objetos dentro de la función <code>c()</code>. Para calcular la longitud del objeto se utiliza la función <code>length()</code></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="objetos-en-r.html#cb28-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)             </span>
+<span id="cb28-2"><a href="objetos-en-r.html#cb28-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="fl">10.5</span>)       </span>
+<span id="cb28-3"><a href="objetos-en-r.html#cb28-3" aria-hidden="true" tabindex="-1"></a>x_a <span class="ot">&lt;-</span> <span class="fu">c</span>(x,a)</span>
+<span id="cb28-4"><a href="objetos-en-r.html#cb28-4" aria-hidden="true" tabindex="-1"></a>x_a</span>
+<span id="cb28-5"><a href="objetos-en-r.html#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  2.0  4.0  6.0 -1.0  5.0  9.0 10.5</span></span>
+<span id="cb28-6"><a href="objetos-en-r.html#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x_a)</span>
+<span id="cb28-7"><a href="objetos-en-r.html#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7</span></span></code></pre></div>
 <div class="rmdnote">
 <p>
-Note que en el ejemplo anterior <code>T</code> y <code>F</code> es la forma corta de especificar <code>TRUE</code> y <code>FALSE</code>. Es recomendable utilizar la forma explícita de <code>TRUE</code> y <code>FALSE</code> que la forma corta.
+Note que en el ejemplo anterior <code>T</code> y <code>F</code> es la forma corta de especificar <code>TRUE</code> y <code>FALSE</code>. Es recomendable utilizar la forma explícita de <code>TRUE</code> y <code>FALSE</code> que la forma corta, dado que <code>T</code> y <code>F</code> son símbolos que pueden redefinirse, por lo que no se debería asumir que siempre se van a evaluar como operadores lógicos.
 </p>
 </div>
 <div id="secuencias" class="section level3" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Secuencias</h3>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="objetos-en-r.html#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb16-2"><a href="objetos-en-r.html#cb16-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb16-3"><a href="objetos-en-r.html#cb16-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">5</span><span class="sc">:</span><span class="dv">3</span></span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="objetos-en-r.html#cb29-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb29-2"><a href="objetos-en-r.html#cb29-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb29-3"><a href="objetos-en-r.html#cb29-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">5</span><span class="sc">:</span><span class="dv">3</span></span></code></pre></div>
 <p>Para generar secuencias de números enteros consecutivos se puede utilizar <code>:</code>, pero si se desea generar otros tipos de secuencias, por ejemplo la secuencia 4,6,8,…,20, se debe utilizar la función <code>seq</code>. Los argumentos de esta función permiten generar secuencias con saltos o longitud definida por el usuario.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="objetos-en-r.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">4</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="objetos-en-r.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">4</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1]  4  6  8 10 12 14 16 18 20</code></pre>
+<div class="rmdnote">
+<p>
+Los argumentos de la función <code>seq</code>, permiten generar secuencia, desde (<code>from</code> y, hasta (<code>to</code>) los valores especificados. Se pueden especificar el incremento de cada valor (<code>by</code>), o puede definirse el largo de la secuencia deseada (<code>length.out</code>).
+</p>
+</div>
 </div>
 <div id="vectores-con-valores-repetidos" class="section level3" number="4.1.2">
 <h3><span class="header-section-number">4.1.2</span> Vectores con valores repetidos</h3>
-<p>Cuando se desea generar un vector con valores repetidos se puede utilizar la función <code>rep</code>. Esta función replica los valores que se espicifican en el primer argumento, tantas veces o el largo que se especifique.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="objetos-en-r.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">5</span>)</span>
-<span id="cb19-2"><a href="objetos-en-r.html#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1 1 1 1 1</span></span>
-<span id="cb19-3"><a href="objetos-en-r.html#cb19-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
-<span id="cb19-4"><a href="objetos-en-r.html#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(x, <span class="dv">2</span>)</span>
-<span id="cb19-5"><a href="objetos-en-r.html#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1 2 3 1 2 3</span></span>
-<span id="cb19-6"><a href="objetos-en-r.html#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(x, <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>))</span>
-<span id="cb19-7"><a href="objetos-en-r.html#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1 1 2 2 2 2 3</span></span>
-<span id="cb19-8"><a href="objetos-en-r.html#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(x, <span class="at">length =</span> <span class="dv">8</span>)</span>
-<span id="cb19-9"><a href="objetos-en-r.html#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1 2 3 1 2 3 1 2</span></span></code></pre></div>
-<!-- ## Recordemos que podemos convertir cualquier vector en factor: -->
-<!-- fcol1 <- as.factor(col) -->
-<!-- # Otra forma de  generar factores: -->
-<!-- gl(3, 5) -->
-<!-- gl(3, 5, length = 30) -->
-<!-- gl(3, 5, labels = c("grupo A", "grupo B", "grupo C")) -->
-<!-- # Genere un factor con elementos -->
-<!-- # 1,1,1,2,2,2,3,3,3,4,4,4,1,1,1,2,2,2,3,3,3,4,4,4,1,1,1,2,2,2,3,3,3,4,4,4 -->
-<!-- ## Seleccion de elementos de un vector -->
-<!-- x <- c(3,52,-8,2,1,7,11,-3,0,6,23,17) -->
-<!-- x[1] -->
-<!-- x[3] -->
-<!-- x[c(1, 3)] -->
-<!-- # Seleccione los primeros 8 elementos de x -->
-<!-- # ?Y si queremos sustituir un elemento del vector? -->
-<!-- ## sustituya el tercer elemento de x por 88 -->
-<!-- x[3] <-  88 -->
-<!-- x -->
-<!-- ## ?Y si queremos suprimir coordenadas? -->
-<!-- x[-3] -->
-<!-- # Suprima la primera y la cuarta coordenada del vector x -->
-<!-- ## ?Y si queremos ordenar el vector? -->
-<!-- sort(x) -->
-<!-- # ?Y si lo queremos ordenado de mayor a menor? -->
-<!-- # ?Que hace la funcion "order"? -->
-<!-- ## Podemos pedirle la edad minima -->
-<!-- min(x) -->
-<!-- which.min(x)                  # ?Que obtenemos con este comando? -->
+<p>Cuando se desea generar un vector con valores repetidos se puede utilizar la función <code>rep</code>. Esta función replica los valores que se espicifican en el primer argumento, tantas veces o hasta alcanzar la longitud total que se especifique.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="objetos-en-r.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">5</span>)</span>
+<span id="cb32-2"><a href="objetos-en-r.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1 1 1 1 1</span></span>
+<span id="cb32-3"><a href="objetos-en-r.html#cb32-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb32-4"><a href="objetos-en-r.html#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(x, <span class="dv">2</span>)</span>
+<span id="cb32-5"><a href="objetos-en-r.html#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1 2 3 1 2 3</span></span>
+<span id="cb32-6"><a href="objetos-en-r.html#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(x, <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>)) <span class="co">#En este caso repetirá el 1 dos vecesm el 2 cuatro veces y el 3 una vez.</span></span>
+<span id="cb32-7"><a href="objetos-en-r.html#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1 1 2 2 2 2 3</span></span>
+<span id="cb32-8"><a href="objetos-en-r.html#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(x, <span class="at">length =</span> <span class="dv">8</span>)</span>
+<span id="cb32-9"><a href="objetos-en-r.html#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1 2 3 1 2 3 1 2</span></span></code></pre></div>
+</div>
+<div id="vectores-de-factores" class="section level3" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Vectores de factores</h3>
+<p>Los vectores que se generan pueden convertirse en factores, para ello se utiliza la función <code>as.factor</code>.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="objetos-en-r.html#cb33-1" aria-hidden="true" tabindex="-1"></a>x_f <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(x)</span></code></pre></div>
+<p>Tambien pueden generarse vectores que contiene factores utilizando <code>gl</code>. A esta función se le debe especificar el número de niveles del factor y el número de repeticiones. Se le puede especificar el largo del vector y las etiquetas (<code>labels</code>) de los factores.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="objetos-en-r.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gl</span>(<span class="dv">3</span>, <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##  [1] 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3
+## Levels: 1 2 3</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="objetos-en-r.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gl</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="at">length =</span> <span class="dv">30</span>)</span></code></pre></div>
+<pre><code>##  [1] 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3
+## Levels: 1 2 3</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="objetos-en-r.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gl</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;grupo A&quot;</span>, <span class="st">&quot;grupo B&quot;</span>, <span class="st">&quot;grupo C&quot;</span>))</span></code></pre></div>
+<pre><code>##  [1] grupo A grupo A grupo A grupo A grupo A grupo B grupo B grupo B grupo B
+## [10] grupo B grupo C grupo C grupo C grupo C grupo C
+## Levels: grupo A grupo B grupo C</code></pre>
+</div>
+<div id="seleccion-de-elementos-de-un-vector" class="section level3" number="4.1.4">
+<h3><span class="header-section-number">4.1.4</span> Seleccion de elementos de un vector</h3>
+<p>Los corchetes (<code>[ ]</code>) se utilizan para indicar posición de un objeto. Se utilizan del lado derecho del objeto. Dado que los vectores son elementos de una dimensión, si se desea seleccionar el primer elemento del objeto <code>x</code> se debe indicar <code>x[1]</code>.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="objetos-en-r.html#cb40-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">52</span>,<span class="sc">-</span><span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">11</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">23</span>,<span class="dv">17</span>)</span>
+<span id="cb40-2"><a href="objetos-en-r.html#cb40-2" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="objetos-en-r.html#cb42-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">3</span>]</span></code></pre></div>
+<pre><code>## [1] -8</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="objetos-en-r.html#cb44-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span></code></pre></div>
+<pre><code>## [1]  3 -8</code></pre>
+<p>Si se desea sustituir un elemento del vector se puede utilizar el signo de asignación.
+Por ejemplo, si se desea sustituir el tercer elemento de x por 88:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="objetos-en-r.html#cb46-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">3</span>] <span class="ot">&lt;-</span>  <span class="dv">88</span></span>
+<span id="cb46-2"><a href="objetos-en-r.html#cb46-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>##  [1]  3 52 88  2  1  7 11 -3  0  6 23 17</code></pre>
 <!-- # ¿Y la edad maxima? -->
+<p>Si se quiere obtener un vector sin algunos elementos, se debe anteponer el signo <code>-</code> al valor del índice.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="objetos-en-r.html#cb48-1" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span><span class="dv">3</span>]</span></code></pre></div>
+<pre><code>##  [1]  3 52  2  1  7 11 -3  0  6 23 17</code></pre>
 </div>
 </div>
 <div id="matrices" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Matrices</h2>
-<p>Las matrices son vectores con atributo de dimensión (filas y columnas). A diferencia de los <code>data.frame</code>s, todas las columnas de las matrices son de una misma clase. Para generar matrices se pude utilizar la función <code>matrix</code>.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="objetos-en-r.html#cb20-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span></span>
-<span id="cb20-2"><a href="objetos-en-r.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(x, <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">ncol =</span> <span class="dv">4</span>)</span></code></pre></div>
+<p>Las matrices son vectores con atributo de dimensión (2 dimensiones: filas y columnas). A diferencia de los <code>data.frame</code>s, todas las columnas de las matrices son de una misma clase. Para generar matrices se puede utilizar la función <code>matrix</code>.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="objetos-en-r.html#cb50-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span></span>
+<span id="cb50-2"><a href="objetos-en-r.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(x, <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">ncol =</span> <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]    1    6   11   16
 ## [2,]    2    7   12   17
@@ -271,14 +297,14 @@ Note que en el ejemplo anterior <code>T</code> y <code>F</code> es la forma cort
 ## [4,]    4    9   14   19
 ## [5,]    5   10   15   20</code></pre>
 <p>Las matrices pueden ser creadas uniendo filas o columnas mediante las funciones <code>cbind()</code> y <code>rbind()</code>.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="objetos-en-r.html#cb22-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
-<span id="cb22-2"><a href="objetos-en-r.html#cb22-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">12</span></span>
-<span id="cb22-3"><a href="objetos-en-r.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="objetos-en-r.html#cb52-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb52-2"><a href="objetos-en-r.html#cb52-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">12</span></span>
+<span id="cb52-3"><a href="objetos-en-r.html#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(x, y)</span></code></pre></div>
 <pre><code>##      x  y
 ## [1,] 1 10
 ## [2,] 2 11
 ## [3,] 3 12</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="objetos-en-r.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="objetos-en-r.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(x, y)</span></code></pre></div>
 <pre><code>##   [,1] [,2] [,3]
 ## x    1    2    3
 ## y   10   11   12</code></pre>
@@ -361,11 +387,11 @@ Note que en el ejemplo anterior <code>T</code> y <code>F</code> es la forma cort
 <div id="listas" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Listas</h2>
 <p>Una lista es la forma generalizada de un vector que puede contener elementos de diferentes clases (número, vector, matriz, lista, etc.). Para crear lista se puede utilizar la función <code>list()</code>. Dada su flexibilidad son contenedores generales de datos. Muchas funciones devuelven un conjunto de resultados de distinta longitud y distinto tipo en forma de lista.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="objetos-en-r.html#cb26-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>)</span>
-<span id="cb26-2"><a href="objetos-en-r.html#cb26-2" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">&quot;aa&quot;</span>, <span class="st">&quot;bb&quot;</span>, <span class="st">&quot;cc&quot;</span>, <span class="st">&quot;dd&quot;</span>, <span class="st">&quot;ee&quot;</span>)</span>
-<span id="cb26-3"><a href="objetos-en-r.html#cb26-3" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
-<span id="cb26-4"><a href="objetos-en-r.html#cb26-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span>  <span class="fu">list</span>(n, s, b)</span>
-<span id="cb26-5"><a href="objetos-en-r.html#cb26-5" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="objetos-en-r.html#cb56-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>)</span>
+<span id="cb56-2"><a href="objetos-en-r.html#cb56-2" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">&quot;aa&quot;</span>, <span class="st">&quot;bb&quot;</span>, <span class="st">&quot;cc&quot;</span>, <span class="st">&quot;dd&quot;</span>, <span class="st">&quot;ee&quot;</span>)</span>
+<span id="cb56-3"><a href="objetos-en-r.html#cb56-3" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb56-4"><a href="objetos-en-r.html#cb56-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span>  <span class="fu">list</span>(n, s, b)</span>
+<span id="cb56-5"><a href="objetos-en-r.html#cb56-5" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] 2 4 6
 ## 
@@ -415,11 +441,11 @@ Note que en el ejemplo anterior <code>T</code> y <code>F</code> es la forma cort
 <code>data.frame</code> convierte los vectores de caracteres en factores automáticamente.
 </p>
 </div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="objetos-en-r.html#cb28-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb28-2"><a href="objetos-en-r.html#cb28-2" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="dv">24</span><span class="sc">:</span><span class="dv">33</span></span>
-<span id="cb28-3"><a href="objetos-en-r.html#cb28-3" aria-hidden="true" tabindex="-1"></a>x3 <span class="ot">&lt;-</span> <span class="fu">gl</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;si&quot;</span>,<span class="st">&quot;no&quot;</span>))</span>
-<span id="cb28-4"><a href="objetos-en-r.html#cb28-4" aria-hidden="true" tabindex="-1"></a>x4 <span class="ot">&lt;-</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span>
-<span id="cb28-5"><a href="objetos-en-r.html#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">A =</span> x1, <span class="at">B =</span> x2, <span class="at">C =</span> x3, <span class="at">D =</span> x4)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="objetos-en-r.html#cb58-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb58-2"><a href="objetos-en-r.html#cb58-2" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="dv">24</span><span class="sc">:</span><span class="dv">33</span></span>
+<span id="cb58-3"><a href="objetos-en-r.html#cb58-3" aria-hidden="true" tabindex="-1"></a>x3 <span class="ot">&lt;-</span> <span class="fu">gl</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;si&quot;</span>,<span class="st">&quot;no&quot;</span>))</span>
+<span id="cb58-4"><a href="objetos-en-r.html#cb58-4" aria-hidden="true" tabindex="-1"></a>x4 <span class="ot">&lt;-</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span>
+<span id="cb58-5"><a href="objetos-en-r.html#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">A =</span> x1, <span class="at">B =</span> x2, <span class="at">C =</span> x3, <span class="at">D =</span> x4)</span></code></pre></div>
 <pre><code>##     A  B  C D
 ## 1   1 24 si a
 ## 2   2 25 si b

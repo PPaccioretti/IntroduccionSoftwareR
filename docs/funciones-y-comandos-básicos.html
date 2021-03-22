@@ -138,18 +138,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Instalación de programas</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#breve-introducción-a-la-interfaz-del-intérprete-de-infostat"><i class="fa fa-check"></i><b>1.1</b> Breve introducción a la interfaz del intérprete de InfoStat</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#breve-introducción-a-la-interfaz-de-rstudio"><i class="fa fa-check"></i><b>1.2</b> Breve introducción a la interfaz de RStudio</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Breve introducción a R</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#SintaxisBasica"><i class="fa fa-check"></i><b>2.1</b> Generalidades del ambiente R</a></li>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#SintaxisBasica"><i class="fa fa-check"></i><b>2.1</b> Generalidades del ambiente R</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#tablas_resumen"><i class="fa fa-check"></i><b>2.1.1</b> Tablas resumen de operadores y funciones</a></li>
+<li class="chapter" data-level="2.1.2" data-path="intro.html"><a href="intro.html#ayuda"><i class="fa fa-check"></i><b>2.1.2</b> Ayuda</a></li>
+<li class="chapter" data-level="2.1.3" data-path="intro.html"><a href="intro.html#asignaciones"><i class="fa fa-check"></i><b>2.1.3</b> Asignaciones</a></li>
+<li class="chapter" data-level="2.1.4" data-path="intro.html"><a href="intro.html#r-como-herramienta-estadística"><i class="fa fa-check"></i><b>2.1.4</b> R como herramienta estadística</a></li>
+<li class="chapter" data-level="2.1.5" data-path="intro.html"><a href="intro.html#r-como-herramienta-gráfica"><i class="fa fa-check"></i><b>2.1.5</b> R como herramienta gráfica</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="funciones-y-comandos-básicos.html"><a href="funciones-y-comandos-básicos.html"><i class="fa fa-check"></i><b>3</b> Funciones y comandos básicos</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="funciones-y-comandos-básicos.html"><a href="funciones-y-comandos-básicos.html#ayuda"><i class="fa fa-check"></i><b>3.1</b> Ayuda</a></li>
-<li class="chapter" data-level="3.2" data-path="funciones-y-comandos-básicos.html"><a href="funciones-y-comandos-básicos.html#asignaciones-y-aritmética-vectorial"><i class="fa fa-check"></i><b>3.2</b> Asignaciones y aritmética vectorial</a></li>
-<li class="chapter" data-level="3.3" data-path="funciones-y-comandos-básicos.html"><a href="funciones-y-comandos-básicos.html#r-como-herramienta-estadística"><i class="fa fa-check"></i><b>3.3</b> R como herramienta estadística</a></li>
-<li class="chapter" data-level="3.4" data-path="funciones-y-comandos-básicos.html"><a href="funciones-y-comandos-básicos.html#r-como-herramienta-gráfica"><i class="fa fa-check"></i><b>3.4</b> R como herramienta gráfica</a></li>
-<li class="chapter" data-level="3.5" data-path="funciones-y-comandos-básicos.html"><a href="funciones-y-comandos-básicos.html#tablas_resumen"><i class="fa fa-check"></i><b>3.5</b> Tablas resumen de operadores y funciones</a></li>
+<li class="chapter" data-level="3.1" data-path="funciones-y-comandos-básicos.html"><a href="funciones-y-comandos-básicos.html#ayuda-1"><i class="fa fa-check"></i><b>3.1</b> Ayuda</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="objetos-en-r.html"><a href="objetos-en-r.html"><i class="fa fa-check"></i><b>4</b> Objetos en R</a>
 <ul>
@@ -157,6 +161,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="4.1.1" data-path="objetos-en-r.html"><a href="objetos-en-r.html#secuencias"><i class="fa fa-check"></i><b>4.1.1</b> Secuencias</a></li>
 <li class="chapter" data-level="4.1.2" data-path="objetos-en-r.html"><a href="objetos-en-r.html#vectores-con-valores-repetidos"><i class="fa fa-check"></i><b>4.1.2</b> Vectores con valores repetidos</a></li>
+<li class="chapter" data-level="4.1.3" data-path="objetos-en-r.html"><a href="objetos-en-r.html#vectores-de-factores"><i class="fa fa-check"></i><b>4.1.3</b> Vectores de factores</a></li>
+<li class="chapter" data-level="4.1.4" data-path="objetos-en-r.html"><a href="objetos-en-r.html#seleccion-de-elementos-de-un-vector"><i class="fa fa-check"></i><b>4.1.4</b> Seleccion de elementos de un vector</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="objetos-en-r.html"><a href="objetos-en-r.html#matrices"><i class="fa fa-check"></i><b>4.2</b> Matrices</a>
 <ul>
@@ -195,145 +201,93 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Sección 3</span> Funciones y comandos básicos</h1>
 <p>En R se puede ejecutar cualquier operación matemática. Comencemos viendo algunas operaciones básicas:</p>
 <p>Suma:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="funciones-y-comandos-básicos.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="funciones-y-comandos-básicos.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] 7</code></pre>
 <p>Raíz cuadrada:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="funciones-y-comandos-básicos.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">15</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="funciones-y-comandos-básicos.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">15</span>)</span></code></pre></div>
 <pre><code>## [1] 3.872983</code></pre>
-<div id="ayuda" class="section level2" number="3.1">
+<div id="ayuda-1" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Ayuda</h2>
 <p>R incluye documentación de ayuda muy detallada. Para acceder a la ayuda de cada función, objeto o datos de prueba se debe ejecutar el comando <code>help()</code> o <code>?</code>. Por ejemplo <code>help(sqrt)</code>, o <code>?sqrt</code>. Otra forma de pedir la ayuda es presionando F1 luego de seleccionar la función. La sentencia <code>??</code> busca un patrón dentro de la documentación del sistema de ayuda, es útil si no se conoce cual función ejecuta cierto análisis. Otra herramienta muy útil para buscar ayuda es Google o <a href="https://stackoverflow.com/">Stack Overflow</a>.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="funciones-y-comandos-básicos.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(sqrt)</span>
-<span id="cb7-2"><a href="funciones-y-comandos-básicos.html#cb7-2" aria-hidden="true" tabindex="-1"></a>??square</span></code></pre></div>
-</div>
-<div id="asignaciones-y-aritmética-vectorial" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Asignaciones y aritmética vectorial</h2>
-<p>Como ya se especificó en la sección <a href="intro.html#SintaxisBasica">2.1</a>, un comando de asignación es <code>&lt;-</code>, donde a la izquierda se especifica el nombre del objeto y a la derecha el valor, ya sean resultados de un cálculo o de un análisis estadístico. Por ejemplo, si se desea asignar el valor de <code>5</code> al objeto <code>radio</code> se debe ejecutar <code>radio &lt;- 5</code>. Otras formas de hacer asignaciones es mediante la utilización de <code>=</code> o <code>-&gt;</code>, este último no es utilizado comúnmente.</p>
-<p>Asignaremos al objeto <code>x</code> una secuencia numérica del 1 al 5 y luego ver el contenido de <code>x</code>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="funciones-y-comandos-básicos.html#cb8-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)  <span class="co">#No se muestra el resultado</span></span>
-<span id="cb8-2"><a href="funciones-y-comandos-básicos.html#cb8-2" aria-hidden="true" tabindex="-1"></a>x                <span class="co">#Se auto imprime el resultado</span></span>
-<span id="cb8-3"><a href="funciones-y-comandos-básicos.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1 2 3 4 5</span></span>
-<span id="cb8-4"><a href="funciones-y-comandos-básicos.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)         <span class="co">#Imprime el resultado de manera explícita mediante el comando print </span></span>
-<span id="cb8-5"><a href="funciones-y-comandos-básicos.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1 2 3 4 5</span></span></code></pre></div>
-</div>
-<div id="r-como-herramienta-estadística" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> R como herramienta estadística</h2>
-<p>En el paquete <code>stats</code> (uno de los paquetes instalados por defecto) contiene la densidad, la función de distribución (probabilidades), función de cuantiles y generación de números aleatorios de las distribuciones estadísticas más comunes. Por ejemplo, si se desea generar 40 números aleatorios de una distribución normal estándar se deberá ejecutar la sentencia <code>rnorm(40)</code>.</p>
-<p>Si se desea calcular medidas descriptivas básicas de un vector se puede ejecutar <code>mean</code> para calcular la media, <code>sd</code> para calcular el desvío estándar y <code>var</code> para la varianza. Otra función útil para obtener valores de posición y dispersión es la función <code>summary</code>.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="funciones-y-comandos-básicos.html#cb9-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">40</span>)</span>
-<span id="cb9-2"><a href="funciones-y-comandos-básicos.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(x)</span></code></pre></div>
-<pre><code>##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## -1.50758 -0.46899  0.07759  0.13220  0.70852  1.78715</code></pre>
-</div>
-<div id="r-como-herramienta-gráfica" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> R como herramienta gráfica</h2>
-<p>Con R se puede realizar gráficos y modificar numerosos parámetros del gráfico para su publicación. Se realizará un histograma y un boxplot de la variable <code>x</code> generada anteriormente.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="funciones-y-comandos-básicos.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(x)</span></code></pre></div>
-<p><img src="TutorialR_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="funciones-y-comandos-básicos.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(x)</span></code></pre></div>
-<p><img src="TutorialR_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
-<p>También se puede realizar gráficos de dispersión utilizando la función <code>plot</code> y editar algunos elementos del gráfico.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="funciones-y-comandos-básicos.html#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)  <span class="co"># Observar que se remplazó el objeto &quot;x&quot; que se generó previamente</span></span>
-<span id="cb13-2"><a href="funciones-y-comandos-básicos.html#cb13-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb13-3"><a href="funciones-y-comandos-básicos.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y)</span></code></pre></div>
-<p><img src="TutorialR_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="funciones-y-comandos-básicos.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y, <span class="at">type=</span><span class="st">&quot;b&quot;</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="TutorialR_files/figure-html/unnamed-chunk-10-2.png" width="672" /></p>
-</div>
-<div id="tablas_resumen" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> Tablas resumen de operadores y funciones</h2>
-<table>
-<caption><span id="tab:funcbasic">Tabla 3.1: </span>Algunas funciones matemáticas en R</caption>
-<thead>
-<tr class="header">
-<th align="left">Sintaxis</th>
-<th align="left">Operación</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code>x + y</code></td>
-<td align="left">suma de x e y</td>
-</tr>
-<tr class="even">
-<td align="left"><code>x - y</code></td>
-<td align="left">diferencia de x e y</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>x * y</code></td>
-<td align="left">multiplicación de x e y</td>
-</tr>
-<tr class="even">
-<td align="left"><code>x / y</code></td>
-<td align="left">división de x por y</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>x %/% y</code></td>
-<td align="left">parte entera de la división de x por y</td>
-</tr>
-<tr class="even">
-<td align="left"><code>x %% y</code></td>
-<td align="left">resto de la división de x por y</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>x ^ y</code></td>
-<td align="left">x elevado a y-ésima potencia</td>
-</tr>
-<tr class="even">
-<td align="left"><code>x &lt; y</code></td>
-<td align="left">x menor que y</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>x &lt;= y</code></td>
-<td align="left">x menor o igual que y</td>
-</tr>
-<tr class="even">
-<td align="left"><code>x &gt; y</code></td>
-<td align="left">x mayor que y</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>x &gt;= y</code></td>
-<td align="left">x mayor o igual que y</td>
-</tr>
-<tr class="even">
-<td align="left"><code>x == y</code></td>
-<td align="left">x igual a y</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>x != y</code></td>
-<td align="left">x no es igual a y</td>
-</tr>
-<tr class="even">
-<td align="left"><code>sqrt(x)</code></td>
-<td align="left">raíz cuadrada de x</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>exp(y)</code></td>
-<td align="left">exponencial de y</td>
-</tr>
-<tr class="even">
-<td align="left"><code>log(x)</code></td>
-<td align="left">logaritmo natural de x</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>log(x, k)</code></td>
-<td align="left">logaritmo base k de x</td>
-</tr>
-<tr class="even">
-<td align="left"><code>sum(x)</code></td>
-<td align="left">suma los elementos de x</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>prod(x)</code></td>
-<td align="left">producto de los elementos de x</td>
-</tr>
-<tr class="even">
-<td align="left"><code>round(x, k)</code></td>
-<td align="left">redondea x a k dígitos</td>
-</tr>
-</tbody>
-</table>
-<hr />
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="funciones-y-comandos-básicos.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(sqrt)</span>
+<span id="cb26-2"><a href="funciones-y-comandos-básicos.html#cb26-2" aria-hidden="true" tabindex="-1"></a>??square</span></code></pre></div>
+<!-- ## Asignaciones y aritmética vectorial -->
+<!-- Como ya se especificó en la sección \@ref(SintaxisBasica), un comando de asignación es `<-`, donde a la izquierda se especifica el nombre del objeto y a la derecha el valor, ya sean resultados de un cálculo o de un análisis estadístico. Por ejemplo, si se desea asignar el valor de `5` al objeto `radio` se debe ejecutar `radio <- 5`. Otras formas de hacer asignaciones es mediante la utilización de `=` o `->`, este último no es utilizado comúnmente. -->
+<!-- Asignaremos al objeto `x` una secuencia numérica del 1 al 5 y luego ver el contenido de `x`: -->
+<!-- ```{r, eval=TRUE, collapse=TRUE} -->
+<!-- x<-c(1,2,3,4,5)  #No se muestra el resultado -->
+<!-- x                #Se auto imprime el resultado -->
+<!-- print(x)         #Imprime el resultado de manera explícita mediante el comando print  -->
+<!-- ``` -->
+<!-- ## R como herramienta estadística -->
+<!-- En el paquete `stats` (uno de los paquetes instalados por defecto) contiene la densidad, la función de distribución (probabilidades), función de cuantiles y generación de números aleatorios de las distribuciones estadísticas más comunes. Por ejemplo, si se desea generar 40 números aleatorios de una distribución normal estándar se deberá ejecutar la sentencia `rnorm(40)`. -->
+<!-- Si se desea calcular medidas descriptivas básicas de un vector se puede ejecutar `mean` para calcular la media, `sd` para calcular el desvío estándar y `var` para la varianza. Otra función útil para obtener valores de posición y dispersión es la función `summary`. -->
+<!-- ```{r, eval=TRUE} -->
+<!-- x<- rnorm(40) -->
+<!-- summary(x) -->
+<!-- ``` -->
+<!-- ## R como herramienta gráfica -->
+<!-- Con R se puede realizar gráficos y modificar numerosos parámetros del gráfico para su publicación. Se realizará un histograma y un boxplot de la variable `x` generada anteriormente.  -->
+<!-- ```{r, eval=TRUE} -->
+<!-- hist(x) -->
+<!-- boxplot(x) -->
+<!-- ``` -->
+<!-- También se puede realizar gráficos de dispersión utilizando la función `plot` y editar algunos elementos del gráfico.  -->
+<!-- ```{r, eval=TRUE} -->
+<!-- x <- c(-4,-3,-2,-1,0,1,2,3,4)  # Observar que se remplazó el objeto "x" que se generó previamente -->
+<!-- y <- x^2 -->
+<!-- plot(x,y) -->
+<!-- plot(x,y, type="b", col="red") -->
+<!-- ``` -->
+<!-- ## Tablas resumen de operadores y funciones {#tablas_resumen} -->
+<!-- ```{r funcbasic, tidy=TRUE, eval=TRUE, echo = FALSE,out.width = '80%'} -->
+<!-- text_tab1 <- data.frame( -->
+<!--   Operador = c("`x + y`",  -->
+<!--                "`x - y`",  -->
+<!--                "`x * y`",  -->
+<!--                "`x / y`", -->
+<!--                "`x %/% y`", -->
+<!--                "`x %% y`", -->
+<!--                "`x ^ y`",  -->
+<!--                "`x < y`", -->
+<!--                "`x <= y`", -->
+<!--                "`x > y`", -->
+<!--                "`x >= y`", -->
+<!--                "`x == y`", -->
+<!--                "`x != y`", -->
+<!--                "`sqrt(x)`", -->
+<!--                "`exp(y)`", -->
+<!--                "`log(x)`", -->
+<!--                "`log(x, k)`", -->
+<!--                "`sum(x)`", -->
+<!--                "`prod(x)`", -->
+<!--                "`round(x, k)`"), -->
+<!--   Operacion = c("suma de x e y", -->
+<!--                 "diferencia de x e y", -->
+<!--                 "multiplicación de x e y",  -->
+<!--                 "división de x por y",  -->
+<!--                 "parte entera de la división de x por y", -->
+<!--                 "resto de la división de x por y", -->
+<!--                 "x elevado a y-ésima potencia", -->
+<!--                 "x menor que y", -->
+<!--                 "x menor o igual que y", -->
+<!--                 "x mayor que y", -->
+<!--                 "x mayor o igual que y", -->
+<!--                 "x igual a y", -->
+<!--                 "x no es igual a y", -->
+<!--                 "raíz cuadrada de x", -->
+<!--                 "exponencial de y", -->
+<!--                 "logaritmo natural de x", -->
+<!--                 "logaritmo base k de x", -->
+<!--                 "suma los elementos de x", -->
+<!--                 "producto de los elementos de x", -->
+<!--                 "redondea x a k dígitos") -->
+<!-- ) -->
+<!-- knitr::kable(text_tab1, col.names = c("Sintaxis", "Operación"), -->
+<!--              caption = 'Algunas funciones matemáticas en R',longtable=TRUE, -->
+<!--              booktabs = TRUE) -->
+<!-- ``` -->
+<!-- --- -->
 <div class="rmdtip">
 <h2 id="ejercitación">
 Ejercitación
@@ -347,15 +301,19 @@ Ejercitación
 <p>Calcule 270 dividido la suma entre 12 y 78</p>
 <p>Calcule el cuadrado de 8</p>
 <p>Calcule el logaritmo de 10</p></li>
-<li><p>Asignaciones y aritmética vectorial</p>
-<p>Calcule el perímetro del círculo de radio 5 y guárdelo en el objeto <code>per</code>.</p>
-<p>Crear el vector de coordenadas 6,7,8,9,10 y llamarlo <code>z</code>Suma de dos vectores</p>
-<p>Calcular la suma de <code>z</code> y <code>x</code></p>
-<p>Calcular el doble de <code>x</code></p>
-<p>¿Qué se obtiene haciendo el producto entre los vectores <code>z</code> y <code>x</code>?</p></li>
+<li><p>Asignaciones y aritmética vectorial</p></li>
 <li><p>R como herramienta gráfica</p>
 <p>Generar un vector <code>y</code> con 20 realizaciones de una normal con media 5 y desvío estándar 2. Calcular la media y la varianza de <code>y</code>.</p></li>
 </ol>
+<!-- ``` -->
+<!--     Calcule el perímetro del círculo de radio 5 y guárdelo en el objeto `per`.  -->
+<!--     Crear el vector de coordenadas 6,7,8,9,10 y llamarlo `z`Suma de dos vectores -->
+<!--     Calcular la suma de `z` y `x` -->
+<!--     Calcular el doble de `x`  -->
+<!--     ¿Qué se obtiene haciendo el producto entre los vectores `z` y `x`? -->
+<!-- 3. R como herramienta gráfica -->
+<!--     Generar un vector `y` con 20 realizaciones de una normal con media 5 y desvío estándar 2. Calcular la media y la varianza de `y`. -->
+<!-- ``` -->
 <!-- ``` -->
 
 </div>

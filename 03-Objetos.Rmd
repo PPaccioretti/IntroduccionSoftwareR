@@ -1,23 +1,35 @@
 # Objetos en R
 
-Los resultados de un cierto procedimiento o valores pueden ser almacenados en diferentes clases de objetos. R tiene cinco clases básicas de objetos, números (`numeric`), números complejos (`complex`), cadenas de caracteres (`character`), factores (`factor`) y valores lógicos (`logical`). Éstos pueden juntarse para formar vectores (`vector`), matrices (`matrix`), hojas de datos (`data.frame`) o listas (`list`) entre otras clases de objetos menos usuales. En esta sección trabajaremos con algunos de ellos. Para conocer la clase de un objeto se utiliza la función `class`.
+Los resultados de un cierto procedimiento o valores pueden ser almacenados en diferentes clases de objetos. R tiene cinco clases básicas de objetos, números (`numeric`), números complejos (`complex`), cadenas de caracteres (`character`), factores (`factor`) y valores lógicos (`logical`). Éstos pueden juntarse para formar vectores (`vector`), matrices (`matrix`), hojas de datos (`data.frame`) o listas (`list`). Otras clases de objetos pueden ser funciones, modelos, objetos espaciales, entre otros. En esta sección trabajaremos con algunos de ellos. Para conocer la clase de un objeto se utiliza la función `class`.
 
 ## Vectores
 
 Es el objeto más simple de R. Es importante tener en cuenta que los vectores solo contienen elementos de la **misma** clase. La función `c()` puede utilizarse para crear vectores concatentando sus argumentos.
 
+
 ```{r, eval=FALSE}
-a <- c(-1,5,9,10.5)           #numérico
+x <- c(2,4,6)                 #numérico (enteros) 
+a <- c(-1,5,9,10.5)           #numérico (contínuo)
 d <- c(4+2i, 2+5i)            #números complejos
-x <- c(1, 2, 3)               #numérico
 y <- c("a", "b", "c")         #caracteres
 z <- c(TRUE, TRUE, FALSE, T)  #lógico
 ```
 
-```{block, type='rmdnote'}
-Note que en el ejemplo anterior `T` y `F` es la forma corta de especificar `TRUE` y `FALSE`. Es recomendable utilizar la forma explícita de `TRUE` y `FALSE` que la forma corta.
+Si quisieramos concatenar `x` y `a` podemos llamar esos objetos dentro de la función `c()`. Para calcular la longitud del objeto se utiliza la función `length()`
+
+```{r, collapse=TRUE}
+x <- c(2,4,6)             
+a <- c(-1,5,9,10.5)       
+x_a <- c(x,a)
+x_a
+length(x_a)
 ```
 
+
+
+```{block, type='rmdnote'}
+Note que en el ejemplo anterior `T` y `F` es la forma corta de especificar `TRUE` y `FALSE`. Es recomendable utilizar la forma explícita de `TRUE` y `FALSE` que la forma corta, dado que `T` y `F` son símbolos que pueden redefinirse, por lo que no se debería asumir que siempre se van a evaluar como operadores lógicos.
+```
 
 
 ### Secuencias
@@ -30,6 +42,7 @@ y <- -5:3
 ```
 
 
+
 Para generar secuencias de números enteros consecutivos se puede utilizar `:`, pero si se desea generar otros tipos de secuencias, por ejemplo la secuencia 4,6,8,...,20, se debe utilizar la función `seq`. Los argumentos de esta función permiten generar secuencias con saltos o longitud definida por el usuario.
 
 ```{r, eval=TRUE, echo=TRUE}
@@ -37,65 +50,76 @@ seq(from = 4, to = 20, by = 2)
 ```
 
 
+```{block, type='rmdnote'}
+Los argumentos de la función `seq`, permiten generar secuencia, desde (`from` y, hasta (`to`) los valores especificados. Se pueden especificar el incremento de cada valor (`by`), o puede definirse el largo de la secuencia deseada (`length.out`).
+```
+
+
+
 ### Vectores con valores repetidos
 
-Cuando se desea generar un vector con valores repetidos se puede utilizar la función `rep`. Esta función replica los valores que se espicifican en el primer argumento, tantas veces o el largo que se especifique.
+Cuando se desea generar un vector con valores repetidos se puede utilizar la función `rep`. Esta función replica los valores que se espicifican en el primer argumento, tantas veces o hasta alcanzar la longitud total que se especifique.
 
 ```{r, eval=TRUE, collapse=TRUE}
 rep(1, 5)
 x <- 1:3
 rep(x, 2)
-rep(x, c(2,4,1))
+rep(x, c(2,4,1)) #En este caso repetirá el 1 dos vecesm el 2 cuatro veces y el 3 una vez.
 rep(x, length = 8)
 ```
 
 
-<!-- ## Recordemos que podemos convertir cualquier vector en factor: -->
-<!-- fcol1 <- as.factor(col) -->
-<!-- # Otra forma de  generar factores: -->
-<!-- gl(3, 5) -->
-<!-- gl(3, 5, length = 30) -->
-<!-- gl(3, 5, labels = c("grupo A", "grupo B", "grupo C")) -->
-<!-- # Genere un factor con elementos -->
-<!-- # 1,1,1,2,2,2,3,3,3,4,4,4,1,1,1,2,2,2,3,3,3,4,4,4,1,1,1,2,2,2,3,3,3,4,4,4 -->
+### Vectores de factores
+
+Los vectores que se generan pueden convertirse en factores, para ello se utiliza la función `as.factor`. 
+
+```{r}
+x_f <- as.factor(x)
+```
+
+Tambien pueden generarse vectores que contiene factores utilizando `gl`. A esta función se le debe especificar el número de niveles del factor y el número de repeticiones. Se le puede especificar el largo del vector y las etiquetas (`labels`) de los factores.
+
+```{r}
+gl(3, 5)
+gl(3, 5, length = 30)
+gl(3, 5, labels = c("grupo A", "grupo B", "grupo C"))
+```
 
 
 
+### Seleccion de elementos de un vector
+
+Los corchetes (`[ ]`) se utilizan para indicar posición de un objeto. Se utilizan del lado derecho del objeto. Dado que los vectores son elementos de una dimensión, si se desea seleccionar el primer elemento del objeto `x` se debe indicar `x[1]`.
 
 
-<!-- ## Seleccion de elementos de un vector -->
+```{r}
+x <- c(3,52,-8,2,1,7,11,-3,0,6,23,17)
+x[1]
+x[3]
+x[c(1, 3)]
+```
 
-<!-- x <- c(3,52,-8,2,1,7,11,-3,0,6,23,17) -->
-<!-- x[1] -->
-<!-- x[3] -->
-<!-- x[c(1, 3)] -->
+Si se desea sustituir un elemento del vector se puede utilizar el signo de asignación.
+Por ejemplo, si se desea sustituir el tercer elemento de x por 88:
 
-<!-- # Seleccione los primeros 8 elementos de x -->
-<!-- # ?Y si queremos sustituir un elemento del vector? -->
-<!-- ## sustituya el tercer elemento de x por 88 -->
+```{r}
+x[3] <-  88
+x
+```
 
-
-<!-- x[3] <-  88 -->
-<!-- x -->
-
-<!-- ## ?Y si queremos suprimir coordenadas? -->
-<!-- x[-3] -->
-<!-- # Suprima la primera y la cuarta coordenada del vector x -->
-<!-- ## ?Y si queremos ordenar el vector? -->
-<!-- sort(x) -->
-<!-- # ?Y si lo queremos ordenado de mayor a menor? -->
-<!-- # ?Que hace la funcion "order"? -->
-<!-- ## Podemos pedirle la edad minima -->
-
-<!-- min(x) -->
-<!-- which.min(x)                  # ?Que obtenemos con este comando? -->
 
 <!-- # ¿Y la edad maxima? -->
+
+Si se quiere obtener un vector sin algunos elementos, se debe anteponer el signo `-` al valor del índice. 
+
+```{r}
+x[-3]
+```
 
 
 ## Matrices
 
-Las matrices son vectores con atributo de dimensión (filas y columnas). A diferencia de los `data.frame`s, todas las columnas de las matrices son de una misma clase. Para generar matrices se pude utilizar la función `matrix`.
+Las matrices son vectores con atributo de dimensión (2 dimensiones: filas y columnas). A diferencia de los `data.frame`s, todas las columnas de las matrices son de una misma clase. Para generar matrices se puede utilizar la función `matrix`.
 
 ```{r, eval=TRUE}
 x <- 1:20
@@ -301,6 +325,7 @@ x3 <- gl(2, 5, labels = c("si","no"))
 x4 <- letters[1:10]
 data.frame(A = x1, B = x2, C = x3, D = x4)
 ```
+
 
 ## Algunas funciones básicas predefinidas
 
