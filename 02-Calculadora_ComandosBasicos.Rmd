@@ -1,10 +1,10 @@
-#Funciones y comandos básicos
+# Funciones y comandos básicos
 
 En R se puede ejecutar cualquier operación matemática. Comencemos viendo algunas operaciones básicas:
 
 Suma:
 ```{r, eval=TRUE}
-5+2
+5 + 2
 ```
 
 Raíz cuadrada:
@@ -113,9 +113,13 @@ text_tab1 <- data.frame(
                 "redondea x a k dígitos")
 )
 
-knitr::kable(text_tab1, col.names = c("Sintaxis", "Operación"),
-             caption = 'Algunas funciones matemáticas en R',longtable=TRUE,
-             booktabs = TRUE)
+knitr::kable(
+  text_tab1,
+  col.names = c("Sintaxis", "Operación"),
+  caption = 'Algunas funciones matemáticas en R',
+  longtable = TRUE,
+  booktabs = TRUE
+)
 ```
 
 
@@ -129,7 +133,8 @@ knitr::kable(text_tab1, col.names = c("Sintaxis", "Operación"),
 
 
 
-```{block, type='boxeda'}
+<!-- ```{block, type='boxeda'} -->
+
 
 1. Funciones y comandos básicos
     
@@ -159,8 +164,6 @@ knitr::kable(text_tab1, col.names = c("Sintaxis", "Operación"),
      
     Generar un vector `y` con 20 realizaciones de una normal con media 5 y desvío estándar 2. Calcular la media y la varianza de `y`.
 
-```
 
 
-
-
+<!-- ``` -->

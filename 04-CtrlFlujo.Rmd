@@ -68,7 +68,7 @@ while (i < 15) {print(i); i = i+1}
 ## Ejercitación
 ```
 
-```{block, type='boxeda'}
+<!-- ```{block, type='boxeda'} -->
 
 1. Construcción condicional
 
@@ -78,7 +78,7 @@ while (i < 15) {print(i); i = i+1}
     
     Usar un ciclo `for` para contar la cantidad de números mayores a 10 en el vector `x <- c(2,5,3,9,8,11,6,8,12,3,57,56)`
 
-```
+<!-- ``` -->
 
 
 

@@ -1,36 +1,47 @@
-\documentclass[]{book}
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
+\usepackage{amsmath}
 \usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-\else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\usepackage[margin=1in]{geometry}
-\usepackage{hyperref}
-\hypersetup{unicode=true,
-            pdftitle={Introducción al software R},
-            pdfauthor={Paccioretti Pablo; Bruno Cecilia},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
-\usepackage{natbib}
-\bibliographystyle{apalike}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Introducción al software R},
+  pdfauthor={Paccioretti Pablo; Bruno Cecilia; González Montoro Aldana; Nores María Laura},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -40,39 +51,48 @@
 \usepackage{framed}
 \definecolor{shadecolor}{RGB}{248,248,248}
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
-\usepackage{graphicx,grffile}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -81,52 +101,14 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-
-%%% Use protect on footnotes to avoid problems with footnotes in titles
-\let\rmarkdownfootnote\footnote%
-\def\footnote{\protect\rmarkdownfootnote}
-
-%%% Change title format to be more compact
-\usepackage{titling}
-
-% Create subtitle command for use in maketitle
-\newcommand{\subtitle}[1]{
-  \posttitle{
-    \begin{center}\large#1\end{center}
-    }
-}
-
-\setlength{\droptitle}{-2em}
-
-  \title{Introducción al software R}
-    \pretitle{\vspace{\droptitle}\centering\huge}
-  \posttitle{\par}
-  \subtitle{Notas de clases}
-  \author{Paccioretti Pablo\footnote{\href{mailto:pablopaccioretti@agro.unc.edu.ar}{\nolinkurl{pablopaccioretti@agro.unc.edu.ar}}} \\ Bruno Cecilia\footnote{\href{mailto:cebruno@agro.unc.edu.ar}{\nolinkurl{cebruno@agro.unc.edu.ar}}}}
-    \preauthor{\centering\large\emph}
-  \postauthor{\par}
-    \date{}
-    \predate{}\postdate{}
-  
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{booktabs}
@@ -253,6 +235,22 @@
 % \newenvironment{rmdwarning}
 %   {\begin{rmdblock}{warning}}
 %   {\end{rmdblock}}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{Introducción al software R}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Notas de clases}
+\author{Paccioretti Pablo\footnote{\href{mailto:pablopaccioretti@agro.unc.edu.ar}{\nolinkurl{pablopaccioretti@agro.unc.edu.ar}}} \and Bruno Cecilia\footnote{\href{mailto:cebruno@agro.unc.edu.ar}{\nolinkurl{cebruno@agro.unc.edu.ar}}} \and González Montoro Aldana\footnote{\href{mailto:aldana.goonzalez.montoro@unc.edu.ar}{\nolinkurl{aldana.goonzalez.montoro@unc.edu.ar}}} \and Nores María Laura\footnote{\href{mailto:lalinores@yahoo.com.ar}{\nolinkurl{lalinores@yahoo.com.ar}}}}
+\date{}
 
 \begin{document}
 \maketitle
@@ -261,15 +259,10 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter{Instalación de programas}\label{instalacion-de-programas}
+\hypertarget{instalaciuxf3n-de-programas}{%
+\chapter{Instalación de programas}\label{instalaciuxf3n-de-programas}}
 
-Se debe tener instalado R y RStudio. R puede ser instalado en múltiples
-plataformas tales como Windows, Mac OS y en sistemas basados en Linux.
-Además hay múltiples entornos de desarrollo integrado (\emph{Integrated
-Development Environment} IDE) los cuales facilitan la programación.
-Ejemplos de este tipo de software es el intérprete de R que contiene
-InfoStat \citep{Infostat} y RStudio \citep{Rstudio}. Las interfaces
-gráficas de ambos softwares son similares.
+Se debe tener instalado R y RStudio. R puede ser instalado en múltiples plataformas tales como Windows, Mac OS y en sistemas basados en Linux. Además hay múltiples entornos de desarrollo integrado (\emph{Integrated Development Environment} IDE) los cuales facilitan la programación. Ejemplos de este tipo de software es el intérprete de R que contiene InfoStat \citep{Infostat} y RStudio \citep{Rstudio}. Las interfaces gráficas de ambos softwares son similares.
 
 Links para las descargas:
 
@@ -281,57 +274,33 @@ Links para las descargas:
   \href{http://www.infostat.com.ar/descargas/demo/infostatinstaller_esp.exe}{InfoStat}
 \end{itemize}
 
-\section{Breve introducción a la interfaz del intérprete de
-InfoStat}\label{breve-introduccion-a-la-interfaz-del-interprete-de-infostat}
+\hypertarget{breve-introducciuxf3n-a-la-interfaz-del-intuxe9rprete-de-infostat}{%
+\section{Breve introducción a la interfaz del intérprete de InfoStat}\label{breve-introducciuxf3n-a-la-interfaz-del-intuxe9rprete-de-infostat}}
 
 La interfaz del intérprete de R en InfoStat se divide en cuatro paneles.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.80000\textwidth]{images/InfoStatPartes.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/InfoStatPartes.png}
 \caption{Diseño de los paneles del intérprete de R de InfoStat RStudio}
 \end{figure}
 
-El panel superior izquierdo permite al usuario visualizar scripts
-previamente escritos o escribir nuevos. En el panel inferior izquierdo
-se muestran los resultados. En los paneles derechos se muestran los
-objetos cargados en el ambiente de trabajo, mientras que en el panel
-inferior derecho se muestran los paquetes instalados y en rojo los
-paquetees cargados.
+El panel superior izquierdo permite al usuario visualizar scripts previamente escritos o escribir nuevos. En el panel inferior izquierdo se muestran los resultados. En los paneles derechos se muestran los objetos cargados en el ambiente de trabajo, mientras que en el panel inferior derecho se muestran los paquetes instalados y en rojo los paquetees cargados.
 
-\chapter{Breve introducción a R}\label{intro}
+\hypertarget{intro}{%
+\chapter{Breve introducción a R}\label{intro}}
 
-R \citep{R-base} es un lenguaje de programación orientado a objetos. Fue
-creado por Ross Ihaka y Robert Gentleman en 1993 como un dialecto del
-software S, fue publicado en 1996 \citep{ihaka1996r}. Es un software
-libre y de código abierto, lo que significa que se puede usar, compartir
-y modificar el software libremente. Junto con el instalador de R, se
-distribuyen ciertos paquetes (\emph{packages}) los cuales incluyen
-funciones para implementar algunos métodos estadísticos clásicos y
-modernos. Muchas personas utilizan R para realizar análisis estadísticos
-por esta razón. Muchos algoritmos y metodologías estadísticas están
-disponibles para ser implementadas en R, pero se debe buscar en cual
-paquete está disponible y descargarlo para su utilización.
+R \citep{R-base} es un lenguaje de programación orientado a objetos. Fue creado por Ross Ihaka y Robert Gentleman en 1993 como un dialecto del software S, fue publicado en 1996 \citep{ihaka1996r}. Es un software libre y de código abierto, lo que significa que se puede usar, compartir y modificar el software libremente. Junto con el instalador de R, se distribuyen ciertos paquetes (\emph{packages}) los cuales incluyen funciones para implementar algunos métodos estadísticos clásicos y modernos. Muchas personas utilizan R para realizar análisis estadísticos por esta razón. Muchos algoritmos y metodologías estadísticas están disponibles para ser implementadas en R, pero se debe buscar en cual paquete está disponible y descargarlo para su utilización.
 
-\section{Generalidades del ambiente R}\label{SintaxisBasica}
+\hypertarget{SintaxisBasica}{%
+\section{Generalidades del ambiente R}\label{SintaxisBasica}}
 
-R distingue mayúsculas y minúsculas, esto significa que \texttt{P} y
-\texttt{p} son variables diferentes. Los comandos elementales consisten
-en expresiones o asignaciones. Si se ejecuta una expresión el resultado
-será impreso pero no se guardará dicho valor. Cuando se asigna un valor
-de una expresión (mediante el comando \texttt{\textless{}-}), el
-resultado no se imprimirá en pantalla y se almacenará en un objeto.
-Comandos diferentes son separados por \texttt{;} o por una nueva línea.
-Un conjunto de comandos pueden estar encerrados entre llaves
-(\texttt{\{} y \texttt{\}}). Los \texttt{\#} indican comentarios en el
-código, todo lo que está a la derecha de este símbolo no será ejecutado
-por R. Si se desean hacer comentarios en más de una línea, cada una de
-ellas debe comenzar con \#.
+R distingue mayúsculas y minúsculas, esto significa que \texttt{P} y \texttt{p} son variables diferentes. Los comandos elementales consisten en expresiones o asignaciones. Si se ejecuta una expresión el resultado será impreso pero no se guardará dicho valor. Cuando se asigna un valor de una expresión (mediante el comando \texttt{\textless{}-}), el resultado no se imprimirá en pantalla y se almacenará en un objeto. Comandos diferentes son separados por \texttt{;} o por una nueva línea. Un conjunto de comandos pueden estar encerrados entre llaves (\texttt{\{} y \texttt{\}}). Los \texttt{\#} indican comentarios en el código, todo lo que está a la derecha de este símbolo no será ejecutado por R. Si se desean hacer comentarios en más de una línea, cada una de ellas debe comenzar con \#.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x <-}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(}\DecValTok{10}\NormalTok{) }\CommentTok{#No se muestra el resultado}
-\KeywordTok{sqrt}\NormalTok{(}\DecValTok{10}\NormalTok{)      }\CommentTok{#Impresión automática del resultado}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{sqrt}\NormalTok{(}\DecValTok{10}\NormalTok{) }\CommentTok{\#No se muestra el resultado}
+\FunctionTok{sqrt}\NormalTok{(}\DecValTok{10}\NormalTok{)      }\CommentTok{\#Impresión automática del resultado}
 \end{Highlighting}
 \end{Shaded}
 
@@ -339,34 +308,23 @@ ellas debe comenzar con \#.
 ## [1] 3.162278
 \end{verbatim}
 
-Las funciones son segmentos de código escrito para llevar a cabo una
-tarea específica, en el ejemplo anterior se utilizó la función
-\texttt{sqrt} para calcular la raíz cuadrada de 10. Las funciones o no
-necesitar argumentos y devolver o no uno o más valores en el resultado.
-Los argumentos de la función son los \emph{inputs} para ejecutar la
-tarea. Argumentos deben ir dentro de paréntesis luego del nombre de la
-función, cada argumento se separa con \texttt{,}
-(\texttt{(arg1,arg2\ )}). Nombres de los argumentos pueden especificarse
-explicitamente o no. Si no se detalla el nombre del argumento, R
-entenderá que están en el mismo orden que se especificaron cuando se
-creó la función.
+Las funciones son segmentos de código escrito para llevar a cabo una tarea específica, en el ejemplo anterior se utilizó la función \texttt{sqrt} para calcular la raíz cuadrada de 10. Las funciones o no necesitar argumentos y devolver o no uno o más valores en el resultado. Los argumentos de la función son los \emph{inputs} para ejecutar la tarea. Argumentos deben ir dentro de paréntesis luego del nombre de la función, cada argumento se separa con \texttt{,} (\texttt{(arg1,arg2\ )}). Nombres de los argumentos pueden especificarse explicitamente o no. Si no se detalla el nombre del argumento, R entenderá que están en el mismo orden que se especificaron cuando se creó la función.
 
 \begin{rmdnote}
 Notar que la mayoría de las funciones de R derivan del inglés y que
 utiliza \texttt{.} como separador decimal.
 \end{rmdnote}
 
-\chapter{Funciones y comandos
-básicos}\label{funciones-y-comandos-basicos}
+\hypertarget{funciones-y-comandos-buxe1sicos}{%
+\chapter{Funciones y comandos básicos}\label{funciones-y-comandos-buxe1sicos}}
 
-En R se puede ejecutar cualquier operación matemática. Comencemos viendo
-algunas operaciones básicas:
+En R se puede ejecutar cualquier operación matemática. Comencemos viendo algunas operaciones básicas:
 
 Suma:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\DecValTok{5}\OperatorTok{+}\DecValTok{2}
+\DecValTok{5} \SpecialCharTok{+} \DecValTok{2}
 \end{Highlighting}
 \end{Shaded}
 
@@ -378,7 +336,7 @@ Raíz cuadrada:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{sqrt}\NormalTok{(}\DecValTok{15}\NormalTok{)}
+\FunctionTok{sqrt}\NormalTok{(}\DecValTok{15}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -386,86 +344,62 @@ Raíz cuadrada:
 ## [1] 3.872983
 \end{verbatim}
 
-\section{Ayuda}\label{ayuda}
+\hypertarget{ayuda}{%
+\section{Ayuda}\label{ayuda}}
 
-R incluye documentación de ayuda muy detallada. Para acceder a la ayuda
-de cada función, objeto o datos de prueba se debe ejecutar el comando
-\texttt{help()} o \texttt{?}. Por ejemplo \texttt{help(sqrt)}, o
-\texttt{?sqrt}. Otra forma de pedir la ayuda es presionando F1 luego de
-seleccionar la función. La sentencia \texttt{??} busca un patrón dentro
-de la documentación del sistema de ayuda, es útil si no se conoce cual
-función ejecuta cierto análisis. Otra herramienta muy útil para buscar
-ayuda es Google o \href{https://stackoverflow.com/}{Stack Overflow}.
+R incluye documentación de ayuda muy detallada. Para acceder a la ayuda de cada función, objeto o datos de prueba se debe ejecutar el comando \texttt{help()} o \texttt{?}. Por ejemplo \texttt{help(sqrt)}, o \texttt{?sqrt}. Otra forma de pedir la ayuda es presionando F1 luego de seleccionar la función. La sentencia \texttt{??} busca un patrón dentro de la documentación del sistema de ayuda, es útil si no se conoce cual función ejecuta cierto análisis. Otra herramienta muy útil para buscar ayuda es Google o \href{https://stackoverflow.com/}{Stack Overflow}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{help}\NormalTok{(sqrt)}
+\FunctionTok{help}\NormalTok{(sqrt)}
 \NormalTok{??square}
 \end{Highlighting}
 \end{Shaded}
 
-\section{Asignaciones y aritmética
-vectorial}\label{asignaciones-y-aritmetica-vectorial}
+\hypertarget{asignaciones-y-aritmuxe9tica-vectorial}{%
+\section{Asignaciones y aritmética vectorial}\label{asignaciones-y-aritmuxe9tica-vectorial}}
 
-Como ya se especificó en la sección \ref{SintaxisBasica}, un comando de
-asignación es \texttt{\textless{}-}, donde a la izquierda se especifica
-el nombre del objeto y a la derecha el valor, ya sean resultados de un
-cálculo o de un análisis estadístico. Por ejemplo, si se desea asignar
-el valor de \texttt{5} al objeto \texttt{radio} se debe ejecutar
-\texttt{radio\ \textless{}-\ 5}. Otras formas de hacer asignaciones es
-mediante la utilización de \texttt{=} o \texttt{-\textgreater{}}, este
-último no es utilizado comúnmente.
+Como ya se especificó en la sección \ref{SintaxisBasica}, un comando de asignación es \texttt{\textless{}-}, donde a la izquierda se especifica el nombre del objeto y a la derecha el valor, ya sean resultados de un cálculo o de un análisis estadístico. Por ejemplo, si se desea asignar el valor de \texttt{5} al objeto \texttt{radio} se debe ejecutar \texttt{radio\ \textless{}-\ 5}. Otras formas de hacer asignaciones es mediante la utilización de \texttt{=} o \texttt{-\textgreater{}}, este último no es utilizado comúnmente.
 
-Asignaremos al objeto \texttt{x} una secuencia numérica del 1 al 5 y
-luego ver el contenido de \texttt{x}:
+Asignaremos al objeto \texttt{x} una secuencia numérica del 1 al 5 y luego ver el contenido de \texttt{x}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x<-}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{)  }\CommentTok{#No se muestra el resultado}
-\NormalTok{x                }\CommentTok{#Se auto imprime el resultado}
-\NormalTok{## [1] 1 2 3 4 5}
-\KeywordTok{print}\NormalTok{(x)         }\CommentTok{#Imprime el resultado de manera explícita mediante el comando print }
-\NormalTok{## [1] 1 2 3 4 5}
+\NormalTok{x}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{)  }\CommentTok{\#No se muestra el resultado}
+\NormalTok{x                }\CommentTok{\#Se auto imprime el resultado}
+\DocumentationTok{\#\# [1] 1 2 3 4 5}
+\FunctionTok{print}\NormalTok{(x)         }\CommentTok{\#Imprime el resultado de manera explícita mediante el comando print }
+\DocumentationTok{\#\# [1] 1 2 3 4 5}
 \end{Highlighting}
 \end{Shaded}
 
-\section{R como herramienta
-estadística}\label{r-como-herramienta-estadistica}
+\hypertarget{r-como-herramienta-estaduxedstica}{%
+\section{R como herramienta estadística}\label{r-como-herramienta-estaduxedstica}}
 
-En el paquete \texttt{stats} (uno de los paquetes instalados por
-defecto) contiene la densidad, la función de distribución
-(probabilidades), función de cuantiles y generación de números
-aleatorios de las distribuciones estadísticas más comunes. Por ejemplo,
-si se desea generar 40 números aleatorios de una distribución normal
-estándar se deberá ejecutar la sentencia \texttt{rnorm(40)}.
+En el paquete \texttt{stats} (uno de los paquetes instalados por defecto) contiene la densidad, la función de distribución (probabilidades), función de cuantiles y generación de números aleatorios de las distribuciones estadísticas más comunes. Por ejemplo, si se desea generar 40 números aleatorios de una distribución normal estándar se deberá ejecutar la sentencia \texttt{rnorm(40)}.
 
-Si se desea calcular medidas descriptivas básicas de un vector se puede
-ejecutar \texttt{mean} para calcular la media, \texttt{sd} para calcular
-el desvío estándar y \texttt{var} para la varianza. Otra función útil
-para obtener valores de posición y dispersión es la función
-\texttt{summary}.
+Si se desea calcular medidas descriptivas básicas de un vector se puede ejecutar \texttt{mean} para calcular la media, \texttt{sd} para calcular el desvío estándar y \texttt{var} para la varianza. Otra función útil para obtener valores de posición y dispersión es la función \texttt{summary}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x<-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{40}\NormalTok{)}
-\KeywordTok{summary}\NormalTok{(x)}
+\NormalTok{x}\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{40}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(x)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## -1.66647 -0.74200 -0.02098 -0.05684  0.72991  1.30036
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+## -2.6270 -0.4958  0.2190  0.0151  0.6109  2.2069
 \end{verbatim}
 
-\section{R como herramienta gráfica}\label{r-como-herramienta-grafica}
+\hypertarget{r-como-herramienta-gruxe1fica}{%
+\section{R como herramienta gráfica}\label{r-como-herramienta-gruxe1fica}}
 
-Con R se puede realizar gráficos y modificar numerosos parámetros del
-gráfico para su publicación. Se realizará un histograma y un boxplot de
-la variable \texttt{x} generada anteriormente.
+Con R se puede realizar gráficos y modificar numerosos parámetros del gráfico para su publicación. Se realizará un histograma y un boxplot de la variable \texttt{x} generada anteriormente.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{hist}\NormalTok{(x)}
+\FunctionTok{hist}\NormalTok{(x)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -473,20 +407,19 @@ la variable \texttt{x} generada anteriormente.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{boxplot}\NormalTok{(x)}
+\FunctionTok{boxplot}\NormalTok{(x)}
 \end{Highlighting}
 \end{Shaded}
 
 \includegraphics{TutorialR_files/figure-latex/unnamed-chunk-9-2.pdf}
 
-También se puede realizar gráficos de dispersión utilizando la función
-\texttt{plot} y editar algunos elementos del gráfico.
+También se puede realizar gráficos de dispersión utilizando la función \texttt{plot} y editar algunos elementos del gráfico.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{4}\NormalTok{,}\OperatorTok{-}\DecValTok{3}\NormalTok{,}\OperatorTok{-}\DecValTok{2}\NormalTok{,}\OperatorTok{-}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{)  }\CommentTok{# Observar que se remplazó el objeto "x" que se generó previamente}
-\NormalTok{y <-}\StringTok{ }\NormalTok{x}\OperatorTok{^}\DecValTok{2}
-\KeywordTok{plot}\NormalTok{(x,y)}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{4}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{3}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{)  }\CommentTok{\# Observar que se remplazó el objeto "x" que se generó previamente}
+\NormalTok{y }\OtherTok{\textless{}{-}}\NormalTok{ x}\SpecialCharTok{\^{}}\DecValTok{2}
+\FunctionTok{plot}\NormalTok{(x,y)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -494,13 +427,14 @@ También se puede realizar gráficos de dispersión utilizando la función
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{plot}\NormalTok{(x,y, }\DataTypeTok{type=}\StringTok{"b"}\NormalTok{, }\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(x,y, }\AttributeTok{type=}\StringTok{"b"}\NormalTok{, }\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \includegraphics{TutorialR_files/figure-latex/unnamed-chunk-10-2.pdf}
 
-\section{Tablas resumen de operadores y funciones}\label{tablas_resumen}
+\hypertarget{tablas_resumen}{%
+\section{Tablas resumen de operadores y funciones}\label{tablas_resumen}}
 
 \begin{longtable}[t]{ll}
 \caption{\label{tab:funcbasic}Algunas funciones matemáticas en R}\\
@@ -533,13 +467,13 @@ Sintaxis & Operación\\
 \bottomrule
 \end{longtable}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{rmdtip}
-\subsection{Ejercitación}\label{ejercitacion}
+\hypertarget{ejercitaciuxf3n}{%
+\subsection{Ejercitación}\label{ejercitaciuxf3n}}
 \end{rmdtip}
 
-\begin{boxeda}
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
@@ -557,54 +491,38 @@ Sintaxis & Operación\\
 \item
   Asignaciones y aritmética vectorial
 
-  Calcule el perímetro del círculo de radio 5 y guárdelo en el objeto
-  \texttt{per}.
+  Calcule el perímetro del círculo de radio 5 y guárdelo en el objeto \texttt{per}.
 
-  Crear el vector de coordenadas 6,7,8,9,10 y llamarlo \texttt{z}Suma de
-  dos vectores
+  Crear el vector de coordenadas 6,7,8,9,10 y llamarlo \texttt{z}Suma de dos vectores
 
   Calcular la suma de \texttt{z} y \texttt{x}
 
   Calcular el doble de \texttt{x}
 
-  ¿Qué se obtiene haciendo el producto entre los vectores \texttt{z} y
-  \texttt{x}?
+  ¿Qué se obtiene haciendo el producto entre los vectores \texttt{z} y \texttt{x}?
 \item
   R como herramienta gráfica
 
-  Generar un vector \texttt{y} con 20 realizaciones de una normal con
-  media 5 y desvío estándar 2. Calcular la media y la varianza de
-  \texttt{y}.
+  Generar un vector \texttt{y} con 20 realizaciones de una normal con media 5 y desvío estándar 2. Calcular la media y la varianza de \texttt{y}.
 \end{enumerate}
-\end{boxeda}
 
-\chapter{Objetos en R}\label{objetos-en-r}
+\hypertarget{objetos-en-r}{%
+\chapter{Objetos en R}\label{objetos-en-r}}
 
-Los resultados de un cierto procedimiento o valores pueden ser
-almacenados en diferentes clases de objetos. R tiene cinco clases
-básicas de objetos, números (\texttt{numeric}), números complejos
-(\texttt{complex}), cadenas de caracteres (\texttt{character}), factores
-(\texttt{factor}) y valores lógicos (\texttt{logical}). Éstos pueden
-juntarse para formar vectores (\texttt{vector}), matrices
-(\texttt{matrix}), hojas de datos (\texttt{data.frame}) o listas
-(\texttt{list}) entre otras clases de objetos menos usuales. En esta
-sección trabajaremos con algunos de ellos. Para conocer la clase de un
-objeto se utiliza la función \texttt{class}.
+Los resultados de un cierto procedimiento o valores pueden ser almacenados en diferentes clases de objetos. R tiene cinco clases básicas de objetos, números (\texttt{numeric}), números complejos (\texttt{complex}), cadenas de caracteres (\texttt{character}), factores (\texttt{factor}) y valores lógicos (\texttt{logical}). Éstos pueden juntarse para formar vectores (\texttt{vector}), matrices (\texttt{matrix}), hojas de datos (\texttt{data.frame}) o listas (\texttt{list}) entre otras clases de objetos menos usuales. En esta sección trabajaremos con algunos de ellos. Para conocer la clase de un objeto se utiliza la función \texttt{class}.
 
-\section{Vectores}\label{vectores}
+\hypertarget{vectores}{%
+\section{Vectores}\label{vectores}}
 
-Es el objeto más simple de R. Es importante tener en cuenta que los
-vectores solo contienen elementos de la \textbf{misma} clase. La función
-\texttt{c()} puede utilizarse para crear vectores concatentando sus
-argumentos.
+Es el objeto más simple de R. Es importante tener en cuenta que los vectores solo contienen elementos de la \textbf{misma} clase. La función \texttt{c()} puede utilizarse para crear vectores concatentando sus argumentos.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{9}\NormalTok{,}\FloatTok{10.5}\NormalTok{)           }\CommentTok{#numérico}
-\NormalTok{d <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\OperatorTok{+}\NormalTok{2i, }\DecValTok{2}\OperatorTok{+}\NormalTok{5i)            }\CommentTok{#números complejos}
-\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)               }\CommentTok{#numérico}
-\NormalTok{y <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{)         }\CommentTok{#caracteres}
-\NormalTok{z <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, T)  }\CommentTok{#lógico}
+\NormalTok{a }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{9}\NormalTok{,}\FloatTok{10.5}\NormalTok{)           }\CommentTok{\#numérico}
+\NormalTok{d }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\SpecialCharTok{+}\NormalTok{2i, }\DecValTok{2}\SpecialCharTok{+}\NormalTok{5i)            }\CommentTok{\#números complejos}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)               }\CommentTok{\#numérico}
+\NormalTok{y }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{)         }\CommentTok{\#caracteres}
+\NormalTok{z }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{, T)  }\CommentTok{\#lógico}
 \end{Highlighting}
 \end{Shaded}
 
@@ -615,25 +533,22 @@ utilizar la forma explícita de \texttt{TRUE} y \texttt{FALSE} que la
 forma corta.
 \end{rmdnote}
 
-\subsection{Secuencias}\label{secuencias}
+\hypertarget{secuencias}{%
+\subsection{Secuencias}\label{secuencias}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{) }
-\NormalTok{x <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{10}
-\NormalTok{y <-}\StringTok{ }\OperatorTok{-}\DecValTok{5}\OperatorTok{:}\DecValTok{3}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{10}
+\NormalTok{y }\OtherTok{\textless{}{-}} \SpecialCharTok{{-}}\DecValTok{5}\SpecialCharTok{:}\DecValTok{3}
 \end{Highlighting}
 \end{Shaded}
 
-Para generar secuencias de números enteros consecutivos se puede
-utilizar \texttt{:}, pero si se desea generar otros tipos de secuencias,
-por ejemplo la secuencia 4,6,8,\ldots{},20, se debe utilizar la función
-\texttt{seq}. Los argumentos de esta función permiten generar secuencias
-con saltos o longitud definida por el usuario.
+Para generar secuencias de números enteros consecutivos se puede utilizar \texttt{:}, pero si se desea generar otros tipos de secuencias, por ejemplo la secuencia 4,6,8,\ldots,20, se debe utilizar la función \texttt{seq}. Los argumentos de esta función permiten generar secuencias con saltos o longitud definida por el usuario.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from =} \DecValTok{4}\NormalTok{, }\DataTypeTok{to =} \DecValTok{20}\NormalTok{, }\DataTypeTok{by =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{seq}\NormalTok{(}\AttributeTok{from =} \DecValTok{4}\NormalTok{, }\AttributeTok{to =} \DecValTok{20}\NormalTok{, }\AttributeTok{by =} \DecValTok{2}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -641,39 +556,34 @@ con saltos o longitud definida por el usuario.
 ## [1]  4  6  8 10 12 14 16 18 20
 \end{verbatim}
 
-\subsection{Vectores con valores
-repetidos}\label{vectores-con-valores-repetidos}
+\hypertarget{vectores-con-valores-repetidos}{%
+\subsection{Vectores con valores repetidos}\label{vectores-con-valores-repetidos}}
 
-Cuando se desea generar un vector con valores repetidos se puede
-utilizar la función \texttt{rep}. Esta función replica los valores que
-se espicifican en el primer argumento, tantas veces o el largo que se
-especifique.
+Cuando se desea generar un vector con valores repetidos se puede utilizar la función \texttt{rep}. Esta función replica los valores que se espicifican en el primer argumento, tantas veces o el largo que se especifique.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{)}
-\NormalTok{## [1] 1 1 1 1 1}
-\NormalTok{x <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{3}
-\KeywordTok{rep}\NormalTok{(x, }\DecValTok{2}\NormalTok{)}
-\NormalTok{## [1] 1 2 3 1 2 3}
-\KeywordTok{rep}\NormalTok{(x, }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{1}\NormalTok{))}
-\NormalTok{## [1] 1 1 2 2 2 2 3}
-\KeywordTok{rep}\NormalTok{(x, }\DataTypeTok{length =} \DecValTok{8}\NormalTok{)}
-\NormalTok{## [1] 1 2 3 1 2 3 1 2}
+\FunctionTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\DocumentationTok{\#\# [1] 1 1 1 1 1}
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{3}
+\FunctionTok{rep}\NormalTok{(x, }\DecValTok{2}\NormalTok{)}
+\DocumentationTok{\#\# [1] 1 2 3 1 2 3}
+\FunctionTok{rep}\NormalTok{(x, }\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\DocumentationTok{\#\# [1] 1 1 2 2 2 2 3}
+\FunctionTok{rep}\NormalTok{(x, }\AttributeTok{length =} \DecValTok{8}\NormalTok{)}
+\DocumentationTok{\#\# [1] 1 2 3 1 2 3 1 2}
 \end{Highlighting}
 \end{Shaded}
 
-\section{Matrices}\label{matrices}
+\hypertarget{matrices}{%
+\section{Matrices}\label{matrices}}
 
-Las matrices son vectores con atributo de dimensión (filas y columnas).
-A diferencia de los \texttt{data.frame}s, todas las columnas de las
-matrices son de una misma clase. Para generar matrices se pude utilizar
-la función \texttt{matrix}.
+Las matrices son vectores con atributo de dimensión (filas y columnas). A diferencia de los \texttt{data.frame}s, todas las columnas de las matrices son de una misma clase. Para generar matrices se pude utilizar la función \texttt{matrix}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{20}
-\KeywordTok{matrix}\NormalTok{(x, }\DataTypeTok{nrow =} \DecValTok{5}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{4}\NormalTok{)}
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{20}
+\FunctionTok{matrix}\NormalTok{(x, }\AttributeTok{nrow =} \DecValTok{5}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{4}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -686,14 +596,13 @@ la función \texttt{matrix}.
 ## [5,]    5   10   15   20
 \end{verbatim}
 
-Las matrices pueden ser creadas uniendo filas o columnas mediante las
-funciones \texttt{cbind()} y \texttt{rbind()}.
+Las matrices pueden ser creadas uniendo filas o columnas mediante las funciones \texttt{cbind()} y \texttt{rbind()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{3}
-\NormalTok{y <-}\StringTok{ }\DecValTok{10}\OperatorTok{:}\DecValTok{12}
-\KeywordTok{cbind}\NormalTok{(x, y)}
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{3}
+\NormalTok{y }\OtherTok{\textless{}{-}} \DecValTok{10}\SpecialCharTok{:}\DecValTok{12}
+\FunctionTok{cbind}\NormalTok{(x, y)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -706,7 +615,7 @@ funciones \texttt{cbind()} y \texttt{rbind()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{rbind}\NormalTok{(x, y) }
+\FunctionTok{rbind}\NormalTok{(x, y)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -716,7 +625,8 @@ funciones \texttt{cbind()} y \texttt{rbind()}.
 ## y   10   11   12
 \end{verbatim}
 
-\subsection{Operaciones con matrices:}\label{operaciones-con-matrices}
+\hypertarget{operaciones-con-matrices}{%
+\subsection{Operaciones con matrices:}\label{operaciones-con-matrices}}
 
 \begin{itemize}
 \tightlist
@@ -739,25 +649,20 @@ funciones \texttt{cbind()} y \texttt{rbind()}.
 \item
   \texttt{diag(A)} : matriz diagonal. (A es una matriz)
 \item
-  \texttt{A\ \%o\%\ B\ ==\ outer(A,B)} : producto exterior de dos
-  vectores o matrices
+  \texttt{A\ \%o\%\ B\ ==\ outer(A,B)} : producto exterior de dos vectores o matrices
 \end{itemize}
 
-\section{Listas}\label{listas}
+\hypertarget{listas}{%
+\section{Listas}\label{listas}}
 
-Una lista es la forma generalizada de un vector que puede contener
-elementos de diferentes clases (número, vector, matriz, lista, etc.).
-Para crear lista se puede utilizar la función \texttt{list()}. Dada su
-flexibilidad son contenedores generales de datos. Muchas funciones
-devuelven un conjunto de resultados de distinta longitud y distinto tipo
-en forma de lista.
+Una lista es la forma generalizada de un vector que puede contener elementos de diferentes clases (número, vector, matriz, lista, etc.). Para crear lista se puede utilizar la función \texttt{list()}. Dada su flexibilidad son contenedores generales de datos. Muchas funciones devuelven un conjunto de resultados de distinta longitud y distinto tipo en forma de lista.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{n <-}\StringTok{  }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{)}
-\NormalTok{s <-}\StringTok{  }\KeywordTok{c}\NormalTok{(}\StringTok{"aa"}\NormalTok{, }\StringTok{"bb"}\NormalTok{, }\StringTok{"cc"}\NormalTok{, }\StringTok{"dd"}\NormalTok{, }\StringTok{"ee"}\NormalTok{)}
-\NormalTok{b <-}\StringTok{  }\KeywordTok{c}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{)}
-\NormalTok{x <-}\StringTok{  }\KeywordTok{list}\NormalTok{(n, s, b)}
+\NormalTok{n }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{)}
+\NormalTok{s }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\StringTok{"aa"}\NormalTok{, }\StringTok{"bb"}\NormalTok{, }\StringTok{"cc"}\NormalTok{, }\StringTok{"dd"}\NormalTok{, }\StringTok{"ee"}\NormalTok{)}
+\NormalTok{b }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{, }\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{)}
+\NormalTok{x }\OtherTok{\textless{}{-}}  \FunctionTok{list}\NormalTok{(n, s, b)}
 \NormalTok{x}
 \end{Highlighting}
 \end{Shaded}
@@ -773,12 +678,10 @@ en forma de lista.
 ## [1]  TRUE FALSE  TRUE FALSE FALSE
 \end{verbatim}
 
-\section{Hojas de datos (Data frames)}\label{hojas-de-datos-data-frames}
+\hypertarget{hojas-de-datos-data-frames}{%
+\section{Hojas de datos (Data frames)}\label{hojas-de-datos-data-frames}}
 
-Es el objeto más común en R para almacenar datos. Sus columnas pueden
-ser de diferentes clases por ejemplo variables continuas y categóricas.
-Este tipo de objetos puede generarse mediante la función
-\texttt{data.frame()}.
+Es el objeto más común en R para almacenar datos. Sus columnas pueden ser de diferentes clases por ejemplo variables continuas y categóricas. Este tipo de objetos puede generarse mediante la función \texttt{data.frame()}.
 
 \begin{rmdnote}
 \texttt{data.frame} convierte los vectores de caracteres en factores
@@ -787,11 +690,11 @@ automáticamente.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x1 <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{10}
-\NormalTok{x2 <-}\StringTok{ }\DecValTok{24}\OperatorTok{:}\DecValTok{33}
-\NormalTok{x3 <-}\StringTok{ }\KeywordTok{gl}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"si"}\NormalTok{,}\StringTok{"no"}\NormalTok{))}
-\NormalTok{x4 <-letters[}\DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{]}
-\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{A =}\NormalTok{ x1, }\DataTypeTok{B =}\NormalTok{ x2, }\DataTypeTok{C =}\NormalTok{ x3, }\DataTypeTok{D =}\NormalTok{ x4)}
+\NormalTok{x1 }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{10}
+\NormalTok{x2 }\OtherTok{\textless{}{-}} \DecValTok{24}\SpecialCharTok{:}\DecValTok{33}
+\NormalTok{x3 }\OtherTok{\textless{}{-}} \FunctionTok{gl}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{5}\NormalTok{, }\AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"si"}\NormalTok{,}\StringTok{"no"}\NormalTok{))}
+\NormalTok{x4 }\OtherTok{\textless{}{-}}\NormalTok{ letters[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{]}
+\FunctionTok{data.frame}\NormalTok{(}\AttributeTok{A =}\NormalTok{ x1, }\AttributeTok{B =}\NormalTok{ x2, }\AttributeTok{C =}\NormalTok{ x3, }\AttributeTok{D =}\NormalTok{ x4)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -809,8 +712,8 @@ automáticamente.
 ## 10 10 33 no j
 \end{verbatim}
 
-\section{Algunas funciones básicas
-predefinidas}\label{algunas-funciones-basicas-predefinidas}
+\hypertarget{algunas-funciones-buxe1sicas-predefinidas}{%
+\section{Algunas funciones básicas predefinidas}\label{algunas-funciones-buxe1sicas-predefinidas}}
 
 \begin{itemize}
 \tightlist
@@ -888,20 +791,17 @@ predefinidas}\label{algunas-funciones-basicas-predefinidas}
   \texttt{library()}
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
 \begin{rmdtip}
-\subsection{Ejercitación}\label{ejercitacion}
+\hypertarget{ejercicio-objetos}{%
+\subsection{Ejercitación}\label{ejercicio-objetos}}
 \end{rmdtip}
 
-\begin{boxeda}
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Vectores
 
-  Genere un vector \texttt{b} el cual contenga los valores de \texttt{x}
-  y \texttt{a} ¿Cuantos elementos tiene el vector \texttt{b}?
+  Genere un vector \texttt{b} el cual contenga los valores de \texttt{x} y \texttt{a} ¿Cuantos elementos tiene el vector \texttt{b}?
 \item
   Secuencias
 
@@ -909,36 +809,28 @@ predefinidas}\label{algunas-funciones-basicas-predefinidas}
 
   seq(4,20,2) ¿Este comando da eror? ¿Por qué?
 
-  Genere usando comandos para secuencias el vector de componentes: 1, 2,
-  3, 4, 5, 6, 73, 72, 71, 70, 69, 68, 3, 6, 9, 12, 15, 18.
+  Genere usando comandos para secuencias el vector de componentes: 1, 2, 3, 4, 5, 6, 73, 72, 71, 70, 69, 68, 3, 6, 9, 12, 15, 18.
 \item
   Repetir valores
 
-  Genere un vector de componentes ``azul'', ``azul'',``azul'', ``azul'',
-  ``amarillo'', ``amarillo'', ``verde'', ``verde'',``verde'', llamado
-  \texttt{col}. ¿Es un vector de factores?
+  Genere un vector de componentes ``azul'', ``azul'',``azul'', ``azul'', ``amarillo'', ``amarillo'', ``verde'', ``verde'',``verde'', llamado \texttt{col}. ¿Es un vector de factores?
 \item
   Matrices
 
-  Calcule la inversa y los autovalores y autovectores de
-  \texttt{A\ \ =\ \ matrix(c(1,3,3,9,5,9,3,5,6),\ nrow\ =\ 3)}
+  Calcule la inversa y los autovalores y autovectores de \texttt{A\ \ =\ \ matrix(c(1,3,3,9,5,9,3,5,6),\ nrow\ =\ 3)}
 \end{enumerate}
-\end{boxeda}
 
-\chapter{Control de flujo}\label{control-de-flujo}
+\hypertarget{control-de-flujo}{%
+\chapter{Control de flujo}\label{control-de-flujo}}
 
-\section{\texorpdfstring{Construcción condicional
-\texttt{if}}{Construcción condicional if}}\label{construccion-condicional-if}
+\hypertarget{construcciuxf3n-condicional-if}{%
+\section{\texorpdfstring{Construcción condicional \texttt{if}}{Construcción condicional if}}\label{construcciuxf3n-condicional-if}}
 
-Es de la forma \texttt{if\ (expr\ 1)\ expr\ 2\ else\ expr\ 3} donde
-\texttt{expr\ 1} debe producir un valor logico. Si \texttt{expr\ 1} es
-verdadero (\texttt{T}), se ejecutara \texttt{expr\ 2}. Si
-\texttt{expr\ 1} es falso (\texttt{F}), y se ha escrito la opcion else,
-que es opcional, se ejecutara \texttt{expr\ 3}.
+Es de la forma \texttt{if\ (expr\ 1)\ expr\ 2\ else\ expr\ 3} donde \texttt{expr\ 1} debe producir un valor logico. Si \texttt{expr\ 1} es verdadero (\texttt{T}), se ejecutara \texttt{expr\ 2}. Si \texttt{expr\ 1} es falso (\texttt{F}), y se ha escrito la opcion else, que es opcional, se ejecutara \texttt{expr\ 3}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ControlFlowTok{if}\NormalTok{( }\DecValTok{3} \OperatorTok{>}\StringTok{ }\DecValTok{2}\NormalTok{) }\KeywordTok{print}\NormalTok{(}\StringTok{"yes"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{( }\DecValTok{3} \SpecialCharTok{\textgreater{}} \DecValTok{2}\NormalTok{) }\FunctionTok{print}\NormalTok{(}\StringTok{"yes"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -948,8 +840,8 @@ que es opcional, se ejecutara \texttt{expr\ 3}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ControlFlowTok{if}\NormalTok{( }\DecValTok{2} \OperatorTok{>}\StringTok{ }\DecValTok{3}\NormalTok{) }\KeywordTok{print}\NormalTok{(}\StringTok{"yes"}\NormalTok{)}
-\ControlFlowTok{if}\NormalTok{( }\DecValTok{2} \OperatorTok{>}\StringTok{ }\DecValTok{3}\NormalTok{) }\KeywordTok{print}\NormalTok{(}\StringTok{"yes"}\NormalTok{) }\ControlFlowTok{else} \KeywordTok{print}\NormalTok{(}\StringTok{"no"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{( }\DecValTok{2} \SpecialCharTok{\textgreater{}} \DecValTok{3}\NormalTok{) }\FunctionTok{print}\NormalTok{(}\StringTok{"yes"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{( }\DecValTok{2} \SpecialCharTok{\textgreater{}} \DecValTok{3}\NormalTok{) }\FunctionTok{print}\NormalTok{(}\StringTok{"yes"}\NormalTok{) }\ControlFlowTok{else} \FunctionTok{print}\NormalTok{(}\StringTok{"no"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -957,15 +849,14 @@ que es opcional, se ejecutara \texttt{expr\ 3}.
 ## [1] "no"
 \end{verbatim}
 
-Ejemplo con dos condiciones supongamos que \texttt{x\ \textless{}-\ 75}
-es la nota numerica de examen de un alumno, queremos asignar nota ``A'',
-``B'' o ``C''
+Ejemplo con dos condiciones
+supongamos que \texttt{x\ \textless{}-\ 75} es la nota numerica de examen de un alumno, queremos asignar nota ``A'', ``B'' o ``C''
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ControlFlowTok{if}\NormalTok{(x }\OperatorTok{<}\StringTok{ }\DecValTok{60}\NormalTok{) nota =}\StringTok{ "C"}
-\ControlFlowTok{if}\NormalTok{(x }\OperatorTok{>=}\StringTok{ }\DecValTok{60} \OperatorTok{&}\StringTok{ }\NormalTok{x }\OperatorTok{<}\StringTok{ }\DecValTok{80}\NormalTok{) nota =}\StringTok{ "B"}
-\ControlFlowTok{if}\NormalTok{(x }\OperatorTok{>=}\StringTok{  }\DecValTok{80}\NormalTok{) nota =}\StringTok{ "A"}
+\ControlFlowTok{if}\NormalTok{(x }\SpecialCharTok{\textless{}} \DecValTok{60}\NormalTok{) nota }\OtherTok{=} \StringTok{"C"}
+\ControlFlowTok{if}\NormalTok{(x }\SpecialCharTok{\textgreater{}=} \DecValTok{60} \SpecialCharTok{\&}\NormalTok{ x }\SpecialCharTok{\textless{}} \DecValTok{80}\NormalTok{) nota }\OtherTok{=} \StringTok{"B"}
+\ControlFlowTok{if}\NormalTok{(x }\SpecialCharTok{\textgreater{}=}  \DecValTok{80}\NormalTok{) nota }\OtherTok{=} \StringTok{"A"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -975,9 +866,9 @@ Ejemplo
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{nota.num <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{39}\NormalTok{, }\DecValTok{51}\NormalTok{, }\DecValTok{60}\NormalTok{, }\DecValTok{65}\NormalTok{, }\DecValTok{72}\NormalTok{, }\DecValTok{78}\NormalTok{, }\DecValTok{79}\NormalTok{, }\DecValTok{83}\NormalTok{, }\DecValTok{85}\NormalTok{, }\DecValTok{85}\NormalTok{, }\DecValTok{87}\NormalTok{, }\DecValTok{89}\NormalTok{, }\DecValTok{91}\NormalTok{, }\DecValTok{95}\NormalTok{, }\DecValTok{96}\NormalTok{, }\DecValTok{97}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{100}\NormalTok{)}
+\NormalTok{nota.num }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{39}\NormalTok{, }\DecValTok{51}\NormalTok{, }\DecValTok{60}\NormalTok{, }\DecValTok{65}\NormalTok{, }\DecValTok{72}\NormalTok{, }\DecValTok{78}\NormalTok{, }\DecValTok{79}\NormalTok{, }\DecValTok{83}\NormalTok{, }\DecValTok{85}\NormalTok{, }\DecValTok{85}\NormalTok{, }\DecValTok{87}\NormalTok{, }\DecValTok{89}\NormalTok{, }\DecValTok{91}\NormalTok{, }\DecValTok{95}\NormalTok{, }\DecValTok{96}\NormalTok{, }\DecValTok{97}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{100}\NormalTok{)}
 
-\NormalTok{prueba <-}\StringTok{ }\KeywordTok{ifelse}\NormalTok{ (nota.num }\OperatorTok{>=}\StringTok{ }\DecValTok{60}\NormalTok{, }\StringTok{"aprobado"}\NormalTok{, }\StringTok{"desaprobado"}\NormalTok{)}
+\NormalTok{prueba }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{ (nota.num }\SpecialCharTok{\textgreater{}=} \DecValTok{60}\NormalTok{, }\StringTok{"aprobado"}\NormalTok{, }\StringTok{"desaprobado"}\NormalTok{)}
 \NormalTok{prueba}
 \end{Highlighting}
 \end{Shaded}
@@ -989,20 +880,14 @@ Ejemplo
 ## [16] "aprobado"    "aprobado"    "aprobado"
 \end{verbatim}
 
-\section{\texorpdfstring{Construcción repetitiva
-\texttt{for}}{Construcción repetitiva for}}\label{construccion-repetitiva-for}
+\hypertarget{construcciuxf3n-repetitiva-for}{%
+\section{\texorpdfstring{Construcción repetitiva \texttt{for}}{Construcción repetitiva for}}\label{construcciuxf3n-repetitiva-for}}
 
-Es de la forma \texttt{for\ (nombre\ in\ expr\ 1)\ expr\ 2} donde
-\texttt{nombre} es la variable de control de iteración, \texttt{expr\ 1}
-es un vector (a menudo de la forma \texttt{m:n}), y \texttt{expr\ 2} es
-una expresión, a menudo agrupada, en cuyas sub-expresiones puede
-aparecer la variable de control, \texttt{nombre}. \texttt{expr\ 2} se
-evalua repetidamente conforme \texttt{nombre} recorre los valores del
-vector \texttt{expr\ 1}.
+Es de la forma \texttt{for\ (nombre\ in\ expr\ 1)\ expr\ 2} donde \texttt{nombre} es la variable de control de iteración, \texttt{expr\ 1} es un vector (a menudo de la forma \texttt{m:n}), y \texttt{expr\ 2} es una expresión, a menudo agrupada, en cuyas sub-expresiones puede aparecer la variable de control, \texttt{nombre}. \texttt{expr\ 2} se evalua repetidamente conforme \texttt{nombre} recorre los valores del vector \texttt{expr\ 1}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{) }\KeywordTok{print}\NormalTok{(i)}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{) }\FunctionTok{print}\NormalTok{(i)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1021,24 +906,23 @@ vector \texttt{expr\ 1}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x =}\StringTok{ }\KeywordTok{numeric}\NormalTok{(}\DecValTok{10}\NormalTok{)}
-\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{) x[i] =}\StringTok{ }\NormalTok{i}\OperatorTok{^}\DecValTok{2}
+\NormalTok{x }\OtherTok{=} \FunctionTok{numeric}\NormalTok{(}\DecValTok{10}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{) x[i] }\OtherTok{=}\NormalTok{ i}\SpecialCharTok{\^{}}\DecValTok{2}
 
-\NormalTok{y =}\StringTok{ }\DecValTok{0}
-\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{) y =}\StringTok{ }\NormalTok{y }\OperatorTok{+}\StringTok{ }\NormalTok{i}
+\NormalTok{y }\OtherTok{=} \DecValTok{0}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{) y }\OtherTok{=}\NormalTok{ y }\SpecialCharTok{+}\NormalTok{ i}
 \end{Highlighting}
 \end{Shaded}
 
-\section{\texorpdfstring{Construccion repetitiva
-\texttt{while}}{Construccion repetitiva while}}\label{construccion-repetitiva-while}
+\hypertarget{construccion-repetitiva-while}{%
+\section{\texorpdfstring{Construccion repetitiva \texttt{while}}{Construccion repetitiva while}}\label{construccion-repetitiva-while}}
 
-Es de la forma \texttt{while\ (expr1)\ expr2}, indicando que se quiere
-repetir la acción \texttt{expr2} mientras que ocurra \texttt{expr1}.
+Es de la forma \texttt{while\ (expr1)\ expr2}, indicando que se quiere repetir la acción \texttt{expr2} mientras que ocurra \texttt{expr1}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{i =}\StringTok{ }\DecValTok{0}
-\ControlFlowTok{while}\NormalTok{ (i }\OperatorTok{<}\StringTok{ }\DecValTok{15}\NormalTok{) \{}\KeywordTok{print}\NormalTok{(i); i =}\StringTok{ }\NormalTok{i}\OperatorTok{+}\DecValTok{1}\NormalTok{\}}
+\NormalTok{i }\OtherTok{=} \DecValTok{0}
+\ControlFlowTok{while}\NormalTok{ (i }\SpecialCharTok{\textless{}} \DecValTok{15}\NormalTok{) \{}\FunctionTok{print}\NormalTok{(i); i }\OtherTok{=}\NormalTok{ i}\SpecialCharTok{+}\DecValTok{1}\NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1060,56 +944,47 @@ repetir la acción \texttt{expr2} mientras que ocurra \texttt{expr1}.
 ## [1] 14
 \end{verbatim}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{rmdtip}
-\subsection{Ejercitación}\label{ejercitacion}
+\hypertarget{ejercitaciuxf3n}{%
+\subsection{Ejercitación}\label{ejercitaciuxf3n}}
 \end{rmdtip}
 
-\begin{boxeda}
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Construcción condicional
 
-  Si se quiere poner notas ``A'', ``B'' o ``C'': ``C'' si final\_score
-  \textless{}60, ``B'' si 60 =\textless{} final\_score \textless{} 80,
-  ``A'' si 80 =\textless{} final\_score =\textless{} 100.
+  Si se quiere poner notas ``A'', ``B'' o ``C'': ``C'' si final\_score \textless60, ``B'' si 60 =\textless{} final\_score \textless{} 80, ``A'' si 80 =\textless{} final\_score =\textless{} 100.
 \item
   Construcción repetitiva
 
-  Usar un ciclo \texttt{for} para contar la cantidad de números mayores
-  a 10 en el vector
-  \texttt{x\ \textless{}-\ c(2,5,3,9,8,11,6,8,12,3,57,56)}
+  Usar un ciclo \texttt{for} para contar la cantidad de números mayores a 10 en el vector \texttt{x\ \textless{}-\ c(2,5,3,9,8,11,6,8,12,3,57,56)}
 \end{enumerate}
-\end{boxeda}
 
-\chapter{Generar nuevas funciones}\label{generar-nuevas-funciones}
+\hypertarget{generar-nuevas-funciones}{%
+\chapter{Generar nuevas funciones}\label{generar-nuevas-funciones}}
 
-R es un lenguaje que permite crear nuevas funciones. Una funcion se
-define con una asignacion de la forma:
+R es un lenguaje que permite crear nuevas funciones. Una funcion se define con una asignacion de la forma:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{nombre <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(arg1, arg2, ...) \{}
+\NormalTok{nombre }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(arg1, arg2, ...) \{}
 \NormalTok{   expresion}
 \NormalTok{ \}}
 \end{Highlighting}
 \end{Shaded}
 
-La \texttt{expresion} es una fórmula o grupo de formulas (o sentencias)
-que utilizan los argumentos para calcular uno o varios valores. El
-resultado de dicha expresión es el valor que proporciona R en su salida
-y este puede ser un número, un vector, un gráfico, una lista y/o un
-mensaje. Una función devuelve el último valor impreso en la consola.
+La \texttt{expresion} es una fórmula o grupo de formulas (o sentencias) que utilizan los argumentos para calcular uno o varios valores. El resultado de dicha expresión es el valor que proporciona R en su salida y este puede ser un número, un vector, un gráfico, una lista y/o un mensaje. Una función devuelve el último valor impreso en la consola.
 
 Ejemplos:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{funcion1 <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{ y =}\StringTok{ }\NormalTok{x }\OperatorTok{+}\StringTok{ }\DecValTok{4}\NormalTok{\}}
+\NormalTok{funcion1 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x)\{ y }\OtherTok{=}\NormalTok{ x }\SpecialCharTok{+} \DecValTok{4}\NormalTok{\}}
 
-\NormalTok{(a<-}\KeywordTok{funcion1}\NormalTok{(}\DecValTok{5}\NormalTok{))}
+\NormalTok{(a}\OtherTok{\textless{}{-}}\FunctionTok{funcion1}\NormalTok{(}\DecValTok{5}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1117,45 +992,43 @@ Ejemplos:
 ## [1] 9
 \end{verbatim}
 
-En en caso siguiente, si se desea guardar el resultado en un objeto solo
-se guardará el rango (último valor impreso en consola).
+En en caso siguiente, si se desea guardar el resultado en un objeto solo se guardará el rango (último valor impreso en consola).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{funcion2 <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(muestra)\{     }\CommentTok{#El único argumento es un vector de datos}
-\NormalTok{  media =}\StringTok{ }\KeywordTok{mean}\NormalTok{(muestra, }\DataTypeTok{na.rm =}\NormalTok{ T)}
-\NormalTok{  varianza =}\StringTok{ }\KeywordTok{var}\NormalTok{(muestra, }\DataTypeTok{na.rm =}\NormalTok{ T)}
-\NormalTok{  rango =}\StringTok{ }\KeywordTok{max}\NormalTok{(muestra, }\DataTypeTok{na.rm =}\NormalTok{ T) }\OperatorTok{-}\StringTok{ }\KeywordTok{min}\NormalTok{(muestra, }\DataTypeTok{na.rm =}\NormalTok{ T)}
-  \KeywordTok{print}\NormalTok{(media)}
-  \KeywordTok{print}\NormalTok{(varianza)}
-  \KeywordTok{print}\NormalTok{(rango)}
+\NormalTok{funcion2 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(muestra)\{     }\CommentTok{\#El único argumento es un vector de datos}
+\NormalTok{  media }\OtherTok{=} \FunctionTok{mean}\NormalTok{(muestra, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\NormalTok{  varianza }\OtherTok{=} \FunctionTok{var}\NormalTok{(muestra, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\NormalTok{  rango }\OtherTok{=} \FunctionTok{max}\NormalTok{(muestra, }\AttributeTok{na.rm =}\NormalTok{ T) }\SpecialCharTok{{-}} \FunctionTok{min}\NormalTok{(muestra, }\AttributeTok{na.rm =}\NormalTok{ T)}
+  \FunctionTok{print}\NormalTok{(media)}
+  \FunctionTok{print}\NormalTok{(varianza)}
+  \FunctionTok{print}\NormalTok{(rango)}
 
 \NormalTok{\}}
 
-\KeywordTok{funcion2}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{40}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{16}\NormalTok{))}
+\FunctionTok{funcion2}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{40}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{16}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 5.603092
-## [1] 216.2479
-## [1] 63.42857
+## [1] 7.189885
+## [1] 320.9558
+## [1] 68.52713
 \end{verbatim}
 
-Para que guarde los tres resultados hay que especificar que se haga una
-lista o vector.
+Para que guarde los tres resultados hay que especificar que se haga una lista o vector.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{funcion3 <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(muestra)\{     }
-\NormalTok{  med =}\StringTok{ }\KeywordTok{mean}\NormalTok{(muestra, }\DataTypeTok{na.rm =}\NormalTok{ T)}
-\NormalTok{  vari =}\StringTok{ }\KeywordTok{var}\NormalTok{(muestra, }\DataTypeTok{na.rm =}\NormalTok{ T)}
-\NormalTok{  rang =}\StringTok{ }\KeywordTok{max}\NormalTok{(muestra, }\DataTypeTok{na.rm =}\NormalTok{ T) }\OperatorTok{-}\StringTok{ }\KeywordTok{min}\NormalTok{(muestra, }\DataTypeTok{na.rm =}\NormalTok{ T)}
-  \CommentTok{# list(media = med, varianza = vari ,rango = rang)}
-  \KeywordTok{c}\NormalTok{(}\StringTok{"Media"}\NormalTok{=med,}\StringTok{"Var"}\NormalTok{=vari,}\StringTok{"Rango"}\NormalTok{=rang)}
+\NormalTok{funcion3 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(muestra)\{     }
+\NormalTok{  med }\OtherTok{=} \FunctionTok{mean}\NormalTok{(muestra, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\NormalTok{  vari }\OtherTok{=} \FunctionTok{var}\NormalTok{(muestra, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\NormalTok{  rang }\OtherTok{=} \FunctionTok{max}\NormalTok{(muestra, }\AttributeTok{na.rm =}\NormalTok{ T) }\SpecialCharTok{{-}} \FunctionTok{min}\NormalTok{(muestra, }\AttributeTok{na.rm =}\NormalTok{ T)}
+  \CommentTok{\# list(media = med, varianza = vari ,rango = rang)}
+  \FunctionTok{c}\NormalTok{(}\StringTok{"Media"}\OtherTok{=}\NormalTok{med,}\StringTok{"Var"}\OtherTok{=}\NormalTok{vari,}\StringTok{"Rango"}\OtherTok{=}\NormalTok{rang)}
 \NormalTok{\}}
 
-\NormalTok{ej <-}\StringTok{ }\KeywordTok{funcion3}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{20}\NormalTok{)}
+\NormalTok{ej }\OtherTok{\textless{}{-}} \FunctionTok{funcion3}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{20}\NormalTok{)}
 \NormalTok{ej}
 \end{Highlighting}
 \end{Shaded}
@@ -1165,38 +1038,32 @@ lista o vector.
 ##  10.5  35.0  19.0
 \end{verbatim}
 
-Los diferentes argumentos de las funciones se separan con \texttt{,}.
-Éstos pueden tener un valor por defecto. Para especificarlo, en el
-momento de crear la función se especifica con el signo \texttt{=}, cuál
-es el valor que se usará si el usuario no lo especifica explícitamente.
+Los diferentes argumentos de las funciones se separan con \texttt{,}. Éstos pueden tener un valor por defecto. Para especificarlo, en el momento de crear la función se especifica con el signo \texttt{=}, cuál es el valor que se usará si el usuario no lo especifica explícitamente.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{funcion4 <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(a,b,}\DataTypeTok{c =} \DecValTok{4}\NormalTok{,}\DataTypeTok{d =} \OtherTok{FALSE}\NormalTok{)\{}
-  \ControlFlowTok{if}\NormalTok{ (d }\OperatorTok{==}\StringTok{ }\OtherTok{FALSE}\NormalTok{) x1 <-}\StringTok{ }\NormalTok{a}\OperatorTok{*}\NormalTok{b }\ControlFlowTok{else}\NormalTok{ x1 <-}\StringTok{ }\NormalTok{a}\OperatorTok{*}\NormalTok{b }\OperatorTok{+}\StringTok{ }\NormalTok{c}
+\NormalTok{funcion4 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(a,b,}\AttributeTok{c =} \DecValTok{4}\NormalTok{,}\AttributeTok{d =} \ConstantTok{FALSE}\NormalTok{)\{}
+  \ControlFlowTok{if}\NormalTok{ (d }\SpecialCharTok{==} \ConstantTok{FALSE}\NormalTok{) x1 }\OtherTok{\textless{}{-}}\NormalTok{ a}\SpecialCharTok{*}\NormalTok{b }\ControlFlowTok{else}\NormalTok{ x1 }\OtherTok{\textless{}{-}}\NormalTok{ a}\SpecialCharTok{*}\NormalTok{b }\SpecialCharTok{+}\NormalTok{ c}
 \NormalTok{  x1}
 \NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{rmdtip}
-\subsection{Ejercitación}\label{ejercitacion}
+\hypertarget{ejercitaciuxf3n}{%
+\subsection{Ejercitación}\label{ejercitaciuxf3n}}
 \end{rmdtip}
 
-\begin{boxeda}
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Funciones
 
-  Genere una función que grafique una variable en función de otra y
-  coloque nombre al eje x que por defecto sea: ``mi eje x''
+  Genere una función que grafique una variable en función de otra y coloque nombre al eje x que por defecto sea: ``mi eje x''
 \end{enumerate}
-\end{boxeda}
 
-\bibliography{book.bib,packages.bib}
-
+  \bibliography{book.bib,packages.bib}
 
 \end{document}

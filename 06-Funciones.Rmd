@@ -67,11 +67,11 @@ funcion4 <- function(a,b,c = 4,d = FALSE){
 ## Ejercitación
 ```
 
-```{block, type='boxeda'}
+<!-- ```{block, type='boxeda'} -->
 
 1. Funciones
 
     Genere una función que grafique una variable en función de otra y coloque nombre al eje x que por defecto sea: "mi eje x"
 
-```
+<!-- ``` -->
 

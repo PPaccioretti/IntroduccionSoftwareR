@@ -4,6 +4,8 @@ subtitle: "Notas de clases"
 author: 
 - Paccioretti Pablo^[pablopaccioretti@agro.unc.edu.ar]
 - Bruno Cecilia^[cebruno@agro.unc.edu.ar]
+- González Montoro Aldana^[aldana.goonzalez.montoro@unc.edu.ar]
+- Nores María Laura^[lalinores@yahoo.com.ar]
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -46,12 +48,9 @@ El panel superior izquierdo permite al usuario visualizar scripts previamente es
 
 
 
-
 ```{r include=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
-
-set.seed(3)
 ```

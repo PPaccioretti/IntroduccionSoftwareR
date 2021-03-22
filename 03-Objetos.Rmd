@@ -4,7 +4,7 @@ Los resultados de un cierto procedimiento o valores pueden ser almacenados en di
 
 ## Vectores
 
-Es el objeto más simple de R. Es importante tener en cuenta que los vectores solo contienen elementos de la **misma** clase. La función `c()` puede utilizarse para crear vectores concatentando sus argumentos. 
+Es el objeto más simple de R. Es importante tener en cuenta que los vectores solo contienen elementos de la **misma** clase. La función `c()` puede utilizarse para crear vectores concatentando sus argumentos.
 
 ```{r, eval=FALSE}
 a <- c(-1,5,9,10.5)           #numérico
@@ -23,7 +23,7 @@ Note que en el ejemplo anterior `T` y `F` es la forma corta de especificar `TRUE
 ### Secuencias
 
 ```{r, eval=FALSE}
-x <- c(1, 2, 3, 4, 5) 
+x <- c(1, 2, 3, 4, 5)
 x <- 1:10
 y <- -5:3
 
@@ -31,6 +31,7 @@ y <- -5:3
 
 
 Para generar secuencias de números enteros consecutivos se puede utilizar `:`, pero si se desea generar otros tipos de secuencias, por ejemplo la secuencia 4,6,8,...,20, se debe utilizar la función `seq`. Los argumentos de esta función permiten generar secuencias con saltos o longitud definida por el usuario.
+
 ```{r, eval=TRUE, echo=TRUE}
 seq(from = 4, to = 20, by = 2)
 ```
@@ -89,7 +90,7 @@ rep(x, length = 8)
 <!-- min(x) -->
 <!-- which.min(x)                  # ?Que obtenemos con este comando? -->
 
-<!-- # ?Y la edad maxima? -->
+<!-- # ¿Y la edad maxima? -->
 
 
 ## Matrices
@@ -101,17 +102,18 @@ x <- 1:20
 matrix(x, nrow = 5, ncol = 4)
 ```
 
-Las matrices pueden ser creadas uniendo filas o columnas mediante las funciones `cbind()` y `rbind()`. 
+Las matrices pueden ser creadas uniendo filas o columnas mediante las funciones `cbind()` y `rbind()`.
 
 ```{r, eval=TRUE}
 x <- 1:3
 y <- 10:12
 cbind(x, y)
-rbind(x, y) 
+rbind(x, y)
 ```
 
 
 ###  Operaciones con matrices:
+
 - `A %*% B` : producto de matrices
 - `t(A)` : traspuesta de la matriz A
 - `solve(A)` : inversa de la matriz A
@@ -193,7 +195,7 @@ rbind(x, y)
 <!-- # Oeste   0.53       0.41 -->
 <!-- # Centro  0.70       0.61 -->
 
-<!-- # ?Como generamos esa matriz? -->
+<!-- # ¿Como generamos esa matriz? -->
 
 <!-- x <- -->
 
@@ -286,7 +288,7 @@ x
 
 ## Hojas de datos (Data frames)
 
-Es el objeto más común en R para almacenar datos. Sus columnas pueden ser de diferentes clases por ejemplo variables continuas y categóricas. Este tipo de objetos puede generarse mediante la función `data.frame()`. 
+Es el objeto más común en R para almacenar datos. Sus columnas pueden ser de diferentes clases por ejemplo variables continuas y categóricas. Este tipo de objetos puede generarse mediante la función `data.frame()`.
 
 ```{block, type="rmdnote"}
 `data.frame` convierte los vectores de caracteres en factores automáticamente.
@@ -296,11 +298,12 @@ Es el objeto más común en R para almacenar datos. Sus columnas pueden ser de d
 x1 <- 1:10
 x2 <- 24:33
 x3 <- gl(2, 5, labels = c("si","no"))
-x4 <-letters[1:10]
+x4 <- letters[1:10]
 data.frame(A = x1, B = x2, C = x3, D = x4)
 ```
 
 ## Algunas funciones básicas predefinidas
+
 - `summay()`
 - `mean()`
 - `var()`
@@ -337,62 +340,35 @@ data.frame(A = x1, B = x2, C = x3, D = x4)
 - `library()`
 
 
----
-  
+
 ```{block, type='rmdtip'}
-## Ejercitación
+## Ejercitación {#ejercicio-objetos}
 ```
 
 
-```{block, type='boxeda'}
+
+<!-- ```{block, type='boxeda'} -->
 
 1. Vectores
 
-    Genere un vector `b` el cual contenga los valores de `x` y `a` ¿Cuantos elementos tiene el vector `b`? 
- 
+    Genere un vector `b` el cual contenga los valores de `x` y `a` ¿Cuantos elementos tiene el vector `b`?
+
 2. Secuencias
-    
+
     Genere la secuencia 8,7,6,5,4
-    
+
     seq(4,20,2) ¿Este comando da eror? ¿Por qué?
-      
+
     Genere usando comandos para secuencias el vector de componentes:  1, 2, 3, 4, 5, 6, 73, 72, 71, 70, 69, 68, 3, 6, 9, 12, 15, 18.
 
 3. Repetir valores
 
     Genere un vector de componentes "azul", "azul","azul", "azul", "amarillo", "amarillo", "verde", "verde","verde", llamado `col`. ¿Es un vector de factores?
-    
 
 4. Matrices
 
     Calcule la inversa y los autovalores y autovectores de `A  =  matrix(c(1,3,3,9,5,9,3,5,6), nrow = 3)`
 
-```
 
+<!-- ``` -->
 
-
-<!-- ## Tambien podemos a??adir alguna columna a un data frame: -->
-<!-- especialista <- c("Toledo", "Toledo", "Toledo", "Buteler", "Buteler") -->
-<!-- zinc.df <- data.frame(zinc.df, especialista) -->
-<!-- ## Operador $ -->
-<!-- ## Es facil acceder y crear nuevas columnas con el operador "$" cuando estas -->
-<!-- # tienen nombre -->
-
-<!-- zinc.df$fondo -->
-<!-- zinc.df$fecha <- factor(c(1,2,1,2,1),labels=c("marzo","abril")) -->
-
-<!-- # Tambien puede usarse la notacion matricial para extraer filas y columnas -->
-<!-- # Extraiga la columna 2 -->
-<!-- # Extraiga los datos de zona Este -->
-<!-- zinc.df["Este",] -->
-<!-- # Que informacion nos da "str" y "summary" de un data frame? -->
-
-<!-- # Le dijimos que "especialista" era factor? -->
-<!-- class(especialista) -->
-<!-- class(zinc.df$especialista) -->
-
-<!-- ## Funcion "attach" -->
-<!-- # Sirve cuando vamos a trabajar con un conjunto de datos y queremos escribir menos! -->
-<!-- # Permite que las columnas dentro de un data frame puedan tratarse temporalmente -->
-<!-- # como variables con ese nombre. -->
-<!-- # Los objetos con el mismo nombre de alguna columna NO son reemplazados. -->
