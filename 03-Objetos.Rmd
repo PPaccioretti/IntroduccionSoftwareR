@@ -1,34 +1,57 @@
 # Objetos en R
 
-Los resultados de un cierto procedimiento o valores pueden ser almacenados en diferentes clases de objetos. R tiene cinco clases básicas de objetos, números (`numeric`), números complejos (`complex`), cadenas de caracteres (`character`), factores (`factor`) y valores lógicos (`logical`). Éstos pueden juntarse para formar vectores (`vector`), matrices (`matrix`), hojas de datos (`data.frame`) o listas (`list`). Otras clases de objetos pueden ser funciones, modelos, objetos espaciales, entre otros. En esta sección trabajaremos con algunos de ellos. Para conocer la clase de un objeto se utiliza la función `class`.
+Los resultados de un cierto procedimiento pueden ser almacenados en diferentes
+clases de objetos. R tiene cinco clases básicas de objetos, números (`numeric`), 
+números complejos (`complex`), cadenas de caracteres (`character`), 
+factores (`factor`) y valores lógicos (`logical`). Éstos pueden juntarse para 
+formar vectores (`vector`), matrices (`matrix`), hojas de datos (`data.frame`) o
+listas (`list`). Otras clases de objetos pueden ser funciones, modelos, objetos 
+espaciales, entre otros. En esta sección trabajaremos con algunos de ellos. 
+Para conocer la clase de un objeto se utiliza la función `class`.
 
 ## Vectores
 
-Es el objeto más simple de R. Es importante tener en cuenta que los vectores solo contienen elementos de la **misma** clase. La función `c()` puede utilizarse para crear vectores concatentando sus argumentos.
+Es el objeto más simple de R. Es importante tener en cuenta que los vectores 
+sólo contienen elementos de la **misma** clase básica. La función `c()` puede 
+utilizarse para crear vectores concatenando sus argumentos.
 
 
 ```{r, eval=FALSE}
-x <- c(2,4,6)                 #numérico (enteros) 
-a <- c(-1,5,9,10.5)           #numérico (contínuo)
+x <- c(2, 4, 6)               #numérico (enteros) 
+a <- c(-1, 5, 9, 10.5)        #numérico (continuo)
 d <- c(4+2i, 2+5i)            #números complejos
 y <- c("a", "b", "c")         #caracteres
 z <- c(TRUE, TRUE, FALSE, T)  #lógico
 ```
 
-Si quisieramos concatenar `x` y `a` podemos llamar esos objetos dentro de la función `c()`. Para calcular la longitud del objeto se utiliza la función `length()`
+Si quisiéramos concatenar `x` y `a` podríamos utilizar como argumentos de la  
+función `c()`, a los objetos que quisiéramos agrupar. 
 
 ```{r, collapse=TRUE}
-x <- c(2,4,6)             
-a <- c(-1,5,9,10.5)       
-x_a <- c(x,a)
+x <- c(2, 4, 6)
+a <- c(-1, 5, 9, 10.5)
+x_a <- c(x, a)
 x_a
+length(x_a)
+```
+
+Si quiséramos comprobar que el objeto `x_a` tiene una longitud de 
+`r length(x) + length(a)` elementos (igual a la suma de elementos de los objetos
+`x` y `a`), podemos utilizar la función `length()`.
+
+```{r, collapse=TRUE}
+length(x) + length(a)
 length(x_a)
 ```
 
 
 
 ```{block, type='rmdnote'}
-Note que en el ejemplo anterior `T` y `F` es la forma corta de especificar `TRUE` y `FALSE`. Es recomendable utilizar la forma explícita de `TRUE` y `FALSE` que la forma corta, dado que `T` y `F` son símbolos que pueden redefinirse, por lo que no se debería asumir que siempre se van a evaluar como operadores lógicos.
+Note que en el ejemplo anterior `T` y `F` es la forma corta de especificar
+`TRUE` y `FALSE`. Es recomendable utilizar la forma explícita de `TRUE` y `FALSE` 
+antes que la forma corta, dado que `T` y `F` son símbolos que pueden redefinirse,
+por lo que no se debería asumir que siempre se van a evaluar como operadores 
+lógicos.
 ```
 
 
