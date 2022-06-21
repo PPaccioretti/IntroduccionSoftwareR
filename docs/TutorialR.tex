@@ -248,7 +248,7 @@
 }
 \makeatother
 \subtitle{Notas de clases}
-\author{Paccioretti Pablo\footnote{\href{mailto:pablopaccioretti@agro.unc.edu.ar}{\nolinkurl{pablopaccioretti@agro.unc.edu.ar}}} \and Bruno Cecilia\footnote{\href{mailto:cebruno@agro.unc.edu.ar}{\nolinkurl{cebruno@agro.unc.edu.ar}}} \and González Montoro Aldana\footnote{\href{mailto:aldana.goonzalez.montoro@unc.edu.ar}{\nolinkurl{aldana.goonzalez.montoro@unc.edu.ar}}} \and Nores María Laura\footnote{\href{mailto:lalinores@yahoo.com.ar}{\nolinkurl{lalinores@yahoo.com.ar}}}}
+\author{Paccioretti Pablo\footnote{\href{mailto:pablopaccioretti@agro.unc.edu.ar}{\nolinkurl{pablopaccioretti@agro.unc.edu.ar}}} \and Bruno Cecilia\footnote{\href{mailto:cebruno@agro.unc.edu.ar}{\nolinkurl{cebruno@agro.unc.edu.ar}}} \and González Montoro Aldana\footnote{\href{mailto:aldana.gonzalez.montoro@unc.edu.ar}{\nolinkurl{aldana.gonzalez.montoro@unc.edu.ar}}} \and Nores María Laura\footnote{\href{mailto:lalinores@yahoo.com.ar}{\nolinkurl{lalinores@yahoo.com.ar}}}}
 \date{}
 
 \begin{document}
@@ -1129,11 +1129,15 @@ automáticamente.
 \hypertarget{construcciuxf3n-condicional-if}{%
 \section{\texorpdfstring{Construcción condicional \texttt{if}}{Construcción condicional if}}\label{construcciuxf3n-condicional-if}}
 
-Es de la forma \texttt{if\ (expr\ 1)\ expr\ 2\ else\ expr\ 3} donde \texttt{expr\ 1} debe producir un valor logico. Si \texttt{expr\ 1} es verdadero (\texttt{T}), se ejecutara \texttt{expr\ 2}. Si \texttt{expr\ 1} es falso (\texttt{F}), y se ha escrito la opcion else, que es opcional, se ejecutara \texttt{expr\ 3}.
+Es de la forma \texttt{if\ (expr\ 1)\ expr\ 2\ else\ expr\ 3} donde \texttt{expr\ 1} debe producir
+un valor lógico. Si \texttt{expr\ 1} es verdadero (\texttt{TRUE}), se ejecutara \texttt{expr\ 2}.
+Si \texttt{expr\ 1} es falso (\texttt{FALSE}), y se ha escrito la opcion else, que es
+opcional, se ejecutara \texttt{expr\ 3}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ControlFlowTok{if}\NormalTok{( }\DecValTok{3} \SpecialCharTok{\textgreater{}} \DecValTok{2}\NormalTok{) }\FunctionTok{print}\NormalTok{(}\StringTok{"yes"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{ (}\DecValTok{3} \SpecialCharTok{\textgreater{}} \DecValTok{2}\NormalTok{)}
+  \FunctionTok{print}\NormalTok{(}\StringTok{"yes"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1143,8 +1147,14 @@ Es de la forma \texttt{if\ (expr\ 1)\ expr\ 2\ else\ expr\ 3} donde \texttt{expr
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ControlFlowTok{if}\NormalTok{( }\DecValTok{2} \SpecialCharTok{\textgreater{}} \DecValTok{3}\NormalTok{) }\FunctionTok{print}\NormalTok{(}\StringTok{"yes"}\NormalTok{)}
-\ControlFlowTok{if}\NormalTok{( }\DecValTok{2} \SpecialCharTok{\textgreater{}} \DecValTok{3}\NormalTok{) }\FunctionTok{print}\NormalTok{(}\StringTok{"yes"}\NormalTok{) }\ControlFlowTok{else} \FunctionTok{print}\NormalTok{(}\StringTok{"no"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{ (}\DecValTok{2} \SpecialCharTok{\textgreater{}} \DecValTok{3}\NormalTok{)}
+  \FunctionTok{print}\NormalTok{(}\StringTok{"yes"}\NormalTok{)}
+
+\ControlFlowTok{if}\NormalTok{ (}\DecValTok{2} \SpecialCharTok{\textgreater{}} \DecValTok{3}\NormalTok{) \{}
+  \FunctionTok{print}\NormalTok{(}\StringTok{"yes"}\NormalTok{)}
+\NormalTok{\} }\ControlFlowTok{else}\NormalTok{\{}
+  \FunctionTok{print}\NormalTok{(}\StringTok{"no"}\NormalTok{)}
+\NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1152,26 +1162,33 @@ Es de la forma \texttt{if\ (expr\ 1)\ expr\ 2\ else\ expr\ 3} donde \texttt{expr
 ## [1] "no"
 \end{verbatim}
 
-Ejemplo con dos condiciones
-supongamos que \texttt{x\ \textless{}-\ 75} es la nota numerica de examen de un alumno, queremos asignar nota ``A'', ``B'' o ``C''
+Ejemplo con dos condiciones:
+
+Supongamos que \texttt{x\ \textless{}-\ 75} es la nota numérica de examen de un estudiante, queremos
+asignar nota ``A'', ``B'' o ``C''
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ControlFlowTok{if}\NormalTok{(x }\SpecialCharTok{\textless{}} \DecValTok{60}\NormalTok{) nota }\OtherTok{=} \StringTok{"C"}
-\ControlFlowTok{if}\NormalTok{(x }\SpecialCharTok{\textgreater{}=} \DecValTok{60} \SpecialCharTok{\&}\NormalTok{ x }\SpecialCharTok{\textless{}} \DecValTok{80}\NormalTok{) nota }\OtherTok{=} \StringTok{"B"}
-\ControlFlowTok{if}\NormalTok{(x }\SpecialCharTok{\textgreater{}=}  \DecValTok{80}\NormalTok{) nota }\OtherTok{=} \StringTok{"A"}
+\ControlFlowTok{if}\NormalTok{ (x }\SpecialCharTok{\textless{}} \DecValTok{60}\NormalTok{)}
+\NormalTok{  nota }\OtherTok{=} \StringTok{"C"}
+\ControlFlowTok{if}\NormalTok{ (x }\SpecialCharTok{\textgreater{}=} \DecValTok{60} \SpecialCharTok{\&}\NormalTok{ x }\SpecialCharTok{\textless{}} \DecValTok{80}\NormalTok{)}
+\NormalTok{  nota }\OtherTok{=} \StringTok{"B"}
+\ControlFlowTok{if}\NormalTok{ (x }\SpecialCharTok{\textgreater{}=}  \DecValTok{80}\NormalTok{)}
+\NormalTok{  nota }\OtherTok{=} \StringTok{"A"}
 \end{Highlighting}
 \end{Shaded}
 
-\texttt{ifelse} es la versión vectorizada de \texttt{if}
+\texttt{ifelse} es la versión vectorizada de \texttt{if}, eto sifnigica que para cada elemento
+del vector lógico, ejecutará una u otra función dependiendo del valor.
 
-Ejemplo
+Ejemplo:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{nota.num }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{39}\NormalTok{, }\DecValTok{51}\NormalTok{, }\DecValTok{60}\NormalTok{, }\DecValTok{65}\NormalTok{, }\DecValTok{72}\NormalTok{, }\DecValTok{78}\NormalTok{, }\DecValTok{79}\NormalTok{, }\DecValTok{83}\NormalTok{, }\DecValTok{85}\NormalTok{, }\DecValTok{85}\NormalTok{, }\DecValTok{87}\NormalTok{, }\DecValTok{89}\NormalTok{, }\DecValTok{91}\NormalTok{, }\DecValTok{95}\NormalTok{, }\DecValTok{96}\NormalTok{, }\DecValTok{97}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{100}\NormalTok{)}
+\NormalTok{nota.num }\OtherTok{\textless{}{-}}
+  \FunctionTok{c}\NormalTok{(}\DecValTok{39}\NormalTok{, }\DecValTok{51}\NormalTok{, }\DecValTok{60}\NormalTok{, }\DecValTok{65}\NormalTok{, }\DecValTok{72}\NormalTok{, }\DecValTok{78}\NormalTok{, }\DecValTok{79}\NormalTok{, }\DecValTok{83}\NormalTok{, }\DecValTok{85}\NormalTok{, }\DecValTok{85}\NormalTok{, }\DecValTok{87}\NormalTok{, }\DecValTok{89}\NormalTok{, }\DecValTok{91}\NormalTok{, }\DecValTok{95}\NormalTok{, }\DecValTok{96}\NormalTok{, }\DecValTok{97}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{100}\NormalTok{)}
 
-\NormalTok{prueba }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{ (nota.num }\SpecialCharTok{\textgreater{}=} \DecValTok{60}\NormalTok{, }\StringTok{"aprobado"}\NormalTok{, }\StringTok{"desaprobado"}\NormalTok{)}
+\NormalTok{prueba }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(nota.num }\SpecialCharTok{\textgreater{}=} \DecValTok{60}\NormalTok{, }\StringTok{"aprobado"}\NormalTok{, }\StringTok{"desaprobado"}\NormalTok{)}
 \NormalTok{prueba}
 \end{Highlighting}
 \end{Shaded}
@@ -1186,7 +1203,12 @@ Ejemplo
 \hypertarget{construcciuxf3n-repetitiva-for}{%
 \section{\texorpdfstring{Construcción repetitiva \texttt{for}}{Construcción repetitiva for}}\label{construcciuxf3n-repetitiva-for}}
 
-Es de la forma \texttt{for\ (nombre\ in\ expr\ 1)\ expr\ 2} donde \texttt{nombre} es la variable de control de iteración, \texttt{expr\ 1} es un vector (a menudo de la forma \texttt{m:n}), y \texttt{expr\ 2} es una expresión, a menudo agrupada, en cuyas sub-expresiones puede aparecer la variable de control, \texttt{nombre}. \texttt{expr\ 2} se evalua repetidamente conforme \texttt{nombre} recorre los valores del vector \texttt{expr\ 1}.
+Es de la forma \texttt{for\ (nombre\ in\ obj)\ \{expr\}} donde \texttt{nombre} es la variable
+de control de iteración, esto sifnifica que asumirá cada valor del objeto \texttt{obj}
+es un vector (puede ser una secuancia \texttt{m:n}), y \texttt{expr} es una expresión, a
+menudo agrupada, en cuyas sub-expresiones puede aparecer la variable de
+control, \texttt{nombre}. \texttt{expr} se evalua repetidamente conforme \texttt{nombre} recorre
+los valores del objeto \texttt{obj}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1220,12 +1242,16 @@ Es de la forma \texttt{for\ (nombre\ in\ expr\ 1)\ expr\ 2} donde \texttt{nombre
 \hypertarget{construccion-repetitiva-while}{%
 \section{\texorpdfstring{Construccion repetitiva \texttt{while}}{Construccion repetitiva while}}\label{construccion-repetitiva-while}}
 
-Es de la forma \texttt{while\ (expr1)\ expr2}, indicando que se quiere repetir la acción \texttt{expr2} mientras que ocurra \texttt{expr1}.
+Es de la forma \texttt{while\ (expr1)\ expr2}, indicando que se quiere repetir la
+acción \texttt{expr2} mientras que ocurra \texttt{expr1}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{i }\OtherTok{=} \DecValTok{0}
-\ControlFlowTok{while}\NormalTok{ (i }\SpecialCharTok{\textless{}} \DecValTok{15}\NormalTok{) \{}\FunctionTok{print}\NormalTok{(i); i }\OtherTok{=}\NormalTok{ i}\SpecialCharTok{+}\DecValTok{1}\NormalTok{\}}
+\ControlFlowTok{while}\NormalTok{ (i }\SpecialCharTok{\textless{}} \DecValTok{15}\NormalTok{) \{}
+  \FunctionTok{print}\NormalTok{(i)}
+\NormalTok{  i }\OtherTok{=}\NormalTok{ i }\SpecialCharTok{+} \DecValTok{1}
+\NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1247,8 +1273,6 @@ Es de la forma \texttt{while\ (expr1)\ expr2}, indicando que se quiere repetir l
 ## [1] 14
 \end{verbatim}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
 \begin{rmdtip}
 \hypertarget{ejercitaciuxf3n}{%
 \subsection{Ejercitación}\label{ejercitaciuxf3n}}
@@ -1259,17 +1283,24 @@ Es de la forma \texttt{while\ (expr1)\ expr2}, indicando que se quiere repetir l
 \item
   Construcción condicional
 
-  Si se quiere poner notas ``A'', ``B'' o ``C'': ``C'' si final\_score \textless60, ``B'' si 60 =\textless{} final\_score \textless{} 80, ``A'' si 80 =\textless{} final\_score =\textless{} 100.
+  Escriba el comando neccesario para poner notas ``A'', ``B'' o ``C'' dependiendo
+  del valor de \texttt{final\_score}:
+  ``C'' si final\_score \textless60,
+  ``B'' si 60 =\textless{} final\_score \textless{} 80,
+  ``A'' si 80 =\textless{} final\_score =\textless{} 100.
 \item
   Construcción repetitiva
 
-  Usar un ciclo \texttt{for} para contar la cantidad de números mayores a 10 en el vector \texttt{x\ \textless{}-\ c(2,5,3,9,8,11,6,8,12,3,57,56)}
+  Usar un ciclo \texttt{for} para contar la cantidad de números mayores a 10 en el
+  vector \texttt{x\ \textless{}-\ c(2,5,3,9,8,11,6,8,12,3,57,56)}, ¿Se podría hacer sin la
+  función \texttt{for}?
 \end{enumerate}
 
 \hypertarget{generar-nuevas-funciones}{%
 \chapter{Generar nuevas funciones}\label{generar-nuevas-funciones}}
 
-R es un lenguaje que permite crear nuevas funciones. Una funcion se define con una asignacion de la forma:
+R es un lenguaje que permite crear nuevas funciones. Una función se define con
+una asignación de la forma:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1279,15 +1310,19 @@ R es un lenguaje que permite crear nuevas funciones. Una funcion se define con u
 \end{Highlighting}
 \end{Shaded}
 
-La \texttt{expresion} es una fórmula o grupo de formulas (o sentencias) que utilizan los argumentos para calcular uno o varios valores. El resultado de dicha expresión es el valor que proporciona R en su salida y este puede ser un número, un vector, un gráfico, una lista y/o un mensaje. Una función devuelve el último valor impreso en la consola.
+La \texttt{expresion} es una fórmula o grupo de fórmulas (o sentencias) que utilizan
+los argumentos para calcular uno o varios valores. El resultado de dicha
+expresión es el valor que proporciona R en su salida y éste puede ser un
+número, un vector, un gráfico, una lista. Una función devuelve el valor de la
+última expresión evaluada.
 
 Ejemplos:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{funcion1 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x)\{ y }\OtherTok{=}\NormalTok{ x }\SpecialCharTok{+} \DecValTok{4}\NormalTok{\}}
+\NormalTok{funcion\_1 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{ y }\OtherTok{=}\NormalTok{ x }\SpecialCharTok{+} \DecValTok{4}\NormalTok{\}}
 
-\NormalTok{(a}\OtherTok{\textless{}{-}}\FunctionTok{funcion1}\NormalTok{(}\DecValTok{5}\NormalTok{))}
+\NormalTok{(a }\OtherTok{\textless{}{-}} \FunctionTok{funcion\_1}\NormalTok{(}\DecValTok{5}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1295,43 +1330,56 @@ Ejemplos:
 ## [1] 9
 \end{verbatim}
 
-En en caso siguiente, si se desea guardar el resultado en un objeto solo se guardará el rango (último valor impreso en consola).
+En el caso siguiente, si se desea guardar el resultado en un objeto sólo se
+almacenará el rango (último valor impreso en consola).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{funcion2 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(muestra)\{     }\CommentTok{\#El único argumento es un vector de datos}
+\NormalTok{funcion\_2 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(muestra) \{     }\CommentTok{\#El único argumento es un vector de datos}
 \NormalTok{  media }\OtherTok{=} \FunctionTok{mean}\NormalTok{(muestra, }\AttributeTok{na.rm =}\NormalTok{ T)}
 \NormalTok{  varianza }\OtherTok{=} \FunctionTok{var}\NormalTok{(muestra, }\AttributeTok{na.rm =}\NormalTok{ T)}
 \NormalTok{  rango }\OtherTok{=} \FunctionTok{max}\NormalTok{(muestra, }\AttributeTok{na.rm =}\NormalTok{ T) }\SpecialCharTok{{-}} \FunctionTok{min}\NormalTok{(muestra, }\AttributeTok{na.rm =}\NormalTok{ T)}
-  \FunctionTok{print}\NormalTok{(media)}
-  \FunctionTok{print}\NormalTok{(varianza)}
-  \FunctionTok{print}\NormalTok{(rango)}
-
+  \FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"Media:"}\NormalTok{, }\FunctionTok{round}\NormalTok{(media, }\DecValTok{2}\NormalTok{)))}
+  \FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"Varianza:"}\NormalTok{, }\FunctionTok{round}\NormalTok{(varianza, }\DecValTok{2}\NormalTok{)))}
+  \FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"Rango:"}\NormalTok{, }\FunctionTok{round}\NormalTok{(rango, }\DecValTok{2}\NormalTok{)))}
 \NormalTok{\}}
 
-\FunctionTok{funcion2}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{40}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{16}\NormalTok{))}
+\NormalTok{miValor }\OtherTok{\textless{}{-}} \FunctionTok{funcion\_2}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{40}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{16}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 8.674483
-## [1] 223.9998
-## [1] 59.92459
+## [1] "Media: 8.67"
+## [1] "Varianza: 224"
+## [1] "Rango: 59.92"
 \end{verbatim}
-
-Para que guarde los tres resultados hay que especificar que se haga una lista o vector.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{funcion3 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(muestra)\{     }
+\NormalTok{miValor}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Rango: 59.92"
+\end{verbatim}
+
+Para que guarde los tres resultados hay que especificar que se haga una lista o
+vector.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{funcion\_3 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(muestra) \{}
 \NormalTok{  med }\OtherTok{=} \FunctionTok{mean}\NormalTok{(muestra, }\AttributeTok{na.rm =}\NormalTok{ T)}
 \NormalTok{  vari }\OtherTok{=} \FunctionTok{var}\NormalTok{(muestra, }\AttributeTok{na.rm =}\NormalTok{ T)}
 \NormalTok{  rang }\OtherTok{=} \FunctionTok{max}\NormalTok{(muestra, }\AttributeTok{na.rm =}\NormalTok{ T) }\SpecialCharTok{{-}} \FunctionTok{min}\NormalTok{(muestra, }\AttributeTok{na.rm =}\NormalTok{ T)}
   \CommentTok{\# list(media = med, varianza = vari ,rango = rang)}
-  \FunctionTok{c}\NormalTok{(}\StringTok{"Media"}\OtherTok{=}\NormalTok{med,}\StringTok{"Var"}\OtherTok{=}\NormalTok{vari,}\StringTok{"Rango"}\OtherTok{=}\NormalTok{rang)}
+  \FunctionTok{c}\NormalTok{(}\StringTok{"Media"} \OtherTok{=}\NormalTok{ med,}
+    \StringTok{"Var"} \OtherTok{=}\NormalTok{ vari,}
+    \StringTok{"Rango"} \OtherTok{=}\NormalTok{ rang)}
 \NormalTok{\}}
 
-\NormalTok{ej }\OtherTok{\textless{}{-}} \FunctionTok{funcion3}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{20}\NormalTok{)}
+\NormalTok{ej }\OtherTok{\textless{}{-}} \FunctionTok{funcion\_3}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{20}\NormalTok{)}
 \NormalTok{ej}
 \end{Highlighting}
 \end{Shaded}
@@ -1341,16 +1389,84 @@ Para que guarde los tres resultados hay que especificar que se haga una lista o 
 ##  10.5  35.0  19.0
 \end{verbatim}
 
-Los diferentes argumentos de las funciones se separan con \texttt{,}. Éstos pueden tener un valor por defecto. Para especificarlo, en el momento de crear la función se especifica con el signo \texttt{=}, cuál es el valor que se usará si el usuario no lo especifica explícitamente.
+Los diferentes argumentos de las funciones se separan con \texttt{,}. Éstos pueden
+tener un valor por defecto. Para indicarlo, en el momento de definir la nueva
+función, se determina con el signo \texttt{=} cuál es el valor que se usará si el
+usuario no lo especifica explícitamente.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{funcion4 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(a,b,}\AttributeTok{c =} \DecValTok{4}\NormalTok{,}\AttributeTok{d =} \ConstantTok{FALSE}\NormalTok{)\{}
-  \ControlFlowTok{if}\NormalTok{ (d }\SpecialCharTok{==} \ConstantTok{FALSE}\NormalTok{) x1 }\OtherTok{\textless{}{-}}\NormalTok{ a}\SpecialCharTok{*}\NormalTok{b }\ControlFlowTok{else}\NormalTok{ x1 }\OtherTok{\textless{}{-}}\NormalTok{ a}\SpecialCharTok{*}\NormalTok{b }\SpecialCharTok{+}\NormalTok{ c}
+\NormalTok{funcion\_4 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(a, b, }\AttributeTok{c =} \DecValTok{4}\NormalTok{, }\AttributeTok{d =} \ConstantTok{FALSE}\NormalTok{) \{}
+  \ControlFlowTok{if}\NormalTok{ (d }\SpecialCharTok{==} \ConstantTok{FALSE}\NormalTok{) \{}
+\NormalTok{    x1 }\OtherTok{\textless{}{-}}\NormalTok{ a }\SpecialCharTok{*}\NormalTok{ b}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{    x1 }\OtherTok{\textless{}{-}}\NormalTok{ a }\SpecialCharTok{*}\NormalTok{ b }\SpecialCharTok{+}\NormalTok{ c}
+\NormalTok{  \}}
 \NormalTok{  x1}
 \NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
+
+Para utilizar la función, no es necesario explicitar el nombre de cada
+argumento. R seguirá el orden de la lista de argumentos que se utilizó en la
+definición de la función. Así, es recomendable que los argumentos sin valores
+por defecto, se coloquen como últimos argumentos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{funcion\_4}\NormalTok{(}\AttributeTok{a =} \DecValTok{2}\NormalTok{, }\AttributeTok{b =} \DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{funcion\_4}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Especifica valores de 2, 5 y 3 para a, b y c, sin tener que aclarar }
+\CommentTok{\# los nombres de dichos argumentos}
+\FunctionTok{funcion\_4}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{3}\NormalTok{)     }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{funcion\_4}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{3}\NormalTok{, }\ConstantTok{TRUE}\NormalTok{)    }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 13
+\end{verbatim}
+
+En el caso de no asignar un valor a uno de los argumentos y optar por utilizar
+el valor por defecto, es necesario el uso de ``d = `` pues en caso contrario el
+tercer argumento corresponde a c.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{funcion\_4}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{5}\NormalTok{, }\AttributeTok{d =} \ConstantTok{TRUE}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 14
+\end{verbatim}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -1364,7 +1480,8 @@ Los diferentes argumentos de las funciones se separan con \texttt{,}. Éstos pue
 \item
   Funciones
 
-  Genere una función que grafique una variable en función de otra y coloque nombre al eje x que por defecto sea: ``mi eje x''
+  Genere una función que grafique una variable en función de otra y coloque
+  nombre al eje x que por defecto sea: ``mi eje x''
 \end{enumerate}
 
   \bibliography{book.bib,packages.bib}

@@ -221,49 +221,85 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="generar-nuevas-funciones" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">Sección 5</span> Generar nuevas funciones<a href="generar-nuevas-funciones.html#generar-nuevas-funciones" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>R es un lenguaje que permite crear nuevas funciones. Una funcion se define con una asignacion de la forma:</p>
+<p>R es un lenguaje que permite crear nuevas funciones. Una función se define con
+una asignación de la forma:</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="generar-nuevas-funciones.html#cb68-1" aria-hidden="true" tabindex="-1"></a>nombre <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1, arg2, ...) {</span>
 <span id="cb68-2"><a href="generar-nuevas-funciones.html#cb68-2" aria-hidden="true" tabindex="-1"></a>   expresion</span>
 <span id="cb68-3"><a href="generar-nuevas-funciones.html#cb68-3" aria-hidden="true" tabindex="-1"></a> }</span></code></pre></div>
-<p>La <code>expresion</code> es una fórmula o grupo de formulas (o sentencias) que utilizan los argumentos para calcular uno o varios valores. El resultado de dicha expresión es el valor que proporciona R en su salida y este puede ser un número, un vector, un gráfico, una lista y/o un mensaje. Una función devuelve el último valor impreso en la consola.</p>
+<p>La <code>expresion</code> es una fórmula o grupo de fórmulas (o sentencias) que utilizan
+los argumentos para calcular uno o varios valores. El resultado de dicha
+expresión es el valor que proporciona R en su salida y éste puede ser un
+número, un vector, un gráfico, una lista. Una función devuelve el valor de la
+última expresión evaluada.</p>
 <p>Ejemplos:</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="generar-nuevas-funciones.html#cb69-1" aria-hidden="true" tabindex="-1"></a>funcion1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x){ y <span class="ot">=</span> x <span class="sc">+</span> <span class="dv">4</span>}</span>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="generar-nuevas-funciones.html#cb69-1" aria-hidden="true" tabindex="-1"></a>funcion_1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { y <span class="ot">=</span> x <span class="sc">+</span> <span class="dv">4</span>}</span>
 <span id="cb69-2"><a href="generar-nuevas-funciones.html#cb69-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-3"><a href="generar-nuevas-funciones.html#cb69-3" aria-hidden="true" tabindex="-1"></a>(a<span class="ot">&lt;-</span><span class="fu">funcion1</span>(<span class="dv">5</span>))</span></code></pre></div>
+<span id="cb69-3"><a href="generar-nuevas-funciones.html#cb69-3" aria-hidden="true" tabindex="-1"></a>(a <span class="ot">&lt;-</span> <span class="fu">funcion_1</span>(<span class="dv">5</span>))</span></code></pre></div>
 <pre><code>## [1] 9</code></pre>
-<p>En en caso siguiente, si se desea guardar el resultado en un objeto solo se guardará el rango (último valor impreso en consola).</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="generar-nuevas-funciones.html#cb71-1" aria-hidden="true" tabindex="-1"></a>funcion2 <span class="ot">&lt;-</span> <span class="cf">function</span>(muestra){     <span class="co">#El único argumento es un vector de datos</span></span>
+<p>En el caso siguiente, si se desea guardar el resultado en un objeto sólo se
+almacenará el rango (último valor impreso en consola).</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="generar-nuevas-funciones.html#cb71-1" aria-hidden="true" tabindex="-1"></a>funcion_2 <span class="ot">&lt;-</span> <span class="cf">function</span>(muestra) {     <span class="co">#El único argumento es un vector de datos</span></span>
 <span id="cb71-2"><a href="generar-nuevas-funciones.html#cb71-2" aria-hidden="true" tabindex="-1"></a>  media <span class="ot">=</span> <span class="fu">mean</span>(muestra, <span class="at">na.rm =</span> T)</span>
 <span id="cb71-3"><a href="generar-nuevas-funciones.html#cb71-3" aria-hidden="true" tabindex="-1"></a>  varianza <span class="ot">=</span> <span class="fu">var</span>(muestra, <span class="at">na.rm =</span> T)</span>
 <span id="cb71-4"><a href="generar-nuevas-funciones.html#cb71-4" aria-hidden="true" tabindex="-1"></a>  rango <span class="ot">=</span> <span class="fu">max</span>(muestra, <span class="at">na.rm =</span> T) <span class="sc">-</span> <span class="fu">min</span>(muestra, <span class="at">na.rm =</span> T)</span>
-<span id="cb71-5"><a href="generar-nuevas-funciones.html#cb71-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(media)</span>
-<span id="cb71-6"><a href="generar-nuevas-funciones.html#cb71-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(varianza)</span>
-<span id="cb71-7"><a href="generar-nuevas-funciones.html#cb71-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(rango)</span>
-<span id="cb71-8"><a href="generar-nuevas-funciones.html#cb71-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-9"><a href="generar-nuevas-funciones.html#cb71-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb71-10"><a href="generar-nuevas-funciones.html#cb71-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-11"><a href="generar-nuevas-funciones.html#cb71-11" aria-hidden="true" tabindex="-1"></a><span class="fu">funcion2</span>(<span class="fu">rnorm</span>(<span class="dv">40</span>,<span class="dv">5</span>,<span class="dv">16</span>))</span></code></pre></div>
-<pre><code>## [1] 8.674483
-## [1] 223.9998
-## [1] 59.92459</code></pre>
-<p>Para que guarde los tres resultados hay que especificar que se haga una lista o vector.</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="generar-nuevas-funciones.html#cb73-1" aria-hidden="true" tabindex="-1"></a>funcion3 <span class="ot">&lt;-</span> <span class="cf">function</span>(muestra){     </span>
-<span id="cb73-2"><a href="generar-nuevas-funciones.html#cb73-2" aria-hidden="true" tabindex="-1"></a>  med <span class="ot">=</span> <span class="fu">mean</span>(muestra, <span class="at">na.rm =</span> T)</span>
-<span id="cb73-3"><a href="generar-nuevas-funciones.html#cb73-3" aria-hidden="true" tabindex="-1"></a>  vari <span class="ot">=</span> <span class="fu">var</span>(muestra, <span class="at">na.rm =</span> T)</span>
-<span id="cb73-4"><a href="generar-nuevas-funciones.html#cb73-4" aria-hidden="true" tabindex="-1"></a>  rang <span class="ot">=</span> <span class="fu">max</span>(muestra, <span class="at">na.rm =</span> T) <span class="sc">-</span> <span class="fu">min</span>(muestra, <span class="at">na.rm =</span> T)</span>
-<span id="cb73-5"><a href="generar-nuevas-funciones.html#cb73-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># list(media = med, varianza = vari ,rango = rang)</span></span>
-<span id="cb73-6"><a href="generar-nuevas-funciones.html#cb73-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">&quot;Media&quot;</span><span class="ot">=</span>med,<span class="st">&quot;Var&quot;</span><span class="ot">=</span>vari,<span class="st">&quot;Rango&quot;</span><span class="ot">=</span>rang)</span>
-<span id="cb73-7"><a href="generar-nuevas-funciones.html#cb73-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb73-8"><a href="generar-nuevas-funciones.html#cb73-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-9"><a href="generar-nuevas-funciones.html#cb73-9" aria-hidden="true" tabindex="-1"></a>ej <span class="ot">&lt;-</span> <span class="fu">funcion3</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>)</span>
-<span id="cb73-10"><a href="generar-nuevas-funciones.html#cb73-10" aria-hidden="true" tabindex="-1"></a>ej</span></code></pre></div>
+<span id="cb71-5"><a href="generar-nuevas-funciones.html#cb71-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Media:&quot;</span>, <span class="fu">round</span>(media, <span class="dv">2</span>)))</span>
+<span id="cb71-6"><a href="generar-nuevas-funciones.html#cb71-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Varianza:&quot;</span>, <span class="fu">round</span>(varianza, <span class="dv">2</span>)))</span>
+<span id="cb71-7"><a href="generar-nuevas-funciones.html#cb71-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Rango:&quot;</span>, <span class="fu">round</span>(rango, <span class="dv">2</span>)))</span>
+<span id="cb71-8"><a href="generar-nuevas-funciones.html#cb71-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb71-9"><a href="generar-nuevas-funciones.html#cb71-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-10"><a href="generar-nuevas-funciones.html#cb71-10" aria-hidden="true" tabindex="-1"></a>miValor <span class="ot">&lt;-</span> <span class="fu">funcion_2</span>(<span class="fu">rnorm</span>(<span class="dv">40</span>,<span class="dv">5</span>,<span class="dv">16</span>))</span></code></pre></div>
+<pre><code>## [1] &quot;Media: 8.67&quot;
+## [1] &quot;Varianza: 224&quot;
+## [1] &quot;Rango: 59.92&quot;</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="generar-nuevas-funciones.html#cb73-1" aria-hidden="true" tabindex="-1"></a>miValor</span></code></pre></div>
+<pre><code>## [1] &quot;Rango: 59.92&quot;</code></pre>
+<p>Para que guarde los tres resultados hay que especificar que se haga una lista o
+vector.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="generar-nuevas-funciones.html#cb75-1" aria-hidden="true" tabindex="-1"></a>funcion_3 <span class="ot">&lt;-</span> <span class="cf">function</span>(muestra) {</span>
+<span id="cb75-2"><a href="generar-nuevas-funciones.html#cb75-2" aria-hidden="true" tabindex="-1"></a>  med <span class="ot">=</span> <span class="fu">mean</span>(muestra, <span class="at">na.rm =</span> T)</span>
+<span id="cb75-3"><a href="generar-nuevas-funciones.html#cb75-3" aria-hidden="true" tabindex="-1"></a>  vari <span class="ot">=</span> <span class="fu">var</span>(muestra, <span class="at">na.rm =</span> T)</span>
+<span id="cb75-4"><a href="generar-nuevas-funciones.html#cb75-4" aria-hidden="true" tabindex="-1"></a>  rang <span class="ot">=</span> <span class="fu">max</span>(muestra, <span class="at">na.rm =</span> T) <span class="sc">-</span> <span class="fu">min</span>(muestra, <span class="at">na.rm =</span> T)</span>
+<span id="cb75-5"><a href="generar-nuevas-funciones.html#cb75-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># list(media = med, varianza = vari ,rango = rang)</span></span>
+<span id="cb75-6"><a href="generar-nuevas-funciones.html#cb75-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">&quot;Media&quot;</span> <span class="ot">=</span> med,</span>
+<span id="cb75-7"><a href="generar-nuevas-funciones.html#cb75-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Var&quot;</span> <span class="ot">=</span> vari,</span>
+<span id="cb75-8"><a href="generar-nuevas-funciones.html#cb75-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Rango&quot;</span> <span class="ot">=</span> rang)</span>
+<span id="cb75-9"><a href="generar-nuevas-funciones.html#cb75-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb75-10"><a href="generar-nuevas-funciones.html#cb75-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-11"><a href="generar-nuevas-funciones.html#cb75-11" aria-hidden="true" tabindex="-1"></a>ej <span class="ot">&lt;-</span> <span class="fu">funcion_3</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>)</span>
+<span id="cb75-12"><a href="generar-nuevas-funciones.html#cb75-12" aria-hidden="true" tabindex="-1"></a>ej</span></code></pre></div>
 <pre><code>## Media   Var Rango 
 ##  10.5  35.0  19.0</code></pre>
-<p>Los diferentes argumentos de las funciones se separan con <code>,</code>. Éstos pueden tener un valor por defecto. Para especificarlo, en el momento de crear la función se especifica con el signo <code>=</code>, cuál es el valor que se usará si el usuario no lo especifica explícitamente.</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="generar-nuevas-funciones.html#cb75-1" aria-hidden="true" tabindex="-1"></a>funcion4 <span class="ot">&lt;-</span> <span class="cf">function</span>(a,b,<span class="at">c =</span> <span class="dv">4</span>,<span class="at">d =</span> <span class="cn">FALSE</span>){</span>
-<span id="cb75-2"><a href="generar-nuevas-funciones.html#cb75-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (d <span class="sc">==</span> <span class="cn">FALSE</span>) x1 <span class="ot">&lt;-</span> a<span class="sc">*</span>b <span class="cf">else</span> x1 <span class="ot">&lt;-</span> a<span class="sc">*</span>b <span class="sc">+</span> c</span>
-<span id="cb75-3"><a href="generar-nuevas-funciones.html#cb75-3" aria-hidden="true" tabindex="-1"></a>  x1</span>
-<span id="cb75-4"><a href="generar-nuevas-funciones.html#cb75-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Los diferentes argumentos de las funciones se separan con <code>,</code>. Éstos pueden
+tener un valor por defecto. Para indicarlo, en el momento de definir la nueva
+función, se determina con el signo <code>=</code> cuál es el valor que se usará si el
+usuario no lo especifica explícitamente.</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="generar-nuevas-funciones.html#cb77-1" aria-hidden="true" tabindex="-1"></a>funcion_4 <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b, <span class="at">c =</span> <span class="dv">4</span>, <span class="at">d =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb77-2"><a href="generar-nuevas-funciones.html#cb77-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (d <span class="sc">==</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb77-3"><a href="generar-nuevas-funciones.html#cb77-3" aria-hidden="true" tabindex="-1"></a>    x1 <span class="ot">&lt;-</span> a <span class="sc">*</span> b</span>
+<span id="cb77-4"><a href="generar-nuevas-funciones.html#cb77-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb77-5"><a href="generar-nuevas-funciones.html#cb77-5" aria-hidden="true" tabindex="-1"></a>    x1 <span class="ot">&lt;-</span> a <span class="sc">*</span> b <span class="sc">+</span> c</span>
+<span id="cb77-6"><a href="generar-nuevas-funciones.html#cb77-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb77-7"><a href="generar-nuevas-funciones.html#cb77-7" aria-hidden="true" tabindex="-1"></a>  x1</span>
+<span id="cb77-8"><a href="generar-nuevas-funciones.html#cb77-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Para utilizar la función, no es necesario explicitar el nombre de cada
+argumento. R seguirá el orden de la lista de argumentos que se utilizó en la
+definición de la función. Así, es recomendable que los argumentos sin valores
+por defecto, se coloquen como últimos argumentos.</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="generar-nuevas-funciones.html#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">funcion_4</span>(<span class="at">a =</span> <span class="dv">2</span>, <span class="at">b =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="generar-nuevas-funciones.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">funcion_4</span>(<span class="dv">2</span>, <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="generar-nuevas-funciones.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Especifica valores de 2, 5 y 3 para a, b y c, sin tener que aclarar </span></span>
+<span id="cb82-2"><a href="generar-nuevas-funciones.html#cb82-2" aria-hidden="true" tabindex="-1"></a><span class="co"># los nombres de dichos argumentos</span></span>
+<span id="cb82-3"><a href="generar-nuevas-funciones.html#cb82-3" aria-hidden="true" tabindex="-1"></a><span class="fu">funcion_4</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>)     </span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="generar-nuevas-funciones.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">funcion_4</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="cn">TRUE</span>)    </span></code></pre></div>
+<pre><code>## [1] 13</code></pre>
+<p>En el caso de no asignar un valor a uno de los argumentos y optar por utilizar
+el valor por defecto, es necesario el uso de “d = “ pues en caso contrario el
+tercer argumento corresponde a c.</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="generar-nuevas-funciones.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">funcion_4</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="at">d =</span> <span class="cn">TRUE</span>) </span></code></pre></div>
+<pre><code>## [1] 14</code></pre>
 <hr />
 <div class="rmdtip">
 <h2 id="ejercitación">
@@ -273,7 +309,8 @@ Ejercitación
 <!-- ```{block, type='boxeda'} -->
 <ol style="list-style-type: decimal">
 <li><p>Funciones</p>
-<p>Genere una función que grafique una variable en función de otra y coloque nombre al eje x que por defecto sea: “mi eje x”</p></li>
+<p>Genere una función que grafique una variable en función de otra y coloque
+nombre al eje x que por defecto sea: “mi eje x”</p></li>
 </ol>
 <!-- ``` -->
 

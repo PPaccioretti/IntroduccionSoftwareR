@@ -4,7 +4,7 @@ subtitle: "Notas de clases"
 author: 
 - Paccioretti Pablo^[pablopaccioretti@agro.unc.edu.ar]
 - Bruno Cecilia^[cebruno@agro.unc.edu.ar]
-- González Montoro Aldana^[aldana.goonzalez.montoro@unc.edu.ar]
+- González Montoro Aldana^[aldana.gonzalez.montoro@unc.edu.ar]
 - Nores María Laura^[lalinores@yahoo.com.ar]
 site: bookdown::bookdown_site
 documentclass: book
